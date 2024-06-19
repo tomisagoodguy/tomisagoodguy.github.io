@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>隨意筆記 on 阿康部落格</title>
+    <link>https://tomisagoodguy.github.io/categories/%E9%9A%A8%E6%84%8F%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in 隨意筆記 on 阿康部落格</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 19 Jun 2024 10:00:47 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/%E9%9A%A8%E6%84%8F%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>國家考試及格:地政士、不動產經紀人</title>
+      <link>https://tomisagoodguy.github.io/about/</link>
+      <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/about/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>阿康的第一篇文章</title>
+      <link>https://tomisagoodguy.github.io/blog/test/</link>
+      <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/blog/test/</guid>
+      <description>pppppppppp</description>
+    </item>
+  </channel>
+</rss>
