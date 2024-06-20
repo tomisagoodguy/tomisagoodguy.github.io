@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>雜談 on 阿康部落格</title>
+    <link>https://tomisagoodguy.github.io/categories/%E9%9B%9C%E8%AB%87/</link>
+    <description>Recent content in 雜談 on 阿康部落格</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 19 Jun 2024 10:00:47 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/%E9%9B%9C%E8%AB%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://tomisagoodguy.github.io/about/</link>
+      <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/about/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
