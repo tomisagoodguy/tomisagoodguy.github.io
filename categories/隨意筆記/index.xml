@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>隨意筆記 on 阿康部落格</title>
+    <link>https://tomisagoodguy.github.io/categories/%E9%9A%A8%E6%84%8F%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in 隨意筆記 on 阿康部落格</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 19 Jun 2024 10:00:47 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/%E9%9A%A8%E6%84%8F%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>阿康的第一篇文章</title>
+      <link>https://tomisagoodguy.github.io/blog/chapter1/</link>
+      <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/blog/chapter1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
