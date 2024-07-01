@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第一篇 on 阿康部落格</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://tomisagoodguy.github.io/blog/</link>
     <description>Recent content in 第一篇 on 阿康部落格</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 19 Jun 2024 10:00:47 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tomisagoodguy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>阿康的第一篇文章</title>
-      <link>http://localhost:1313/blog/chapter1/</link>
+      <link>https://tomisagoodguy.github.io/blog/chapter1/</link>
       <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
-      <guid>http://localhost:1313/blog/chapter1/</guid>
+      <guid>https://tomisagoodguy.github.io/blog/chapter1/</guid>
       <description>何謂土地總登記</description>
     </item>
     <item>
       <title>阿康的第二篇文章</title>
-      <link>http://localhost:1313/blog/chapter2/</link>
+      <link>https://tomisagoodguy.github.io/blog/chapter2/</link>
       <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
-      <guid>http://localhost:1313/blog/chapter2/</guid>
-      <description></description>
+      <guid>https://tomisagoodguy.github.io/blog/chapter2/</guid>
+      <description>我是誰</description>
     </item>
   </channel>
 </rss>
