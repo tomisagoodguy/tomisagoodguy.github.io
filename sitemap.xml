@@ -11,13 +11,16 @@
     <loc>https://tomisagoodguy.github.io/about/</loc>
     <lastmod>2024-06-19T10:00:47+08:00</lastmod>
   </url><url>
-    <loc>https://tomisagoodguy.github.io/tags/python/</loc>
+    <loc>https://tomisagoodguy.github.io/categories/</loc>
+    <lastmod>2024-06-19T10:00:47+08:00</lastmod>
+  </url><url>
+    <loc>https://tomisagoodguy.github.io/categories/%E7%B9%BC%E6%89%BF/</loc>
+    <lastmod>2024-06-19T10:00:47+08:00</lastmod>
+  </url><url>
+    <loc>https://tomisagoodguy.github.io/blog/chapter1/</loc>
     <lastmod>2024-06-19T10:00:47+08:00</lastmod>
   </url><url>
     <loc>https://tomisagoodguy.github.io/blog/chapter2/</loc>
-    <lastmod>2024-06-19T10:00:47+08:00</lastmod>
-  </url><url>
-    <loc>https://tomisagoodguy.github.io/tags/</loc>
     <lastmod>2024-06-19T10:00:47+08:00</lastmod>
   </url><url>
     <loc>https://tomisagoodguy.github.io/search/</loc>
@@ -26,6 +29,6 @@
     <loc>https://tomisagoodguy.github.io/blog/</loc>
     <lastmod>2019-10-29T13:49:23+08:00</lastmod>
   </url><url>
-    <loc>https://tomisagoodguy.github.io/categories/</loc>
+    <loc>https://tomisagoodguy.github.io/tags/</loc>
   </url>
 </urlset>
