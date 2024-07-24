@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第一篇 on 阿康部落格</title>
-    <link>https://tomisagoodguy.github.io/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in 第一篇 on 阿康部落格</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 19 Jun 2024 10:00:47 +0800</lastBuildDate>
-    <atom:link href="https://tomisagoodguy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python chapter1</title>
-      <link>https://tomisagoodguy.github.io/blog/chapter2/</link>
+      <link>http://localhost:1313/blog/chapter2/</link>
       <pubDate>Wed, 19 Jun 2024 10:00:47 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/chapter2/</guid>
+      <guid>http://localhost:1313/blog/chapter2/</guid>
       <description></description>
     </item>
   </channel>
