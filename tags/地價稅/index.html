@@ -138,6 +138,7 @@
   <div class="container">
     <div class="row">
       
+      
       <div class="col-lg-4">
   <div class="widgets">
     
@@ -189,56 +190,110 @@
   </div>
 </div>
       
+      
       <div class="col-lg-8 mb-5 mb-lg-0">
         <div class="title text-center">
           <h2 class="mb-5">所有文章</h2>
         </div>
+        
         <div class="content">
           <ul class="list-group list-group-flush article-list">
             
             
-            <li class="list-group-item bg-transparent border-bottom py-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <a href="https://tomisagoodguy.github.io/blog/landlaw1/" class="article-link">
-                  <h4>地價稅課徵制度概述</h4>
-                </a>
-                <span class="text-muted small">2024-12-20</span>
-              </div>
+            <li class="list-group-item bg-transparent border-bottom py-3 px-2">
               
               
-              
-              <div class="mt-1 mb-2">
+              <article class="article-preview">
+                <header>
+                  <a href="https://tomisagoodguy.github.io/blog/landlaw1/" class="article-link">
+                    <h3 class="font-weight-bold text-primary hover-title mb-1">地價稅課徵制度概述</h3>
+                  </a>
+                  <time class="text-muted small" datetime="2024-12-20 10:07:47 &#43;0800 CST">發布於：2024-12-20</time>
+                </header>
                 
-                <a href="/categories/%e5%9c%9f%e5%9c%b0%e7%a8%85%e6%b3%95" class="badge badge-primary">土地稅法</a>
                 
-              </div>
-              
-              
-              
-              <div class="mt-1">
-                <p class="text-muted mb-0">
+                <p class="text-muted mt-1 mb-2 small">
                   
-                    
-                      一、意義 地價稅是對土地價值所課徵的賦稅。
+                    一、意義 地價稅是對土地價值所課徵的賦稅。
 二、課稅範圍 (一) 範圍 已規定地價之土地，除依第二十...
-                    
                   
                 </p>
-              </div>
+                
+                
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <div class="article-tags">
+                    
+                      
+                        <a href="/categories/%e5%9c%9f%e5%9c%b0%e7%a8%85%e6%b3%95" class="badge badge-primary badge-sm">土地稅法</a>
+                      
+                    
+                  </div>
+                  <a href="https://tomisagoodguy.github.io/blog/landlaw1/" class="btn btn-sm btn-primary read-more-btn">
+                    <span class="read-more-text">閱讀更多</span> <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </article>
             </li>
             
           </ul>
         </div>
       </div>
-
+      
       
       <div class="col-12 mt-5">
-        
+        <nav aria-label="Page navigation">
+          
+        </nav>
       </div>
     </div>
   </div>
 </section>
 
+
+<style>
+   
+  .hover-title {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    position: relative;
+  }
+  .hover-title:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+   
+  .list-group-item {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 15px !important;
+  }
+  .list-group-item:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: scale(1.02);
+  }
+
+   
+  .read-more-btn {
+    transition: all 0.3s ease;
+    color: white !important;
+    font-size: 0.85rem;
+  }
+  .read-more-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 255, 0.2);
+  }
+
+   
+  .badge-primary {
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+  .badge-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
 
 
 
