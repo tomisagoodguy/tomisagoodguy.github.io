@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>股票 on land-knowledege</title>
+    <link>http://localhost:1313/categories/%E8%82%A1%E7%A5%A8/</link>
+    <description>Recent content in 股票 on land-knowledege</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 22 Jul 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%82%A1%E7%A5%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7月月營收股票進場檢討</title>
+      <link>http://localhost:1313/blog/sample-post/</link>
+      <pubDate>Tue, 22 Jul 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/sample-post/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

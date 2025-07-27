@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on land-knowledege</title>
-    <link>https://tomisagoodguy.github.io/blog/</link>
-    <description>Recent content in Blogs on land-knowledege</description>
+    <title>Stick on land-knowledege</title>
+    <link>http://localhost:1313/categories/stick/</link>
+    <description>Recent content in Stick on land-knowledege</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 27 Jul 2025 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://tomisagoodguy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/stick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>7月月營收股票進場檢討</title>
-      <link>https://tomisagoodguy.github.io/blog/stock-review-july/</link>
+      <link>http://localhost:1313/blog/stock-review-july/</link>
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/stock-review-july/</guid>
+      <guid>http://localhost:1313/blog/stock-review-july/</guid>
       <description>7月份策略強勢股觀察&#xA;2059 川湖 2404 漢唐 2449 京元電子 3032 偉訓 3037 欣興 3167 大量 3543 未知 4721 美琪瑪 4931 新盛力 6191 精成科 8358 金居 </description>
     </item>
   </channel>
