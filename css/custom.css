@@ -225,3 +225,8 @@ section.category-french-cuisine {
 section.category-stock-research {
     background-color: #f8f8f8; /* Clean, light grey */
 }
+
+/* Table border style */
+table, th, td {
+  border: 1px solid black !important;
+}
