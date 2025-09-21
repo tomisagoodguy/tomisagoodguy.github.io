@@ -176,3 +176,52 @@
 .toc-container::-webkit-scrollbar-thumb:hover {
   background: rgba(79, 70, 229, 0.4); /* Darker on hover */
 }
+
+/* Recipe Gallery Styles */
+.recipe-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.recipe-gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+}
+
+.recipe-gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.recipe-gallery-item figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Arrow for image captions */
+.recipe-gallery-item figcaption::before {
+    content: '↑' !important;
+    display: block !important;
+    font-size: 1.5rem !important;
+    color: #888 !important;
+    margin-bottom: 4px !important;
+}
+
+/* Category-specific backgrounds */
+section.category-french-dessert,
+section.category-belgian-cuisine,
+section.category-french-cuisine {
+    background-color: #fdf8f0; /* Warm, light beige */
+}
+
+section.category-stock-research {
+    background-color: #f8f8f8; /* Clean, light grey */
+}
