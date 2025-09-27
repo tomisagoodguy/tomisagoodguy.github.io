@@ -230,3 +230,21 @@ section.category-stock-research {
 table, th, td {
   border: 1px solid black !important;
 }
+
+.skill-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem; /* Slightly larger font */
+  color: #333;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 5px solid #007bff; /* Accent color from other styles */
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.skill-title i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #007bff; /* Icon color */
+}
