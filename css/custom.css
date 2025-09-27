@@ -1,13 +1,15 @@
 /**
- * @doc
- * 網站整體樣式表 (v3 - 最終完整版)
- * -----------------------------------------
- * 包含所有原始樣式，並整合了最終修正的「黑白主題」。
- * 此版本根據最新回饋，加入了「浮動按鈕」的淺色樣式，並確保頁首頁尾所有文字/圖示均為淺色。
- *
- * 使用方式：直接複製全部內容，取代您現有的 CSS 檔案。
- * 最後更新時間：2025-09-27
- */
+ * @doc
+ * 網站整體樣式表 (v5 - 最終整合版)
+ * -----------------------------------------
+ * 此檔案為我們所有討論的最終成果，整合了：
+ * 1. 您原有的網站樣式 (GitHub項目, 技能, TOC 等)。
+ * 2. 最終版本的「專業深色主題」(以石墨灰為基調)。
+ * 3. 深色主題下的浮動按鈕樣式。
+ *
+ * 使用方式：直接複製全部內容，完整取代您現有的 CSS 檔案即可。
+ * 最後更新時間：2025-09-27
+ */
 
 /* GitHub 項目卡片樣式 */
 .github-projects {
@@ -268,44 +270,46 @@ td {
   margin-top: 0;
 }
 
-
 /* =================================================================
-   Header and Footer Color Customization (Black & White Theme)
-   ================================================================= */
+   Header and Footer Color Customization (專業深色主題)
+   ================================================================= */
 
-/* 基礎設定：頁尾、Newsletter 區塊背景為黑色 */
+/* 基礎設定：頁尾、Newsletter 區塊背景為深石墨灰 */
 footer.footer-section,
 .newsletter-section {
-  background-color: #000000;
+  background-color: #212529;
+  /* 深石墨灰 */
 }
 
-/* 強制設定頁首在任何狀態下背景皆為純黑 */
+/* 強制設定頁首在任何狀態下背景皆為深石墨灰 */
 header.navigation .navbar,
 header.navigation.nav-bg .navbar {
-  background-color: #000000 !important;
+  background-color: #212529 !important;
 }
 
-/* 頁首：品牌 Logo 文字顏色 */
+/* 頁首：品牌 Logo 文字顏色改為柔和的亮灰色 */
 .navigation .navbar-brand {
-  color: #ffffff;
+  color: #f8f9fa;
+  /* 亮灰色 */
 }
 
-/* 強制設定導覽列連結文字、搜尋圖示在任何狀態下皆為純白 */
+/* 強制設定導覽列連結文字、搜尋圖示在任何狀態下皆為柔和的亮灰色 */
 header.navigation .navbar-nav .nav-link,
 header.navigation .search .search-btn i {
-  color: #ffffff !important;
+  color: #f8f9fa !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 頁首：導覽連結的 Hover 與 Active 效果 */
+/* 頁首：導覽連結的 Hover 與 Active 效果，使用稍亮的灰色 */
 header.navigation .navbar-nav .nav-link:hover,
 header.navigation .navbar-nav .nav-item.active .nav-link {
-  background-color: #333333;
+  background-color: #343a40;
+  /* 稍亮的炭灰色 */
   color: #ffffff !important;
   border-radius: 5px;
 }
 
-/* 頁首：反轉 Logo 圖片顏色以適應黑色背景 */
+/* 頁首：反轉 Logo 圖片顏色以適應深色背景 (如果您的Logo是圖片) */
 .navigation .navbar-brand img,
 .navigation.nav-bg .navbar-brand img {
   filter: invert(1) brightness(100);
@@ -314,76 +318,77 @@ header.navigation .navbar-nav .nav-item.active .nav-link {
 /* 頁首：行動版漢堡選單圖示顏色 */
 .navigation .navbar-toggler i,
 .navigation.nav-bg .navbar-toggler i {
-  color: #ffffff !important;
+  color: #f8f9fa !important;
 }
 
-/* 下拉式選單樣式 */
+/* 下拉式選單樣式，使用與頁首一致的深色背景 */
 .navbar-nav .dropdown-menu {
-  background-color: #000000;
-  border: 1px solid #333333;
+  background-color: #212529;
+  border: 1px solid #343a40;
 }
 
 .navbar-nav .dropdown-item {
-  color: #ffffff;
+  color: #f8f9fa;
   transition: background-color 0.3s ease;
 }
 
 .navbar-nav .dropdown-item:hover {
   color: #ffffff;
-  background-color: #333333;
+  background-color: #343a40;
 }
 
-/* 【修正】頁尾：統一設定所有文字、圖示顏色為淺色 */
+/* 頁尾：統一設定所有文字、段落、連結、圖示顏色為柔和的亮灰色 */
 footer.footer-section,
+footer.footer-section p,
 footer.footer-section li,
 footer.footer-section h6,
 footer.footer-section a,
 footer.footer-section i,
 .newsletter-section h2,
 .newsletter-section p {
-  color: #ffffff;
+  color: #f8f9fa !important;
 }
 
 /* 覆寫主題對 icon 的主要顏色設定 */
 footer.footer-section .text-primary {
-  color: #ffffff !important;
+  color: #f8f9fa !important;
 }
 
-/* 頁尾：Copyright 文字使用淺灰色 */
-.footer-copyright {
-  color: #cccccc;
+/* 頁尾：Copyright 文字使用更柔和的灰色，做出視覺區隔 */
+.footer-copyright,
+.footer-copyright p,
+.footer-copyright a {
+  color: #adb5bd !important;
+  /* 中灰色 */
 }
 
 /* 頁尾：連結 hover 效果 */
 footer.footer-section a:hover {
-  color: #ffffff;
+  color: #ffffff !important;
   text-decoration: underline;
 }
 
-/* --- End of Customization --- */
-
-
 /* =================================================================
-   【新增】Floating Action Buttons (Scroll Top/Bottom) Customization
-   ================================================================= */
+   Floating Action Buttons (Scroll Top/Bottom) Customization
+   ================================================================= */
 
 #return-to-top,
 #go-to-bottom {
-  background-color: #222222;
-  /* 深灰色背景 */
-  color: #ffffff;
-  /* 白色圖示 */
-  border: 1px solid #444444;
-  /* 輕微邊框 */
+  background-color: #343a40;
+  /* 炭灰色背景 */
+  color: #f8f9fa;
+  /* 亮灰色圖示 */
+  border: 1px solid #495057;
+  /* 邊框顏色 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #return-to-top:hover,
 #go-to-bottom:hover {
-  background-color: #444444;
+  background-color: #495057;
   /* Hover 時背景變亮 */
   color: #ffffff;
-  /* 圖示維持白色 */
+  /* 圖示變為純白 */
   transform: translateY(-3px);
 }
