@@ -1,9 +1,9 @@
 /**
  * @doc
- * 網站整體樣式表 (完整版)
+ * 網站整體樣式表 (完整修正版)
  * -----------------------------------------
  * 包含所有原始樣式 (GitHub卡片, 技能標籤, 目錄等)
- * 並整合了最終版的「黑白主題」頁首與頁尾樣式。
+ * 並整合了修正版的「黑白主題」頁首與頁尾樣式，解決導覽列顏色與文字問題。
  *
  * 使用方式：直接複製全部內容，取代您現有的 CSS 檔案。
  * 最後更新時間：2025-09-27
@@ -308,46 +308,55 @@ td {
 
 
 /* =================================================================
-   Header and Footer Color Customization (Black & White Theme)
+   Header and Footer Color Customization (Black & White Theme) - 【修正版】
    ================================================================= */
 
 /**
  * @doc
- * 頁首與頁尾顏色主題優化 (黑白版)
+ * 頁首與頁尾顏色主題優化 (黑白版) - 修正版
+ * -----------------------------------------
  *
- * 1.  將頁首、頁尾區塊的背景色統一設定為純黑色 (#000000)。
- * 2.  將相關文字顏色調整為白色 (#ffffff) 以確保最佳可讀性。
- * 3.  反轉 Logo 顏色以適應黑色背景。
- * 4.  修正了下拉式選單的樣式，使其與黑色導覽列保持一致。
- * 5.  為導覽列連結的 hover 效果設定為深灰色 (#333333)，提供清晰的互動回饋。
- * 6.  保留了平滑過渡動畫與 active 頁面樣式。
+ * 1.  【修正】強制將頁首背景色設定為純黑色 (#000000)，覆寫 Bootstrap 的 'bg-transparent' 樣式。
+ * 2.  【修正】強制將導覽列文字顏色調整為白色 (#ffffff)，覆寫 Bootstrap 的 'navbar-white' 樣式。
+ * 3.  反轉 Logo 顏色以適應黑色背景 (維持不變)。
+ * 4.  修正了下拉式選單的樣式，使其與黑色導覽列保持一致 (維持不變)。
+ * 5.  為導覽列連結的 hover 效果設定為深灰色 (#333333)，提供清晰的互動回饋 (維持不變)。
  */
 
 /* 基礎設定：設定頁首與頁尾的背景色為黑色 */
 header.navigation,
-header.navigation.nav-bg,
 footer.footer-section,
 .newsletter-section {
   background-color: #000000;
 }
 
+/* 【修正 1】強制覆寫 Bootstrap 樣式，確保導覽列背景為純黑 */
+/* 透過更精確的選擇器來提高優先級 */
+header.navigation .navbar {
+  background-color: #000000 !important;
+  /* 使用 !important 確保最高優先級 */
+}
+
 /* 頁首：品牌 Logo 與文字顏色 */
-.navigation .navbar-brand,
-.navigation .navbar-nav .nav-link {
+.navigation .navbar-brand {
   color: #ffffff;
 }
 
-/* 頁首：導覽連結樣式與過渡效果 */
+/* 【修正 2】強制覆寫 Bootstrap 'navbar-white' 的文字顏色，確保連結文字為純白 */
 .navigation .navbar-nav .nav-link {
+  color: #ffffff !important;
+  /* 使用 !important 確保文字為白色 */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 頁首：導覽連結的 Hover 與 Active 效果 */
+/* 頁首：導覽連結的 Hover 與 Active 效果 (此部分設計正確，問題在於基礎顏色) */
+/* 當基礎文字顏色修正後，這個 hover 效果就能正常顯示 */
 .navigation .navbar-nav .nav-link:hover,
 .navigation .navbar-nav .nav-item.active .nav-link {
   background-color: #333333;
   /* 使用深灰色作為 hover/active 背景 */
-  color: #ffffff;
+  color: #ffffff !important;
+  /* 同樣確保 hover 時文字也是白色 */
   border-radius: 5px;
 }
 
@@ -363,7 +372,7 @@ footer.footer-section,
   color: #ffffff;
 }
 
-/* 【重要修正】下拉式選單樣式，使其與黑色主題一致 */
+/* 【重要修正】下拉式選單樣式，使其與黑色主題一致 (維持不變) */
 .navbar-nav .dropdown-menu {
   background-color: #000000;
   /* 同樣的黑色背景 */
