@@ -9,18 +9,11 @@
     <lastBuildDate>Sat, 27 Sep 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://tomisagoodguy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>「菲式思考」：15個專業選股策略的完整條件清單</title>
+      <title>「菲式思考」：15個選股策略的條件清單</title>
       <link>https://tomisagoodguy.github.io/blog/%E8%8F%B2%E5%BC%8F%E6%80%9D%E8%80%83/</link>
       <pubDate>Sat, 27 Sep 2025 00:00:00 +0800</pubDate>
       <guid>https://tomisagoodguy.github.io/blog/%E8%8F%B2%E5%BC%8F%E6%80%9D%E8%80%83/</guid>
       <description>前言 在複雜多變的股票市場中，建立一套清晰且有邏輯的投資策略至關重要。「菲式思考」提供了一系列基於基本面、技術面與籌碼面的綜合選股框架，幫助投資人從不同維度篩選出具備潛力的投資標的。&#xA;本文旨在系統性地整理並解析「菲式思考」中所提及的15種選股策略，將其核心條件一一條列，讓您能夠更清晰地理解每種策略背後的思考邏輯與篩選標準。&#xA;15大選股策略條件詳解 以下我們將逐一介紹文件中所列出的策略及其具體條件。&#xA;1. 融券回補事件 此策略旨在捕捉市場上因融券強制回補，可能引發軋空行情的潛力股。&#xA;1.融券回補日介於7至14天之間。&#xA;2.券資比大於 20%。</description>
-    </item>
-    <item>
-      <title>法式糖塔 (Tarte au Sucre)</title>
-      <link>https://tomisagoodguy.github.io/blog/%E6%B3%95%E5%BC%8F%E7%B3%96%E5%A1%94/</link>
-      <pubDate>Sat, 27 Sep 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/%E6%B3%95%E5%BC%8F%E7%B3%96%E5%A1%94/</guid>
-      <description>食材 (Ingredients) 組成部分 (Component) 材料 (Ingredient) 份量 (Quantity) 麵團 (Dough) T55 麵粉 (T55 Flour) 250g 鹽 (Salt) 5g 糖 (Sugar) 25g 室溫奶油 (Unsalted Butter, room temp) 80g 全蛋 (Whole Eggs) 2個 溫水 (Warm Water, 35°C) 40ml 新鮮酵母 (Fresh Yeast) 10g 內餡 (Filling) 蛋 (Egg) 1個 牛奶 (Milk) 50ml 融化奶油 (Melted Butter) 25g 法國甜菜金砂糖 (Vergeoise Blonde Sugar) 20g 表面 (Topping) 塊狀冷奶油 (Cold Butter, cubed) 25g 法國甜菜金砂糖 (Vergeoise Blonde Sugar) 20g 珍珠糖 (Pearl Sugar) 適量 蛋黃液 (Egg Yolk Wash) 1個蛋黃 + 少許水 杏桃果醬 (Apricot Jam) 適量 (選擇性) 🍩 麵團製作 (Dough Preparation) 準備模具：將塔模均勻抹上奶油後，冷藏備用。</description>
     </item>
     <item>
       <title>營收公布能為投資參考依據？</title>
@@ -30,32 +23,11 @@
       <description>本文的詳細研究與數據分析已整理成論文格式，歡迎參考。&#xA;相關論文下載：&#xA;營收公布能為投資參考依據？以台股為例 (PDF) 台股營收動能策略之風險模型驗證 (PDF) 因子 (Factors)&#xA;市場因子 (Market Factor)：這是最基礎的因子，代表整體市場的風險溢酬。 規模因子 (Size Factor / SMB)：指小型市值公司的股票報酬與大型市值公司股票報酬的差異。這個因子捕捉了公司規模對報酬的影響。 價值因子 (Value Factor / HML)：指高帳面市值比 (B/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異。這代表了價值型股票相對於成長型股票的超額報酬。 獲利因子 (Profitability Factor / ROE / RMW)：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式： Q因子模型：使用最新一季公布的股東權益報酬率 (ROE) 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。 5因子模型：使用上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。 投資因子 (Investment Factor / I/A / CMA)：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式： Q因子模型：使用最新一季公布的總資產除以去年同季度的總資產價值 (I/A) 來決定，資產增長率越高的公司，預期未來報酬越低。 5因子模型：使用去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值來決定。 策略 (Strategies) 來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。</description>
     </item>
     <item>
-      <title>阿爾隆式豬菲力佐酸甜啤酒醬與田園蔬菜</title>
-      <link>https://tomisagoodguy.github.io/blog/%E9%98%BF%E7%88%BE%E9%9A%86%E5%BC%8F%E8%B1%AC%E8%8F%B2%E5%8A%9B%E4%BD%90%E9%85%B8%E7%94%9C%E5%95%A4%E9%85%92%E9%86%AC%E8%88%87%E7%94%B0%E5%9C%92%E8%94%AC%E8%8F%9C/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/%E9%98%BF%E7%88%BE%E9%9A%86%E5%BC%8F%E8%B1%AC%E8%8F%B2%E5%8A%9B%E4%BD%90%E9%85%B8%E7%94%9C%E5%95%A4%E9%85%92%E9%86%AC%E8%88%87%E7%94%B0%E5%9C%92%E8%94%AC%E8%8F%9C/</guid>
-      <description>阿爾隆式豬菲力佐酸甜啤酒醬與田園蔬菜，一道充滿比利時鄉村風情的經典料理。鮮嫩的豬菲力，搭配使用黑啤酒熬煮的濃郁醬汁，風味層次豐富，令人回味無窮。&#xA;食材準備 (Ingredients) 組成部分 (Component) 材料 (Ingredient) 份量 (Quantity) 主食 (Pork) 豬小里肌 (腰內肉) 2 條 油 30ml 鹽及胡椒 少許 田園蔬菜 (Vegetables) 紅蘿蔔 100g 白蘿蔔 100g 韭蔥 (白色部分) 100g 西芹 100g 大蘑菇 100g 無鹽奶油 50g 檸檬 1/4 個 酸甜啤酒醬 (Sauce) 無鹽奶油 80g 糖 20g 紅葡萄酒醋 40ml 比利時黑啤酒 150ml 牛高湯 200ml 香草束 (百里香、月桂葉、巴西里梗) 1 捲 裝飾 (Garnish) 新鮮巴西里葉 1 小把 烹飪步驟 (Method) 第一步：高湯熬煮 (可省略，使用市售高湯) 將牛骨頭以 250 度烤 1 小時至金黃色。</description>
-    </item>
-    <item>
-      <title>焗烤法式雞肉野菇菠菜薄餅捲</title>
-      <link>https://tomisagoodguy.github.io/blog/%E7%84%97%E7%83%A4%E6%B3%95%E5%BC%8F%E9%9B%9E%E8%82%89%E9%87%8E%E8%8F%87%E8%8F%A0%E8%8F%9C%E8%96%84%E9%A4%85%E6%8D%B2/</link>
-      <pubDate>Thu, 11 Sep 2025 22:01:14 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/%E7%84%97%E7%83%A4%E6%B3%95%E5%BC%8F%E9%9B%9E%E8%82%89%E9%87%8E%E8%8F%87%E8%8F%A0%E8%8F%9C%E8%96%84%E9%A4%85%E6%8D%B2/</guid>
-      <description>焗烤法式雞肉野菇菠菜薄餅捲&#xA;French crepes with chicken, mushroom and spinach&#xA;材料 (Ingredients) 組成部分 (Component) 材料 (Ingredient) 份量 (Quantity) 薄餅 (Crepes) 中筋麵粉 (All-purpose Flour) 125g 蛋 (Eggs) 2顆 牛奶 (Milk) 250g 糖 (Sugar) 25g 鹽 (Salt) 1撮 融化奶油 (Melted Butter) 25g 內餡 (Filling) 雞胸肉 (Chicken Breast) 1片 蘑菇 (Mushrooms) 200g 菠菜 (Spinach) 200g 蒜頭 (Garlic) 2瓣 紅蔥頭 (Shallots) 2瓣 百里香 (Thyme) 1株 鹽、胡椒 (Salt, Pepper) 適量 白醬 (Béchamel) 奶油 (Butter) 30g 中筋麵粉 (All-purpose Flour) 30g 牛奶 (Milk) 300g 鮮奶油 (Heavy Cream) 50g 豆蔻粉 (Nutmeg) 適量 鹽、胡椒 (Salt, Pepper) 適量 其他 (Other) 焗烤用起司 (Grating Cheese) 適量 鮮奶油 (Heavy Cream) 少許 材料 🥞 薄餅製作 (Crepe Preparation) 將麵粉、糖、鹽混合，加入蛋攪拌均勻。</description>
-    </item>
-    <item>
       <title>9月月營收股票進場檢討</title>
       <link>https://tomisagoodguy.github.io/blog/stock-review-sep/</link>
       <pubDate>Wed, 10 Sep 2025 00:00:00 +0800</pubDate>
       <guid>https://tomisagoodguy.github.io/blog/stock-review-sep/</guid>
       <description>記憶體 、 碳化矽族群&#xA;觀察營收創新高、虧轉盈&#xA;成交金額市場PR90的個股&#xA;2344 華邦電 2408 南亞科 5443 均豪 5483 中美晶 6488 環球晶 8299 群聯 </description>
-    </item>
-    <item>
-      <title>法式麵糊油炸蘋果附杏桃果醬</title>
-      <link>https://tomisagoodguy.github.io/blog/%E6%B3%95%E5%BC%8F%E9%BA%B5%E7%B3%8A%E6%B2%B9%E7%82%B8%E8%98%8B%E6%9E%9C%E9%99%84%E6%9D%8F%E6%A1%83%E6%9E%9C%E9%86%AC/</link>
-      <pubDate>Sat, 06 Sep 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/blog/%E6%B3%95%E5%BC%8F%E9%BA%B5%E7%B3%8A%E6%B2%B9%E7%82%B8%E8%98%8B%E6%9E%9C%E9%99%84%E6%9D%8F%E6%A1%83%E6%9E%9C%E9%86%AC/</guid>
-      <description>法式麵糊油炸蘋果附杏桃果醬&#xA;Apple fritters with apricot sauce&#xA;材料 (Ingredients) 組成部分 (Component) 材料 (Ingredient) 份量 (Quantity) 主要 蘋果 (Apple) 4個 麵糊 (Fritter Batter) T55 麵粉 (T55 Flour) 250g 雞蛋 (Eggs) 2個 糖 (Sugar) 10g 鹽 (Salt) 5g 融化的無鹽奶油 (Melted Unsalted Butter) 25ml 啤酒 (Beer) 150ml 蛋白 (Egg Whites) 3個 水 (Water) 適量 (to adjust) 醃料 (Marinade) 糖粉 (Powdered Sugar) 40g 卡爾瓦杜斯蘋果白蘭地 (Calvados) 20ml 檸檬 (Lemon) 1/2 個 收尾 (To Finish) 杏桃果醬 (Apricot Jam) 150g 炸油 (Frying Oil) 適量 (to taste) 糖粉 (Powdered Sugar) 適量 (to taste) 🍺 麵糊準備 (Batter Preparation) 食材：中筋或 T55 麵粉、糖、鹽、全蛋、啤酒、融化奶油。</description>
     </item>
     <item>
       <title>7月月營收股票進場檢討</title>
