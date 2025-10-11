@@ -6,8 +6,29 @@
     <description>Recent content in Categories on land-knowledege</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 05 Oct 2025 12:16:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Oct 2025 22:01:14 +0800</lastBuildDate>
     <atom:link href="https://tomisagoodguy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>French Cuisine</title>
+      <link>https://tomisagoodguy.github.io/categories/french-cuisine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomisagoodguy.github.io/categories/french-cuisine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Italian Cuisine</title>
+      <link>https://tomisagoodguy.github.io/categories/italian-cuisine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomisagoodguy.github.io/categories/italian-cuisine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>食譜</title>
+      <link>https://tomisagoodguy.github.io/categories/%E9%A3%9F%E8%AD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tomisagoodguy.github.io/categories/%E9%A3%9F%E8%AD%9C/</guid>
+      <description></description>
+    </item>
     <item>
       <title>不動產估價</title>
       <link>https://tomisagoodguy.github.io/categories/%E4%B8%8D%E5%8B%95%E7%94%A2%E4%BC%B0%E5%83%B9/</link>
@@ -51,20 +72,6 @@
       <description></description>
     </item>
     <item>
-      <title>Italian Cuisine</title>
-      <link>https://tomisagoodguy.github.io/categories/italian-cuisine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomisagoodguy.github.io/categories/italian-cuisine/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>食譜</title>
-      <link>https://tomisagoodguy.github.io/categories/%E9%A3%9F%E8%AD%9C/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomisagoodguy.github.io/categories/%E9%A3%9F%E8%AD%9C/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>土地稅法規</title>
       <link>https://tomisagoodguy.github.io/categories/%E5%9C%9F%E5%9C%B0%E7%A8%85%E6%B3%95%E8%A6%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -104,13 +111,6 @@
       <link>https://tomisagoodguy.github.io/categories/belgian-cuisine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tomisagoodguy.github.io/categories/belgian-cuisine/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>French Cuisine</title>
-      <link>https://tomisagoodguy.github.io/categories/french-cuisine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tomisagoodguy.github.io/categories/french-cuisine/</guid>
       <description></description>
     </item>
     <item>
