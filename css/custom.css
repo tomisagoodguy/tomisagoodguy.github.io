@@ -912,18 +912,24 @@ body.dark-mode .post-meta span {
     color: #aaa !important;
 }
 
-/* --- 關於我頁面樣式覆寫 --- */
-
-/* 將「我的歷程」中的年份設定為預設的標題顏色 */
-.timeline-year {
-  color: var(--heading-color); 
-  /* 或是您也可以強制設為黑色: color: #000000; */
-}
-
-/* 將「專業技能」中的子標題設定為預設的標題顏色 */
+/* --- 關於我頁面：修復標題顏色 (v2) --- */
+/*
+ * 修正 .timeline-year (例如 2025) 
+ * 和 .skill-title (例如 不動產專業) 的樣式問題。
+ */
+.timeline-year,
 .skill-title {
-  color: var(--heading-color);
-  /* 或是您也可以強制設為黑色: color: #000000; */
+  
+  /* * 1. 強制將「背景」設為透明 (transparent)。
+   * 這會修復「白天模式下出現黑背景」和「黑夜模式下出現白背景」的問題。
+   */
+  background-color: transparent !important;
+  
+  /* * 2. 強制將「文字顏色」設為 CSS 變數 (--heading-color)。
+   * 這會讓文字在「白天模式」顯示為黑色/深色。
+   * 並在「黑夜模式」自動切換為白色/淺色。
+   */
+  color: var(--heading-color) !important;
 }
 /* --- 分頁按鈕 (Pagination) 樣式覆寫 --- */
 
@@ -934,4 +940,27 @@ body.dark-mode .post-meta span {
  */
 .pagination-default .page-item.active .page-link {
   color: #fff !important; 
+}
+
+/* --- 「回到頂部/底部」按鈕樣式 (修復深色模式) ---
+/*
+ * 您的 style.min.css 可能硬編碼(hard-coded)了按鈕顏色，
+ * 導致它們在切換主題時不會改變。
+ *
+ * 以下規則會覆寫它們，改用 CSS 變數，
+ * 讓按鈕背景/圖示顏色能隨主題自動反轉。
+ */
+#return-to-top,
+#go-to-bottom {
+  /*
+   * 按鈕背景色: 設為「標題顏色」
+   * (淺色模式 = 深色; 深色模式 = 淺色)
+   */
+  background-color: var(--heading-color) !important;
+  
+  /*
+   * 圖示(icon)顏色: 設為「頁面背景色」
+   * (淺色模式 = 淺色; 深色模式 = 深色)
+   */
+  color: var(--body-bg-color) !important;
 }
