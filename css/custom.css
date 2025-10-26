@@ -496,26 +496,28 @@ input:checked + .slider:before {
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 body.dark-mode a {
-    color: #8ab4f8; /* A light blue for links */
+    color: #bb86fc;
 }
 
 body.dark-mode .navigation .navbar {
-    background-color: #1a1a1a !important;
+    background-color: #1E1E1E !important;
+    border-bottom: 1px solid #333 !important;
 }
 
 body.dark-mode .sub-navigation {
-    background-color: #2a2a2a;
-    border-bottom: 1px solid #444;
+    background-color: #1E1E1E;
+    border-bottom: 1px solid #333;
 }
 
 body.dark-mode .card {
-    background-color: #2a2a2a;
-    color: #fff;
+    background-color: #1E1E1E;
+    color: #e0e0e0;
+    border: 1px solid #333;
 }
 
 body.dark-mode .card-title a {
@@ -523,30 +525,32 @@ body.dark-mode .card-title a {
 }
 
 body.dark-mode .post-meta {
-    color: #ccc;
+    color: #aaa;
 }
 
 body.dark-mode .section {
-    background-color: #2a2a2a;
+    background-color: #121212;
 }
 
 body.dark-mode .widget {
-    background-color: #2a2a2a;
+    background-color: #1E1E1E;
+    border: 1px solid #333;
 }
 
 body.dark-mode .skill-tags li {
-    background-color: #3a3a3a;
-    color: #fff;
+    background-color: #333;
+    color: #e0e0e0;
 }
 
 body.dark-mode .github-project-card {
-    background-color: #2a2a2a;
-    border-left-color: #0366d6;
+    background-color: #1E1E1E;
+    border-left-color: #bb86fc;
 }
 
 body.dark-mode .toc-container {
-    background-color: rgba(42, 42, 42, 0.95);
-    color: #fff;
+    background-color: rgba(30, 30, 30, 0.95);
+    color: #e0e0e0;
+    border: 1px solid #333;
 }
 
 body.dark-mode .toc-content nav>ul>li>a {
@@ -554,43 +558,44 @@ body.dark-mode .toc-content nav>ul>li>a {
 }
 
 body.dark-mode .toc-content nav>ul>li>a:hover {
-    background-color: rgba(79, 70, 229, 0.2);
+    background-color: rgba(187, 134, 252, 0.2);
     color: #fff;
 }
 
 body.dark-mode .toc-content nav>ul>li.active>a {
     color: #fff;
-    background-color: rgba(79, 70, 229, 0.3);
+    background-color: rgba(187, 134, 252, 0.3);
 }
 
 body.dark-mode .recipe-gallery-item {
-    background-color: #2a2a2a;
-    border-color: #444;
+    background-color: #1E1E1E;
+    border-color: #333;
 }
 
 body.dark-mode .recipe-gallery-item figcaption {
-    color: #ccc;
+    color: #aaa;
 }
 
 body.dark-mode .pagination .page-link {
-    background-color: #2a2a2a;
-    color: #fff;
-    border-color: #444;
+    background-color: #1E1E1E;
+    color: #e0e0e0;
+    border-color: #333;
 }
 
 body.dark-mode .pagination .page-item.active .page-link {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+    color: #121212;
 }
 
 body.dark-mode .pagination .page-item.disabled .page-link {
-    background-color: #2a2a2a;
+    background-color: #1E1E1E;
     color: #6c757d;
-    border-color: #444;
+    border-color: #333;
 }
 
 body.dark-mode footer.footer-section {
-    background-color: #1a1a1a;
-    color: #fff;
-    border-top: 1px solid #444;
+    background-color: #1E1E1E;
+    color: #e0e0e0;
+    border-top: 1px solid #333;
 }
