@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel Vba on land-knowledege</title>
+    <link>https://tomisagoodguy.github.io/categories/excel-vba/</link>
+    <description>Recent content in Excel Vba on land-knowledege</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 21 Sep 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/excel-vba/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VBA環境設定與基礎概念</title>
+      <link>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Sun, 21 Sep 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</guid>
+      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先進行環境設定。</description>
+    </item>
+  </channel>
+</rss>

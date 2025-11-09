@@ -219,6 +219,13 @@
       <description>一、如何判斷適用新制或舊制？ 財政部 - 房地合一稅2.0&#xA;房地交易適用制度，由「取得時間」與「出售時間」共同決定。&#xA;取得房地時間 出售房地時間 持有期間 適用制度 不限 104/12/31 (含) 以前 不限 舊制 105/01/01 (含) 以後 105/01/01 (含) 以後 不限 新制 (房地合一稅) 103/01/02 至 104/12/31 105/01/01 (含) 以後 2年 (含) 以內 新制 (房地合一稅) 103/01/02 以前 105/01/01 (含) 以後 超過 2 年 舊制 1、房地只要是在104年12月31日以前出售者，一律適用舊制。</description>
     </item>
     <item>
+      <title>VBA環境設定與基礎概念</title>
+      <link>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Sun, 21 Sep 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</guid>
+      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先進行環境設定。</description>
+    </item>
+    <item>
       <title>營收公布能為投資參考依據？</title>
       <link>https://tomisagoodguy.github.io/finance/revenue-announcement-as-investment-reference/</link>
       <pubDate>Sun, 21 Sep 2025 00:00:00 +0800</pubDate>
