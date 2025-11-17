@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-tw"><head>
   <meta charset="utf-8">
-  <title>Excel VBA 學習筆記：環境設定與基礎 | land-knowledege</title>
+  <title>Excel VBA 學習筆記：從入門到網路爬蟲 | land-knowledege</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法與核心概念，適合作為入門學習參考。">
+  <meta name="description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法、物件操作與網路爬蟲實作，適合作為入門到進階的學習參考。">
   <meta name="author" content="定康">
   <meta name="theme-color" content="#fff">
   
@@ -17,15 +17,15 @@
   <meta name="generator" content="Hugo 0.127.0">
 
   <!-- Open Graph & Twitter Card -->
-  <meta property="og:title" content="Excel VBA 學習筆記：環境設定與基礎 | land-knowledege">
-  <meta property="og:description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法與核心概念，適合作為入門學習參考。">
+  <meta property="og:title" content="Excel VBA 學習筆記：從入門到網路爬蟲 | land-knowledege">
+  <meta property="og:description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法、物件操作與網路爬蟲實作，適合作為入門到進階的學習參考。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/">
   
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Excel VBA 學習筆記：環境設定與基礎 | land-knowledege">
-  <meta name="twitter:description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法與核心概念，適合作為入門學習參考。">
+  <meta name="twitter:title" content="Excel VBA 學習筆記：從入門到網路爬蟲 | land-knowledege">
+  <meta name="twitter:description" content="本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法、物件操作與網路爬蟲實作，適合作為入門到進階的學習參考。">
   
   
 
@@ -78,8 +78,8 @@
         "@type": "WebPage",
         "@id": "https:\/\/tomisagoodguy.github.io\/finance\/excel-vba%E5%AD%B8%E7%BF%92\/"
       },
-      "headline": "Excel VBA 學習筆記：環境設定與基礎",
-      "description": "本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法與核心概念，適合作為入門學習參考。",
+      "headline": "Excel VBA 學習筆記：從入門到網路爬蟲",
+      "description": "本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法、物件操作與網路爬蟲實作，適合作為入門到進階的學習參考。",
       
       "datePublished": "2025-11-08T00:00:00\u002b08:00",
       "dateModified": "2025-11-08T00:00:00\u002b08:00",
@@ -392,62 +392,40 @@
         <li><a href="#1-開啟開發人員工具">1. 開啟開發人員工具</a></li>
         <li><a href="#2-開啟-vba-編輯器-vbe">2. 開啟 VBA 編輯器 (VBE)</a></li>
         <li><a href="#3-開啟常用視窗">3. 開啟常用視窗</a></li>
-        <li><a href="#4-調整編輯器字形">4. 調整編輯器字形</a></li>
-        <li><a href="#5-撰寫風格設定">5. 撰寫風格設定</a></li>
+        <li><a href="#4-調整編輯器字形與風格">4. 調整編輯器字形與風格</a></li>
       </ul>
     </li>
     <li><a href="#vba-基礎概念">VBA 基礎概念</a>
       <ul>
         <li><a href="#專案與模組">專案與模組</a></li>
         <li><a href="#程序-sub--function">程序 (Sub / Function)</a></li>
-        <li><a href="#變數-variables-與資料型別-data-types">變數 (Variables) 與資料型別 (Data Types)</a></li>
+        <li><a href="#變數-variables-與資料型別">變數 (Variables) 與資料型別</a></li>
         <li><a href="#註解-comments">註解 (Comments)</a></li>
       </ul>
     </li>
-    <li><a href="#互動與除錯">互動與除錯</a>
+    <li><a href="#操作-excel-物件與互動">操作 Excel 物件與互動</a>
       <ul>
-        <li><a href="#及時運算視窗-immediate-window">及時運算視窗 (Immediate Window)</a></li>
+        <li><a href="#核心物件工作表-worksheet-與儲存格-range--cells">核心物件：工作表 (Worksheet) 與儲存格 (Range / Cells)</a></li>
+        <li><a href="#互動與除錯及時運算視窗-immediate-window">互動與除錯：及時運算視窗 (Immediate Window)</a></li>
       </ul>
     </li>
-    <li><a href="#操作-excel-物件">操作 Excel 物件</a>
+    <li><a href="#excel-vba-網路爬蟲">Excel VBA 網路爬蟲</a>
       <ul>
-        <li><a href="#工作表-worksheet">工作表 (Worksheet)</a></li>
-        <li><a href="#儲存格-range--cells">儲存格 (Range / Cells)</a></li>
-      </ul>
-    </li>
-    <li><a href="#網頁抓取與開發人員工具">網頁抓取與開發人員工具</a>
-      <ul>
-        <li><a href="#如何尋找資料">如何尋找資料</a></li>
-        <li><a href="#確認網路請求的步驟">確認網路請求的步驟</a></li>
-      </ul>
-    </li>
-    <li><a href="#網路爬蟲複習筆記">網路爬蟲複習筆記</a>
-      <ul>
-        <li><a href="#1-基礎概念">1. 基礎概念</a></li>
-        <li><a href="#2-找出資料封包-request">2. 找出資料封包 (Request)</a>
+        <li><a href="#1-網路爬蟲核心概念">1. 網路爬蟲核心概念</a></li>
+        <li><a href="#2-分析網頁資料來源-chrome-開發人員工具">2. 分析網頁資料來源 (Chrome 開發人員工具)</a></li>
+        <li><a href="#3-vba-實作網頁資料抓取">3. VBA 實作網頁資料抓取</a></li>
+        <li><a href="#4-解析不同格式的資料">4. 解析不同格式的資料</a>
           <ul>
-            <li><a href="#21-開發人員工具">2.1 開發人員工具</a></li>
-            <li><a href="#22-操作-3-步驟">2.2 操作 3 步驟</a></li>
-            <li><a href="#23-尋找目標-request-的技巧">2.3 尋找目標 Request 的技巧</a></li>
-            <li><a href="#24-request-觀察重點">2.4 Request 觀察重點</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-下載資料封包-vba-實作">3. 下載資料封包 (VBA 實作)</a>
-          <ul>
-            <li><a href="#31-發送流程-填寫信封">3.1 發送流程 (填寫信封)</a></li>
-            <li><a href="#32-接收回應">3.2 接收回應</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-資料整理與解析">4. 資料整理與解析</a>
-          <ul>
-            <li><a href="#a-csv-格式">A. CSV 格式</a></li>
-            <li><a href="#b-html-格式">B. HTML 格式</a></li>
-            <li><a href="#c-json-格式">C. JSON 格式</a></li>
+            <li><a href="#a-html-格式">A. HTML 格式</a></li>
+            <li><a href="#b-json-格式">B. JSON 格式</a></li>
+            <li><a href="#c-csv-格式">C. CSV 格式</a></li>
             <li><a href="#d-暴力解決法">D. 暴力解決法</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#附錄資源連結">附錄：資源連結</a></li>
+    <li><a href="#範例檔案下載">範例檔案下載</a></li>
   </ul>
 </nav></nav>
           </div>
@@ -459,7 +437,7 @@
         
         <a href="/categories/excel-vba" class="badge badge-primary badge-sm">Excel vba</a>
         
-        <h2>Excel VBA 學習筆記：環境設定與基礎</h2>
+        <h2>Excel VBA 學習筆記：從入門到網路爬蟲</h2>
         <div class="mb-3 post-meta">
           <span>By 定康</span>
           
@@ -471,13 +449,14 @@
 
         <div class="content mb-5 post-content">
           <p><em>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。</em></p>
+<p>11/7上到單元5抓取上市公司或成交價排行榜</p>
 <h2 id="學習資源">學習資源</h2>
 <blockquote>
 <h3 id="excel-vba-金融資料抓取--打造股票研究系統">Excel VBA 金融資料抓取 | 打造股票研究系統</h3>
-</blockquote>
 <ul>
 <li><strong>課程網站</strong>：<a href="https://hahow.in/courses/5d2f3980fe9fef0021fac548">Hahow 好學校</a></li>
 </ul>
+</blockquote>
 <hr>
 <h2 id="vba-環境設置">VBA 環境設置</h2>
 <p>在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</p>
@@ -496,16 +475,14 @@
 <li><strong>及時運算視窗 (Immediate Window)</strong> <code>(Ctrl+G)</code>：用於即時測試程式碼或顯示變數值。</li>
 <li><strong>區域變數視窗 (Locals Window)</strong>：顯示目前程序中所有區域變數的值，在除錯時非常有用。</li>
 </ul>
-<h3 id="4-調整編輯器字形">4. 調整編輯器字形</h3>
-<p>為了提升程式碼的可讀性，建議調整編輯器的字形設定：</p>
+<h3 id="4-調整編輯器字形與風格">4. 調整編輯器字形與風格</h3>
+<p>為了提升程式碼的可讀性，建議調整編輯器的設定：</p>
 <ol>
 <li>前往 <strong>[工具 (Tools)]</strong> &gt; <strong>[選項 (Options)]</strong>。</li>
 <li>選擇 <strong>[撰寫風格 (Editor Format)]</strong> 頁籤。</li>
-<li>將 <strong>字形 (Font)</strong> 設定為 <strong>Consolas</strong> 或 <strong>微軟正黑體 (Microsoft JhengHei)</strong>。</li>
-<li>將 <strong>大小 (Size)</strong> 設定為 <strong>12</strong> 或 <strong>14</strong>。</li>
+<li>將 <strong>字形 (Font)</strong> 設定為 <strong>Consolas</strong> 或 <strong>微軟正黑體</strong>，<strong>大小 (Size)</strong> 設定為 <strong>12</strong> 或 <strong>14</strong>。</li>
+<li>您可以根據個人喜好調整程式碼的顏色配置。</li>
 </ol>
-<h3 id="5-撰寫風格設定">5. 撰寫風格設定</h3>
-<p>您可以根據個人喜好調整程式碼編輯器的顏色配置：</p>
 <p><img alt="顏色配置" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E9%A1%8F%E8%89%B2%E9%85%8D%E7%BD%AE.png"></p>
 <hr>
 <h2 id="vba-基礎概念">VBA 基礎概念</h2>
@@ -521,48 +498,37 @@
 <h3 id="程序-sub--function">程序 (Sub / Function)</h3>
 <p><strong>程序</strong> 是 VBA 執行的基本單位，可以想像成一個個獨立的「功能」或「指令集」。</p>
 <ul>
-<li><strong>Sub 程序 (Subroutine)</strong>：執行一系列的動作，但不會回傳值。這是最常見的程序類型。
+<li>
+<p><strong>Sub 程序 (Subroutine)</strong>：執行一系列的動作，但不會回傳值。</p>
 <pre tabindex="0"><code class="language-vba" data-lang="vba">Sub SayHello()
     MsgBox &#34;Hello, World!&#34;
 End Sub
-</code></pre></li>
-</ul>
-<p><img alt="執行程式" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E5%9F%B7%E8%A1%8C%E7%A8%8B%E5%BC%8F.png"></p>
-<ul>
-<li><strong>Function 程序 (Function)</strong>：執行計算並 <strong>回傳一個值</strong>。可以在儲存格中像內建函數一樣使用。
+</code></pre><p><img alt="執行程式" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E5%9F%B7%E8%A1%8C%E7%A8%8B%E5%BC%8F.png"></p>
+</li>
+<li>
+<p><strong>Function 程序 (Function)</strong>：執行計算並 <strong>回傳一個值</strong>。</p>
 <pre tabindex="0"><code class="language-vba" data-lang="vba">Function AddTwo(num As Integer) As Integer
     AddTwo = num + 2
 End Function
 </code></pre></li>
-<li><strong>命名規則</strong>：
-<ul>
-<li>必須以字母開頭。</li>
-<li>不可以包含空格、<code>.</code>、<code>!</code> 或 <code>@</code>、<code>&amp;</code>、<code>$</code>、<code>#</code> 等符號。</li>
-<li>名稱不能與 VBA 的保留關鍵字（如 <code>Sub</code>, <code>Dim</code>, <code>For</code>）重複。</li>
-</ul>
+<li>
+<p><strong>命名規則</strong>：必須以字母開頭，且不能包含空格或特殊符號 (<code>.</code>、<code>!</code>、<code>@</code>、<code>&amp;</code>、<code>$</code>、<code>#</code>)，亦不可使用 VBA 的保留關鍵字。</p>
 </li>
 </ul>
-<h3 id="變數-variables-與資料型別-data-types">變數 (Variables) 與資料型別 (Data Types)</h3>
-<p><strong>變數</strong> 就像是儲存資料的暫時容器。在 VBA 中，使用 <code>Dim</code> 來宣告變數。</p>
+<h3 id="變數-variables-與資料型別">變數 (Variables) 與資料型別</h3>
+<p><strong>變數</strong> 是儲存資料的暫時容器。在 VBA 中，使用 <code>Dim</code> 來宣告變數。</p>
 <ul>
-<li>
-<p><strong>語法</strong>：<code>Dim [變數名稱] As [資料型別]</code></p>
-</li>
-<li>
-<p><strong>常見資料型別</strong>：</p>
+<li><strong>語法</strong>：<code>Dim [變數名稱] As [資料型別]</code></li>
+<li><strong>常見資料型別</strong>：<code>String</code> (文字)、<code>Integer</code> (整數)、<code>Long</code> (長整數)、<code>Double</code> (浮點數)、<code>Boolean</code> (布林)、<code>Date</code> (日期)、<code>Object</code> (物件)、<code>Variant</code> (萬用)。
+<img alt="常用變數類型" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E5%B8%B8%E7%94%A8%E8%AE%8A%E6%95%B8%E9%A1%9E%E5%9E%8B.png"></li>
+<li><strong>使用注意事項</strong>：
 <ul>
-<li><code>String</code>：文字字串 (e.g., &ldquo;Hello&rdquo;)</li>
-<li><code>Integer</code>：整數 (-32,768 to 32,767)</li>
-<li><code>Long</code>：長整數 (範圍更大)</li>
-<li><code>Double</code>：雙精度浮點數 (包含小數)</li>
-<li><code>Boolean</code>：布林值 (<code>True</code> 或 <code>False</code>)</li>
-<li><code>Date</code>：日期/時間</li>
-<li><code>Object</code>：泛用物件，可代表工作表、儲存格等。</li>
-<li><code>Variant</code>：萬用類型。可以根據儲存的資料自動改變類型，但會占用較大的儲存空間。</li>
+<li><strong>型態不符</strong>：確認賦予的值與宣告的變數類型相符。</li>
+<li><strong>溢位</strong>：當數值超出範圍時，需轉換為更大範圍的類型 (如 <code>Integer</code> -&gt; <code>Long</code>)。</li>
+<li><strong>物件變數</strong>：指派物件時必須使用 <code>Set</code> 關鍵字 (e.g., <code>Set mySheet = Sheets(1)</code>)。</li>
 </ul>
 </li>
-<li>
-<p><strong>範例</strong>：</p>
+<li><strong>範例</strong>：
 <pre tabindex="0"><code class="language-vba" data-lang="vba">Sub VariableExample()
     Dim name As String
     Dim age As Integer
@@ -574,73 +540,30 @@ End Function
 End Sub
 </code></pre></li>
 </ul>
-<p><img alt="常用變數類型" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E5%B8%B8%E7%94%A8%E8%AE%8A%E6%95%B8%E9%A1%9E%E5%9E%8B.png"></p>
 <h3 id="註解-comments">註解 (Comments)</h3>
-<p>註解用來解釋程式碼，VBA 會忽略註解的內容。以單引號 <code>'</code> 開頭。</p>
+<p>註解用來解釋程式碼，以單引號 <code>'</code> 開頭，VBA 會忽略其內容。</p>
 <pre tabindex="0"><code class="language-vba" data-lang="vba">&#39; 這是一行註解
 MsgBox &#34;這行程式碼會被執行&#34; &#39; 這也是註解
 </code></pre><p><img alt="註解" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E8%A8%BB%E8%A7%A3.png"></p>
 <hr>
-<h2 id="互動與除錯">互動與除錯</h2>
-<h3 id="及時運算視窗-immediate-window">及時運算視窗 (Immediate Window)</h3>
-<p>這是一個強大的工具，主要有兩種用途：</p>
-<ol>
-<li><strong>執行簡短程式</strong>：直接輸入程式碼並按 Enter 即可執行（不需加 <code>?</code>）。
-<pre tabindex="0"><code>MsgBox &#34;Test&#34;
-</code></pre></li>
-<li><strong>查詢變數或屬性內容</strong>：在程式中斷或執行時，用 <code>?</code> 開頭來查詢值。
-<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub PrintToImmediate()
-    Dim myVar As String
-    myVar = &#34;Hello from Debug.Print&#34;
-    &#39; 將 myVar 的內容輸出到及時運算視窗
-    Debug.Print myVar 
-End Sub
-
-&#39; 在及時運算視窗中輸入以下指令並按 Enter
-? myVar &#39; 會顯示 &#34;Hello from Debug.Print&#34;
-</code></pre></li>
-</ol>
-<hr>
-<h2 id="操作-excel-物件">操作 Excel 物件</h2>
+<h2 id="操作-excel-物件與互動">操作 Excel 物件與互動</h2>
 <p>VBA 的強大之處在於能直接控制 Excel 的各個物件。</p>
-<h3 id="工作表-worksheet">工作表 (Worksheet)</h3>
+<h3 id="核心物件工作表-worksheet-與儲存格-range--cells">核心物件：工作表 (Worksheet) 與儲存格 (Range / Cells)</h3>
 <ul>
-<li><strong>依名稱指定</strong>：<code>Sheets(&quot;工作表1&quot;)</code> 或 <code>Worksheets(&quot;工作表1&quot;)</code></li>
+<li>
+<p><strong>工作表 (Worksheet)</strong></p>
+<ul>
+<li><strong>依名稱指定</strong>：<code>Sheets(&quot;工作表1&quot;)</code></li>
 <li><strong>依順序指定</strong>：<code>Sheets(1)</code> (第一個工作表)</li>
-<li><strong>常用屬性與方法</strong>：
-<ul>
-<li><code>.Name</code>：讀取或設定工作表名稱。 <code>Sheets(1).Name = &quot;MySheet&quot;</code></li>
-<li><code>.Activate</code>：選定並切換至該工作表。 <code>Sheets(&quot;MySheet&quot;).Activate</code></li>
-<li><code>.Select</code>：選取工作表（可多選）。 <code>Sheets(Array(&quot;Sheet1&quot;, &quot;Sheet2&quot;)).Select</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="儲存格-range--cells">儲存格 (Range / Cells)</h3>
-<p>儲存格是 Excel 最基本的物件。</p>
-<ul>
-<li>
-<p><strong>Range 屬性</strong>：最直觀的方式，如同在 Excel 中輸入位置。</p>
-<ul>
-<li><code>Range(&quot;A1&quot;)</code>：單一儲存格</li>
-<li><code>Range(&quot;A1:C5&quot;)</code>：一個範圍</li>
-<li><code>Range(&quot;MyNamedRange&quot;)</code>：已命名的儲存格範圍</li>
+<li><strong>常用操作</strong>：<code>.Name</code> (名稱), <code>.Activate</code> (啟用), <code>.Select</code> (選取)。</li>
 </ul>
 </li>
 <li>
-<p><strong>Cells 屬性</strong>：使用列 (Row) 和欄 (Column) 的數字索引，適合在迴圈中使用。</p>
+<p><strong>儲存格 (Range / Cells)</strong></p>
 <ul>
-<li><code>Cells(1, 1)</code>：等於 <code>Range(&quot;A1&quot;)</code></li>
-<li><code>Cells(2, 3)</code>：等於 <code>Range(&quot;C2&quot;)</code></li>
-<li><code>Cells(2, &quot;C&quot;)</code>：欄位也可用字母表示</li>
-</ul>
-</li>
-<li>
-<p><strong>常用屬性與方法</strong>：</p>
-<ul>
-<li><code>.Value</code>：儲存格顯示的值。 <code>Range(&quot;A1&quot;).Value = &quot;Hello&quot;</code></li>
-<li><code>.Formula</code>：儲存格中的公式。 <code>Range(&quot;C1&quot;).Formula = &quot;=A1+B1&quot;</code></li>
-<li><code>.Select</code>：選取儲存格。 <code>Range(&quot;A1&quot;).Select</code></li>
-<li><code>.ClearContents</code>：清除儲存格內容。 <code>Range(&quot;A1:C5&quot;).ClearContents</code></li>
+<li><strong>Range 屬性</strong>：<code>Range(&quot;A1&quot;)</code> 或 <code>Range(&quot;A1:C5&quot;)</code>。</li>
+<li><strong>Cells 屬性</strong>：使用列欄索引 <code>Cells(1, 1)</code>，適合在迴圈中使用。</li>
+<li><strong>常用操作</strong>：<code>.Value</code> (值), <code>.Formula</code> (公式), <code>.Select</code> (選取), <code>.ClearContents</code> (清除內容)。</li>
 </ul>
 </li>
 <li>
@@ -659,172 +582,165 @@ End Sub
 End Sub
 </code></pre></li>
 </ul>
+<h3 id="互動與除錯及時運算視窗-immediate-window">互動與除錯：及時運算視窗 (Immediate Window)</h3>
+<p>這是一個強大的工具 (<code>Ctrl+G</code>)，主要有兩種用途：</p>
+<ol>
+<li><strong>執行簡短程式</strong>：直接輸入程式碼並按 Enter 即可執行。
+<pre tabindex="0"><code>MsgBox &#34;Test&#34;
+</code></pre></li>
+<li><strong>查詢變數或屬性內容</strong>：在程式中斷或執行時，用 <code>?</code> 開頭來查詢值，或使用 <code>Debug.Print</code> 將訊息輸出至此視窗。
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub PrintToImmediate()
+    Dim myVar As String
+    myVar = &#34;Hello from Debug.Print&#34;
+    &#39; 將 myVar 的內容輸出到及時運算視窗
+    Debug.Print myVar 
+End Sub
+</code></pre></li>
+</ol>
 <hr>
-<h2 id="網頁抓取與開發人員工具">網頁抓取與開發人員工具</h2>
-<p>在進行金融資料抓取時，常需要從網頁上獲取資料。Chrome 開發人員工具是分析網頁結構與背景資料請求的利器。</p>
-<h3 id="如何尋找資料">如何尋找資料</h3>
-<p>在 Chrome 中按下 <code>F12</code> 開啟開發人員工具，可以幫助我們找到資料的藏身之處：</p>
+<h2 id="excel-vba-網路爬蟲">Excel VBA 網路爬蟲</h2>
+<p>本章節整理使用 VBA 進行網路資料抓取的概念與實作流程。</p>
+<h3 id="1-網路爬蟲核心概念">1. 網路爬蟲核心概念</h3>
 <ul>
-<li><strong>DOC (文件)</strong>：資料直接呈現在網頁的 HTML 內容中。</li>
-<li><strong>XHR (XMLHttpRequest)</strong>：資料是透過背景的 API 請求（非同步）載入的，通常為 JSON 或 XML 格式，這是抓取動態網頁資料的關鍵。</li>
+<li><strong>網路溝通原理</strong>：網路溝通基於「Request (請求)」與「Response (回應)」。瀏覽器向伺服器發送請求，伺服器回傳資料。</li>
+<li><strong>爬蟲定義</strong>：網路爬虫的本質，就是<strong>找出發送哪一個 Request 可以拿到想要的資料</strong>，並用程式模仿這個過程。</li>
+</ul>
+<h3 id="2-分析網頁資料來源-chrome-開發人員工具">2. 分析網頁資料來源 (Chrome 開發人員工具)</h3>
+<p>在 Chrome 中按下 <code>F12</code> 開啟開發人員工具，是分析網頁結構與背景資料請求的利器。</p>
+<ul>
+<li>
+<p><strong>操作步驟</strong>：</p>
+<ol>
+<li>切換到 <strong>Network</strong> 頁籤。</li>
+<li>確認紅燈亮起 (表示正在錄製網路活動)。</li>
+<li>在網頁上執行操作 (如點擊、捲動)，並觀察左側出現的請求列表。</li>
+</ol>
+</li>
+<li>
+<p><strong>如何尋找資料</strong>：</p>
+<ul>
+<li><strong>DOC (文件)</strong>：資料直接呈現在網頁的 HTML 內容中，適合抓取靜態表格資料。</li>
+<li><strong>XHR (XMLHttpRequest)</strong>：資料是透過背景的 API 請求（非同步）載入的，通常為 JSON 格式，是抓取動態網頁資料的關鍵。</li>
 <li><strong>JS (JavaScript)</strong>：資料可能被寫在 JavaScript 程式碼中。</li>
 </ul>
 <p><img alt="認識Chrome開發人員工具資料藏在哪裡" src="/finance/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E8%AA%8D%E8%AD%98Chrome%E9%96%8B%E7%99%BC%E4%BA%BA%E5%93%A1.png"></p>
-<h3 id="確認網路請求的步驟">確認網路請求的步驟</h3>
-<ol>
-<li>切換到 <strong>Network</strong> 頁籤。</li>
-<li>執行操作（例如點擊按鈕、捲動頁面）並觀察是否有新的網路請求出現（紅燈閃爍表示正在錄製）。</li>
-<li>篩選 <strong>ALL</strong> 或 <strong>XHR</strong> 類別，尋找包含所需資料的請求。</li>
-</ol>
-<hr>
-<h2 id="網路爬蟲複習筆記">網路爬蟲複習筆記</h2>
-<h3 id="1-基礎概念">1. 基礎概念</h3>
-<ul>
-<li><strong>網路溝通原理</strong>：網路的溝通是基於「Request (請求)」與「Response (回應)」。</li>
-<li><strong>爬蟲定義</strong>：網路爬蟲的本質，就是找出發送哪一個 Request 可以拿到想要的資料。</li>
-</ul>
-<h3 id="2-找出資料封包-request">2. 找出資料封包 (Request)</h3>
-<h4 id="21-開發人員工具">2.1 開發人員工具</h4>
-<ul>
-<li><strong>啟動方式</strong>：在瀏覽器中按下 <code>F12</code> 開啟開發人員工具。</li>
-<li><strong>工具架構</strong>：
-<ul>
-<li>上方：Request 的分類。</li>
-<li>左側：Request 的名稱列表。</li>
-<li>右側：選定 Request 的相關詳細訊息。</li>
-</ul>
 </li>
-</ul>
-<h4 id="22-操作-3-步驟">2.2 操作 3 步驟</h4>
-<ol>
-<li>選到 <strong>Network</strong> 功能頁籤。</li>
-<li>確認有亮紅燈（表示正在錄製網路活動）。</li>
-<li>選到 <strong>All</strong> 類別（以查看所有類型的請求）。</li>
-</ol>
-<h4 id="23-尋找目標-request-的技巧">2.3 尋找目標 Request 的技巧</h4>
-<ul>
-<li><strong>觀察紀錄</strong>：參考前一個步驟的紀錄。</li>
-<li><strong>依資料類型判斷</strong>：
-<ul>
-<li><strong>表格資料</strong>：通常在 <strong>Doc</strong> 分類中。</li>
-<li><strong>圖表資料</strong>：通常在 <strong>XHR</strong> 或 <strong>JS</strong> 分類中。</li>
-</ul>
-</li>
-<li><strong>關鍵字搜尋</strong>：觀察 Request 名稱是否包含特定關鍵字，例如股票代號或網址中的特定縮寫。</li>
-</ul>
-<h4 id="24-request-觀察重點">2.4 Request 觀察重點</h4>
-<p>找出正確 Request 後，需觀察以下重點以便後續模仿：</p>
+<li>
+<p><strong>Request 觀察重點</strong>：找出正確 Request 後，需在右側觀察以下重點以便後續模仿：</p>
 <ul>
 <li><strong>URL</strong> (網址)</li>
-<li><strong>Method</strong> (參數傳遞方式)：
-<ul>
-<li><code>GET</code></li>
-<li><code>POST</code>：必須額外觀察 <strong>Form Data</strong>。</li>
-</ul>
-</li>
-<li><strong>Header</strong> (標頭資訊)：
-<ul>
-<li><code>Content-Type</code></li>
-<li><code>User-agent</code></li>
-<li><code>Referer</code></li>
+<li><strong>Method</strong> (請求方法)：<code>GET</code> 或 <code>POST</code>。</li>
+<li><strong>Header</strong> (標頭資訊)：有時需要模擬 <code>User-agent</code>、<code>Referer</code> 等資訊。</li>
+<li><strong>Form Data / Payload</strong>：若為 <code>POST</code> 請求，需觀察其傳遞的參數。</li>
 </ul>
 </li>
 </ul>
-<h3 id="3-下載資料封包-vba-實作">3. 下載資料封包 (VBA 實作)</h3>
-<p>使用 VBA 的 XMLHTTP &ldquo;小幫手&rdquo; 來模擬瀏覽器發送 Request。</p>
+<h3 id="3-vba-實作網頁資料抓取">3. VBA 實作網頁資料抓取</h3>
+<p>使用 VBA 的 <code>XMLHTTP</code> 或 <code>WinHttp</code> 物件 (&ldquo;小幫手&rdquo;) 來模擬瀏覽器發送 Request。</p>
 <ul>
-<li><strong>核心物件</strong>：<code>WinHttp.WinHttpRequest.5.1</code></li>
-</ul>
-<h4 id="31-發送流程-填寫信封">3.1 發送流程 (填寫信封)</h4>
+<li>
+<p><strong>發送流程</strong>：</p>
 <ol>
-<li><strong><code>open</code></strong>：設定寄送資訊。
+<li><strong><code>open</code></strong>：設定請求方法 (<code>GET</code>/<code>POST</code>) 與網址 (URL)。</li>
+<li><strong><code>setRequestHeader</code></strong>：(非必要) 設定標頭資訊。</li>
+<li><strong><code>send</code></strong>：發送請求。若是 <code>POST</code> 方法，需在此步驟傳入參數。</li>
+</ol>
+</li>
+<li>
+<p><strong>接收回應</strong>：</p>
 <ul>
-<li><strong>Method</strong>：用什麼方式發送 (<code>GET</code>/<code>POST</code>)。</li>
-<li><strong>URL</strong>：寄到哪裡。</li>
-<li><strong>(非同步參數)</strong>：通常設為 <code>False</code>。</li>
+<li><strong><code>status</code></strong>：檢查 HTTP 狀態碼，<code>200</code> 代表成功。</li>
+<li><strong><code>responseText</code></strong>：取得文字形式的回應資料 (如 HTML, JSON)。</li>
+<li><strong><code>responseBody</code></strong>：取得原始二進位資料。</li>
 </ul>
 </li>
-<li><strong><code>setRequestHeader</code></strong>：設定標頭資訊 (Key 與 Value)。</li>
-<li><strong><code>send</code></strong>：發送請求。若是 <code>POST</code> 方法，需在此步驟加入 Form Data。</li>
-</ol>
-<h4 id="32-接收回應">3.2 接收回應</h4>
-<ul>
-<li><strong><code>responseText</code></strong>：取得文字形式的回應資料。</li>
-<li><strong><code>responseBody</code></strong>：取得原始資料，通常需搭配轉碼程式處理。</li>
+<li>
+<p><strong>範例：抓取 Yahoo 股市網頁</strong>
+以下程式碼示範如何使用 <code>MSXML2.XMLHTTP</code> 物件抓取指定網頁的 HTML 原始碼。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub YahooBrokerTrading()
+    &#39; 聲明變數
+    Dim objHTTP As Object       &#39; 宣告 HTTP 請求物件
+    Dim strURL As String        &#39; 儲存目標網址
+    Dim strResponse As String   &#39; 儲存伺服器回傳的內容
+    Dim lngStatus As Long       &#39; 儲存 HTTP 狀態碼
+
+    &#39; 設定目標網址 (以台積電主力進出表為例)
+    strURL = &#34;https://tw.stock.yahoo.com/quote/2330.TW/broker-trading&#34;
+
+    &#39; 1. 建立 HTTP 請求物件
+    Set objHTTP = CreateObject(&#34;MSXML2.XMLHTTP&#34;)
+
+    &#39; 2. 設定並發送請求 (使用同步 GET 請求)
+    objHTTP.Open &#34;GET&#34;, strURL, False
+    objHTTP.send
+
+    &#39; 3. 接收並檢查回應
+    lngStatus = objHTTP.Status &#39; 取得回傳的 HTTP 狀態碼
+
+    If lngStatus = 200 Then &#39; 狀態碼 200 表示成功
+        strResponse = objHTTP.responseText
+        &#39; 此處 strResponse 即為網頁的完整 HTML 內容
+        &#39; 可將其寫入儲存格或進行下一步解析
+        Debug.Print &#34;成功取得資料，內容長度: &#34; &amp; Len(strResponse)
+    Else
+        MsgBox &#34;網路請求失敗。HTTP 狀態碼: &#34; &amp; lngStatus, vbCritical
+    End If
+
+    &#39; 4. 釋放物件
+    Set objHTTP = Nothing
+End Sub
+</code></pre></li>
 </ul>
-<h3 id="4-資料整理與解析">4. 資料整理與解析</h3>
-<p>取得回應資料後，需「請小幫手回家」進行整理。</p>
-<h4 id="a-csv-格式">A. CSV 格式</h4>
-<ul>
-<li>使用換行符號 <code>chr(10)</code> 將資料切成一列一列。</li>
-<li>使用逗號 <code>,</code> 將每一列資料切成一個一個的欄位資料。</li>
-</ul>
-<h4 id="b-html-格式">B. HTML 格式</h4>
+<h3 id="4-解析不同格式的資料">4. 解析不同格式的資料</h3>
+<p>取得回應資料後，需根據其格式進行整理與解析。</p>
+<h4 id="a-html-格式">A. HTML 格式</h4>
 <ul>
 <li><strong>核心物件</strong>：邀請 <code>HTMLFile</code> 小幫手。</li>
-<li><strong>操作方式</strong>：將下載的資料交給它，再透過它取得網頁元素。</li>
-<li><strong>取得元素的方法</strong>：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">優點</th>
-<th style="text-align:left">缺點</th>
-<th style="text-align:left">使用頻率</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>getElementByID</code></td>
-<td style="text-align:left">回傳單一元素</td>
-<td style="text-align:left">不是所有元素都有 ID</td>
-<td style="text-align:left">低</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>getElementsByTagName</code></td>
-<td style="text-align:left">每個元素都有 Tag</td>
-<td style="text-align:left">需要使用索引值指定</td>
-<td style="text-align:left">高</td>
-</tr>
-</tbody>
-</table>
+<li><strong>操作方式</strong>：將下載的 HTML 文字交給它，再透過 DOM (文件物件模型) 方法取得網頁元素。</li>
+<li><strong>取得元素的方法</strong>：
 <ul>
-<li><strong>注意事項與小知識</strong>：
-<ul>
-<li><strong>網頁類型</strong>：需區分是「一次到位型」還是「東拼西湊型」網頁。</li>
-<li><strong>連結取得</strong>：通常放在 <code>a</code> 標籤中，使用 <code>href</code> 屬性取得。</li>
-<li><strong>Class 屬性</strong>：要使用 <code>classname</code> 來取得。</li>
-<li><strong>網址修正</strong>：當取得的網址不完整時 (如 <code>about:</code> 開頭)，需找出正確網址並用 <code>Replace</code> 取代掉 <code>about:</code>。</li>
-<li><strong>印出內容</strong>：使用 <code>innerText</code> 或 <code>innerHTML</code>。</li>
+<li><code>getElementById(id)</code>: 透過 ID 取得單一元素 (不常用)。</li>
+<li><code>getElementsByTagName(tag)</code>: 透過標籤名稱 (如 <code>tr</code>, <code>td</code>, <code>a</code>) 取得元素集合 (常用)。</li>
+<li><code>getElementsByClassName(class)</code>: 透過 Class 名稱取得元素集合 (常用)。</li>
 </ul>
 </li>
+<li><strong>印出內容</strong>：使用 <code>.innerText</code> (純文字) 或 <code>.innerHTML</code> (含 HTML 標籤)。</li>
 </ul>
-<h4 id="c-json-格式">C. JSON 格式</h4>
+<h4 id="b-json-格式">B. JSON 格式</h4>
 <ul>
 <li><strong>前置作業</strong>：
 <ol>
-<li>下載並匯入 <code>JsonConverter.bas</code>。</li>
+<li>需匯入 <code>JsonConverter.bas</code> 模組。</li>
 <li>在 VBA 編輯器中，勾選 <strong>工具 &gt; 設定引用項目 &gt; Microsoft Scripting Runtime</strong>。</li>
 </ol>
 </li>
-<li><strong>解析語法</strong>：使用 <code>JsonConverter.ParseJson(資料)</code>。</li>
+<li><strong>解析語法</strong>：使用 <code>JsonConverter.ParseJson(資料)</code> 將 JSON 字串轉換為 VBA 物件 (字典或集合)。</li>
 <li><strong>資料存取技巧</strong>：
 <ul>
-<li><strong>檢查開頭</strong>：查看資料是否為陣列開頭 (中括號 <code>[</code> )。</li>
-<li><strong>陣列 (<code>[]</code>)</strong>：若遇到中括號，需使用索引值來指定所需區塊。</li>
-<li><strong>物件 (<code>{}</code>)</strong>：其餘狀況直接使用 Key 名稱來取值。</li>
+<li><strong>陣列 (<code>[]</code>)</strong>：若資料以 <code>[</code> 開頭，需使用索引值 (如 <code>data(1)</code>) 來存取。</li>
+<li><strong>物件 (<code>{}</code>)</strong>：若資料以 <code>{</code> 開頭，需使用 Key 名稱 (如 <code>data(&quot;key&quot;)</code>) 來取值。</li>
 </ul>
 </li>
 </ul>
-<h4 id="d-暴力解決法">D. 暴力解決法</h4>
-<p>當標準解析方法不適用時，可使用 <code>split</code> 語法進行以下操作：</p>
+<h4 id="c-csv-格式">C. CSV 格式</h4>
 <ul>
-<li>擷取資料</li>
-<li>分隔列</li>
-<li>分隔儲存格</li>
+<li>可使用 <code>Split</code> 函數搭配換行符號 (<code>vbLf</code> 或 <code>Chr(10)</code>) 將資料切成多列。</li>
+<li>再對每一列使用 <code>Split</code> 函數搭配逗號 <code>,</code> 將其切成多個欄位。</li>
+</ul>
+<h4 id="d-暴力解決法">D. 暴力解決法</h4>
+<p>當標準解析方法不適用時，可直接使用 <code>Split</code> 函數，以特定字串為切割點，強行擷取所需資料片段。</p>
+<hr>
+<h2 id="附錄資源連結">附錄：資源連結</h2>
+<ul>
+<li><strong>製作流程說明文件</strong>：<a href="https://www.dropbox.com/scl/fi/v7vwjdo7jeekkt1zm865j/_.paper?rlkey=kk8yifxbabsrt8sohdpch49sr&dl=0">Dropbox Paper</a></li>
 </ul>
 <hr>
+<h2 id="範例檔案下載">範例檔案下載</h2>
+<p>以下是本筆記中提及的相關 Excel 範例檔案，您可以點擊下載：</p>
+<ul>
+<li><a href="/finance/excel-vba%E5%AD%B8%E7%BF%92/%E7%88%AC%E8%9F%B2%E7%A8%8B%E5%BC%8F%E7%94%A2%E7%94%9F%E5%99%A8V4.xlsm">爬蟲程式產生器V4.xlsm</a></li>
+<li><a href="/finance/excel-vba%E5%AD%B8%E7%BF%92/Yahoo%E4%B8%BB%E5%8A%9B%E9%80%B2%E5%87%BA%E8%A1%A8.xlsm">Yahoo主力進出表.xlsm</a></li>
+</ul>
 
         </div>
 
@@ -889,7 +805,7 @@ End Sub
                   
                   <div class="col-md-6 mb-3">
                     <div class="post-item">
-                      <a href="/finance/excel-vba%E5%AD%B8%E7%BF%92/">Excel VBA 學習筆記：環境設定與基礎</a>
+                      <a href="/finance/excel-vba%E5%AD%B8%E7%BF%92/">Excel VBA 學習筆記：從入門到網路爬蟲</a>
                       <small>2025-11-08</small>
                     </div>
                   </div>

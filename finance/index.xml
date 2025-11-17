@@ -9,11 +9,11 @@
     <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://tomisagoodguy.github.io/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Excel VBA 學習筆記：環境設定與基礎</title>
+      <title>Excel VBA 學習筆記：從入門到網路爬蟲</title>
       <link>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate>
       <guid>https://tomisagoodguy.github.io/finance/excel-vba%E5%AD%B8%E7%BF%92/</guid>
-      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description>
+      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;11/7上到單元5抓取上市公司或成交價排行榜&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description>
     </item>
     <item>
       <title>10月月營收股票進場檢討</title>
