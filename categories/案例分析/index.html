@@ -203,7 +203,7 @@
   <div class="container">
     
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
-      <a class="navbar-brand mobile-view" href="http://localhost:1313/"><img class="img-fluid"
+      <a class="navbar-brand mobile-view" href="http://localhost:1313/"><img loading="lazy" class="img-fluid"
           src="http://localhost:1313/images/law.png" alt="land-knowledege"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="ti-menu"></i>
@@ -224,7 +224,7 @@
           </ul>
         </div>
 
-        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/"><img class="img-fluid"
+        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/"><img loading="lazy" class="img-fluid"
             src="http://localhost:1313/images/law.png" alt="land-knowledege"></a>
 
         <ul class="navbar-nav">
@@ -286,6 +286,13 @@
           
           
         </ul>
+
+        <div class="theme-switch-wrapper pl-lg-4">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
 
         
         <!-- search -->
@@ -378,7 +385,7 @@
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
         <a href="http://localhost:1313/" aria-label="land-knowledege">
-          <img src="http://localhost:1313/images/law.png" alt="land-knowledege" class="footer-logo">
+<img loading="lazy" src="http://localhost:1313/images/law.png" alt="land-knowledege" class="footer-logo">
         </a>
       </div>
                
@@ -388,19 +395,19 @@
           
           <li class="mb-3">
             <a class="text-dark d-flex align-items-center" href="tel:0911445898">
-              <i class="ti-mobile mr-3 text-primary"></i>0911445898
+              <i class="ti-mobile text-primary"></i>0911445898
             </a>
           </li>
           
                      
           <li class="mb-3 d-flex align-items-center">
-            <i class="ti-location-pin mr-3 text-primary"></i>Taiwan
+            <i class="ti-location-pin text-primary"></i>Taiwan
           </li>
           
                      
           <li class="mb-3">
             <a class="text-dark d-flex align-items-center" href="mailto:tom890108159@gmail.com">
-              <i class="ti-email mr-3 text-primary"></i>tom890108159@gmail.com
+              <i class="ti-email text-primary"></i>tom890108159@gmail.com
             </a>
           </li>
           
@@ -413,13 +420,13 @@
           
           <li class="mb-3">
             <a class="text-dark social-item" href="https://www.facebook.com/profile.php?id=100005583693079" >
-              <i class="ti-facebook mr-2"></i>facebook
+              <i class="ti-facebook"></i>facebook
             </a>
           </li>
           
           <li class="mb-3">
             <a class="text-dark social-item" href="https://github.com/tomisagoodguy?tab=repositories" >
-              <i class="ti-github mr-2"></i>github
+              <i class="ti-github"></i>github
             </a>
           </li>
           
@@ -513,6 +520,7 @@
 <!-- Main Script -->
 
 <script src="http://localhost:1313/js/script.min.js"></script>
+<script src="http://localhost:1313/js/theme-switch.js"></script>
 
 
 <script>
@@ -621,13 +629,19 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .footer-section {
-  background-color: #f8f9fa;
+  background-color: var(--footer-bg-color, #f8f9fa);
   padding-top: 3rem;
+  transition: background-color 0.3s;
+}
+
+.footer-section .text-dark {
+  color: var(--footer-text-color, #343a40);
+  transition: color 0.3s;
 }
 
 .social-item:hover, 
 .category-item:hover {
-  color: var(--primary) !important;
+  color: var(--primary-color, #007bff) !important;
   text-decoration: none;
 }
 
