@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自動化實驗室 on land-knowledege</title>
+    <link>https://tomisagoodguy.github.io/automation/</link>
+    <description>Recent content in 自動化實驗室 on land-knowledege</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Excel VBA 學習筆記：從入門到網路爬蟲</title>
+      <link>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</guid>
+      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;11/7上到第三章單元8抓取上市公司或成交價排行榜&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description>
+    </item>
+    <item>
+      <title>10月月營收股票進場檢討</title>
+      <link>https://tomisagoodguy.github.io/automation/stock-review-oct/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/stock-review-oct/</guid>
+      <description>記憶體 、 ABF 、AI 技嘉、廣達突破創新高失敗又重新盤整&#xA;撼訊吃了根跌停-&amp;gt;散戶佔多數還是要小心&#xA;2376 技嘉 2382 廣達 2408 南亞科 3037 欣興 3189 景碩 6150 撼訊 8271 宇瞻 </description>
+    </item>
+    <item>
+      <title>9月月營收股票進場檢討</title>
+      <link>https://tomisagoodguy.github.io/automation/stock-review-sep/</link>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/stock-review-sep/</guid>
+      <description>記憶體 、 碳化矽族群 觀察營收創新高、虧轉盈 成交金額市場PR90的個股&#xA;2344 華邦電 2408 南亞科 5443 均豪 5483 中美晶 6488 環球晶 8299 群聯 </description>
+    </item>
+    <item>
+      <title>7月月營收股票進場檢討</title>
+      <link>https://tomisagoodguy.github.io/automation/stock-review-july/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/stock-review-july/</guid>
+      <description>7月份策略強勢股觀察&#xA;2059 川湖 2404 漢唐 2449 京元電子 3032 偉訓 3037 欣興 3167 大量 3543 未知 4721 美琪瑪 4931 新盛力 6191 精成科 8358 金居 </description>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,7 @@
 /* Hero Section Styles */
 .hero-section {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  color: #ffffff !important;
   padding: 80px 20px;
   text-align: center;
   margin-bottom: 40px;
@@ -14,11 +14,13 @@
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: #ffffff !important;
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -159,4 +161,218 @@
 
 .profile-social-link:hover {
   color: #0366d6;
+}
+
+/* Force borders on outline buttons */
+.btn-outline-primary {
+  border: 2px solid #3b71ca !important;
+}
+
+.btn-outline-success {
+  border: 2px solid #28a745 !important;
+}
+
+.btn-outline-danger {
+  border: 2px solid #dc3545 !important;
+}
+
+/* Restore sticky TOC */
+.toc-container {
+  position: sticky;
+  top: 80px;
+  /* Adjust based on navbar height */
+  z-index: 1000;
+}
+
+/* Scroll to Top/Bottom Buttons */
+#return-to-top,
+#go-to-bottom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#go-to-bottom {
+  bottom: 80px;
+  /* Position it above the top button */
+}
+
+#return-to-top i,
+#go-to-bottom i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#return-to-top:hover,
+#go-to-bottom:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+#return-to-top:hover i,
+#go-to-bottom:hover i {
+  color: #fff;
+  top: 5px;
+}
+
+/* --------------------------
+   About Page Styles
+   -------------------------- */
+
+/* Profile Sidebar */
+.profile-sidebar {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.social-links li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.social-links li a:hover {
+  background: #3b71ca;
+  color: #fff;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid #e9ecef;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #3b71ca;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #e9ecef;
+}
+
+.timeline-year {
+  color: #3b71ca;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* Skills */
+.skill-category {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.skill-title {
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.skill-title i {
+  color: #3b71ca;
+  margin-right: 10px;
+}
+
+.skill-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags li {
+  background: #f8f9fa;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.skill-tags li:hover {
+  background: #3b71ca;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* GitHub Projects */
+.github-project-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.github-project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.github-link i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.project-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
 }
