@@ -421,6 +421,14 @@
     </li>
     <li><a href="#附錄資源連結">附錄：資源連結</a></li>
     <li><a href="#範例檔案下載">範例檔案下載</a></li>
+    <li><a href="#常見問題-faq">常見問題 (FAQ)</a>
+      <ul>
+        <li><a href="#q1-字串與變數如何連接">Q1: 字串與變數如何連接？</a></li>
+        <li><a href="#q2-爬蟲請求方法-get-與-post-有何差異">Q2: 爬蟲請求方法 GET 與 POST 有何差異？</a></li>
+      </ul>
+    </li>
+    <li><a href="#實用工具連結">實用工具連結</a></li>
+    <li><a href="#結語">結語</a></li>
   </ul>
 </nav></nav>
           </div>
@@ -736,18 +744,65 @@ End Sub
 <li><a href="/automation/excel-vba%E5%AD%B8%E7%BF%92/%E7%88%AC%E8%9F%B2%E7%A8%8B%E5%BC%8F%E7%94%A2%E7%94%9F%E5%99%A8V4.xlsm">爬蟲程式產生器V4.xlsm</a></li>
 <li><a href="/automation/excel-vba%E5%AD%B8%E7%BF%92/Yahoo%E4%B8%BB%E5%8A%9B%E9%80%B2%E5%87%BA%E8%A1%A8.xlsm">Yahoo主力進出表.xlsm</a></li>
 </ul>
-<p>Q: 字串與變數如何連接</p>
-<p>A:在字串與變數之間使用 &amp; 來連接</p>
-<p>dim stock as string</p>
-<p>stock=2330</p>
-<p>網址 &quot; &amp; stock &amp; &quot;</p>
-<p>Q:ＧＥＴ　和ＰＯＳＴ方法差異</p>
-<p>Ａ：　ＧＥＴ：參數在網址即可看見</p>
-<p>　　　　ＰＯＳＴ：參數藏在ｆｏｒｍ　ｄａｔａ</p>
-<p>相關網址:</p>
-<p><a href="https://blog.gtwang.org/programming/url-percent-encoding-and-decoding-using-java/">https://blog.gtwang.org/programming/url-percent-encoding-and-decoding-using-java/</a></p>
-<p><a href="https://www.convertstring.com/zh_TW/EncodeDecode/UrlEncode">https://www.convertstring.com/zh_TW/EncodeDecode/UrlEncode</a></p>
-<p><a href="https://tools.jb51.net/table/useragent">https://tools.jb51.net/table/useragent</a></p>
+<hr>
+<h2 id="常見問題-faq">常見問題 (FAQ)</h2>
+<h3 id="q1-字串與變數如何連接">Q1: 字串與變數如何連接？</h3>
+<p>VBA 使用 <code>&amp;</code> 符號來連接字串與變數。這在動態組建網址時非常常用。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Dim stock As String
+stock = &#34;2330&#34;
+
+&#39; 將變數插入網址字串中
+Dim url As String
+url = &#34;https://tw.stock.yahoo.com/quote/&#34; &amp; stock &amp; &#34;.TW&#34;
+MsgBox url &#39; 輸出: https://tw.stock.yahoo.com/quote/2330.TW
+</code></pre><h3 id="q2-爬蟲請求方法-get-與-post-有何差異">Q2: 爬蟲請求方法 GET 與 POST 有何差異？</h3>
+<ul>
+<li><strong>GET</strong>：
+<ul>
+<li><strong>特徵</strong>：參數直接附加在網址後面（例如 <code>?id=123</code>），所有人都看得到。</li>
+<li><strong>用途</strong>：通常用於<strong>取得</strong>資料（瀏覽網頁、搜尋）。</li>
+<li><strong>限制</strong>：網址長度有限制，不適合傳輸大量資料。</li>
+</ul>
+</li>
+<li><strong>POST</strong>：
+<ul>
+<li><strong>特徵</strong>：參數隱藏在請求主體（Form Data / Payload）中，網址上看不到。</li>
+<li><strong>用途</strong>：通常用於<strong>提交</strong>資料（登入帳號、填寫表單、上傳檔案）。</li>
+<li><strong>優點</strong>：較適合傳遞敏感或大量資料。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="實用工具連結">實用工具連結</h2>
+<p>進行網路爬蟲時，常會用到以下工具來處理編碼或偽裝瀏覽器身分：</p>
+<ul>
+<li>
+<p><strong>URL 編碼/解碼工具</strong>：
+當網址包含中文字或特殊符號時，伺服器可能無法辨識，需轉換為 URL 編碼（Percent-encoding，如 <code>%E5%8F%B0%E7%81%A3</code>）。</p>
+<ul>
+<li><a href="https://www.convertstring.com/zh_TW/EncodeDecode/UrlEncode">URL Encode/Decode (ConvertString)</a> - 線上快速轉換工具。</li>
+<li><a href="https://blog.gtwang.org/programming/url-percent-encoding-and-decoding-using-java/">URL 編碼原理與實作 (GTWang)</a> - 深入了解編碼原理。</li>
+</ul>
+</li>
+<li>
+<p><strong>User Agent 大全</strong>：
+有些網站會擋掉沒有 User-Agent 的請求（視為機器人）。我們可以設定 User-Agent Header 來偽裝成 Chrome 或 Edge 瀏覽器。</p>
+<ul>
+<li><a href="https://tools.jb51.net/table/useragent">常用 User Agent String 列表</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="結語">結語</h2>
+<p>Excel VBA 結合網路爬蟲功能，能將繁瑣的「複製貼上」工作自動化，大幅提升資料收集與整理的效率。</p>
+<p><strong>學習建議路徑</strong>：</p>
+<ol>
+<li><strong>熟悉 VBA 基礎</strong>：變數、迴圈、邏輯判斷。</li>
+<li><strong>掌握 HTTP 請求</strong>：了解 GET/POST 與觀察 Network 面板。</li>
+<li><strong>練習靜態爬蟲</strong>：從簡單的 HTML 表格抓取開始。</li>
+<li><strong>挑戰動態爬蟲</strong>：學習解析 JSON 資料，這是現代網站的主流。</li>
+</ol>
+<p>希望這份筆記能幫助您在自動化的路上更進一步！</p>
 
         </div>
 
@@ -760,13 +815,20 @@ End Sub
                 
                   <div class="prev-post">
                     <span>上一篇</span>
-                    <a href="/automation/stock-review-oct/">
-                      <h5>10月月營收股票進場檢討</h5>
+                    <a href="/automation/office%E5%AD%B8%E7%BF%92/">
+                      <h5>OFFICE 學習筆記：</h5>
                     </a>
                   </div>
                 
               </div>
               <div class="col-md-6 text-right">
+                
+                  <div class="next-post">
+                    <span>下一篇</span>
+                    <a href="/automation/land-share-calculation/">
+                      <h5>土地持分相加括擴分計算</h5>
+                    </a>
+                  </div>
                 
               </div>
             </div>
@@ -794,7 +856,14 @@ End Sub
                     
                     <div class="col-md-6 mb-3">
                       <div class="post-item">
-                        <a href="/real-estate/office%E5%AD%B8%E7%BF%92/">OFFICE 學習筆記：</a>
+                        <a href="/automation/land-share-calculation/">土地持分相加括擴分計算</a>
+                        <small>2025-11-20</small>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                      <div class="post-item">
+                        <a href="/automation/office%E5%AD%B8%E7%BF%92/">OFFICE 學習筆記：</a>
                         <small>2025-11-08</small>
                       </div>
                     </div>
@@ -845,8 +914,8 @@ End Sub
                   
                   <div class="col-md-6 mb-3">
                     <div class="post-item">
-                      <a href="/lifestyle/%E7%B6%AD%E4%B9%9F%E7%B4%8D%E5%BC%8F%E7%85%8E%E8%B1%AC%E6%8E%92%E9%99%84%E7%95%AA%E8%8C%84%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/">維也納式煎豬排附番茄義大利麵</a>
-                      <small>2025-11-15</small>
+                      <a href="/automation/land-share-calculation/">土地持分相加括擴分計算</a>
+                      <small>2025-11-20</small>
                     </div>
                   </div>
                   
@@ -891,10 +960,10 @@ End Sub
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
         <a href="https://tomisagoodguy.github.io/" aria-label="land-knowledege">
-<img loading="lazy" src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege" class="footer-logo">
+          <img loading="lazy" src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege" class="footer-logo">
         </a>
       </div>
-               
+      
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">聯絡我們</h6>
         <ul class="list-unstyled contact-list">
@@ -905,12 +974,12 @@ End Sub
             </a>
           </li>
           
-                     
+          
           <li class="mb-3 d-flex align-items-center">
             <i class="ti-location-pin text-primary"></i>Taiwan
           </li>
           
-                     
+          
           <li class="mb-3">
             <a class="text-dark d-flex align-items-center" href="mailto:tom890108159@gmail.com">
               <i class="ti-email text-primary"></i>tom890108159@gmail.com
@@ -997,6 +1066,9 @@ End Sub
   </div>
 </footer>
 
+<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+<a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
+
 <script>
   var indexURL = "https://tomisagoodguy.github.io/index.json"
 </script>
@@ -1020,26 +1092,26 @@ End Sub
 <!-- Main Script -->
 
 <script src="https://tomisagoodguy.github.io/js/script.min.js"></script>
-<script src="https://tomisagoodguy.github.io/js/theme-switch.js"></script>
+<script src="https://tomisagoodguy.github.io/%20js/theme-switch.js"></script>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('newsletter-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const response = document.getElementById('newsletter-response');
-      const email = this.querySelector('input[name="email"]').value;
-      
-      
-      
-      
-      response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
-      this.reset();
-    });
-  }
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const response = document.getElementById('newsletter-response');
+        const email = this.querySelector('input[name="email"]').value;
+
+        
+        
+
+        response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
+        this.reset();
+      });
+    }
+  });
 </script>
 
 
@@ -1057,118 +1129,116 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 <script>
-	(function () {
-		const cookieBox = document.getElementById('js-cookie-box');
-		const cookieButton = document.getElementById('js-cookie-button');
-		if (!Cookies.get('cookie-box')) {
-			cookieBox.classList.remove('cookie-box-hide');
-			cookieButton.onclick = function () {
-				Cookies.set('cookie-box', true, {
-					expires:  2 
-				});
-				cookieBox.classList.add('cookie-box-hide');
-			};
+  (function () {
+    const cookieBox = document.getElementById('js-cookie-box');
+    const cookieButton = document.getElementById('js-cookie-button');
+    if (!Cookies.get('cookie-box')) {
+      cookieBox.classList.remove('cookie-box-hide');
+      cookieButton.onclick = function () {
+        Cookies.set('cookie-box', true, {
+          expires:  2 
+    });
+    cookieBox.classList.add('cookie-box-hide');
+  };
 		}
-	})();
+	}) ();
 </script>
 
 
 <style>
-.cookie-box {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  padding: 1rem 0;
-  background: rgba(51, 51, 51, 0.95);
-  transition: all .75s cubic-bezier(.19, 1, .22, 1);
-  color: #fdfdfd;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
+  .cookie-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 1rem 0;
+    background: rgba(51, 51, 51, 0.95);
+    transition: all .75s cubic-bezier(.19, 1, .22, 1);
+    color: #fdfdfd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-.cookie-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.cookie-content p {
-  margin: 0;
-  padding: 0.5rem 0;
-}
-
-.cookie-buttons {
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-
-.cookie-box-hide {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
   .cookie-content {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-  
+
+  .cookie-content p {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
   .cookie-buttons {
-    margin-top: 1rem;
-    margin-left: 0;
+    white-space: nowrap;
+    margin-left: 1rem;
   }
-}
 
- 
-.footer-logo {
-  max-height: 60px;
-  width: auto;
-}
+  .cookie-box-hide {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
 
-.footer-section {
-  background-color: var(--footer-bg-color, #f8f9fa);
-  padding-top: 3rem;
-  transition: background-color 0.3s;
-}
+  @media (max-width: 768px) {
+    .cookie-content {
+      flex-direction: column;
+      text-align: center;
+    }
 
-.footer-section .text-dark {
-  color: var(--footer-text-color, #343a40);
-  transition: color 0.3s;
-}
+    .cookie-buttons {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
 
-.social-item:hover, 
-.category-item:hover {
-  color: var(--primary-color, #007bff) !important;
-  text-decoration: none;
-}
+   
+  .footer-logo {
+    max-height: 60px;
+    width: auto;
+  }
 
-.category-count {
-  font-size: 0.8rem;
-  color: #6c757d;
-}
+  .footer-section {
+    background-color: var(--footer-bg-color, #f8f9fa);
+    padding-top: 3rem;
+    transition: background-color 0.3s;
+  }
 
-.newsletter-section {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-}
+  .footer-section .text-dark {
+    color: var(--footer-text-color, #343a40);
+    transition: color 0.3s;
+  }
 
-.contact-list i,
-.social-list i,
-.quick-links i {
-  transition: transform 0.3s ease;
-}
+  .social-item:hover,
+  .category-item:hover {
+    color: var(--primary-color, #007bff) !important;
+    text-decoration: none;
+  }
 
-.contact-list a:hover i,
-.social-list a:hover i,
-.quick-links a:hover i {
-  transform: translateX(3px);
-}
+  .category-count {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+
+  .newsletter-section {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .contact-list i,
+  .social-list i,
+  .quick-links i {
+    transition: transform 0.3s ease;
+  }
+
+  .contact-list a:hover i,
+  .social-list a:hover i,
+  .quick-links a:hover i {
+    transform: translateX(3px);
+  }
 </style>
+</body>
 
-<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
-        <a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
-    </body>
 </html>

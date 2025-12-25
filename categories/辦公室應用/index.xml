@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>辦公室應用 on land-knowledege</title>
+    <link>https://tomisagoodguy.github.io/categories/%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%87%89%E7%94%A8/</link>
+    <description>Recent content in 辦公室應用 on land-knowledege</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 20 Nov 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%87%89%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>土地持分相加括擴分計算</title>
+      <link>https://tomisagoodguy.github.io/automation/land-share-calculation/</link>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/land-share-calculation/</guid>
+      <description>工具介紹 這是一個專為地政作業設計的 Excel 小工具，主要功能包括：&#xA;土地持分相加：快速計算多筆土地持分的總和。 擴分計算：協助處理分數擴分與通分運算。 對於經常需要處理複雜持分計算的代書或地政從業人員來說，這是一個非常實用的輔助工具。&#xA;檔案下載 點擊以下連結下載 Excel 檔案：</description>
+    </item>
+  </channel>
+</rss>

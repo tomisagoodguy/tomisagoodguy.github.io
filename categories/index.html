@@ -473,6 +473,13 @@
           </li>
           
           <li class="mb-2">
+            <a href="https://tomisagoodguy.github.io/categories/%E5%B0%88%E6%A5%AD%E8%83%BD%E5%8A%9B/" class="h5">
+              專業能力
+              <span class="badge badge-light ml-2">1</span>
+            </a>
+          </li>
+          
+          <li class="mb-2">
             <a href="https://tomisagoodguy.github.io/categories/%E6%88%BF%E5%B1%8B%E7%A8%85/" class="h5">
               房屋稅
               <span class="badge badge-light ml-2">1</span>
@@ -507,6 +514,13 @@
             </a>
           </li>
           
+          <li class="mb-2">
+            <a href="https://tomisagoodguy.github.io/categories/%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%87%89%E7%94%A8/" class="h5">
+              辦公室應用
+              <span class="badge badge-light ml-2">1</span>
+            </a>
+          </li>
+          
         </ul>
       </div>
     </div>
@@ -519,10 +533,10 @@
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
         <a href="https://tomisagoodguy.github.io/" aria-label="land-knowledege">
-<img loading="lazy" src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege" class="footer-logo">
+          <img loading="lazy" src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege" class="footer-logo">
         </a>
       </div>
-               
+      
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">聯絡我們</h6>
         <ul class="list-unstyled contact-list">
@@ -533,12 +547,12 @@
             </a>
           </li>
           
-                     
+          
           <li class="mb-3 d-flex align-items-center">
             <i class="ti-location-pin text-primary"></i>Taiwan
           </li>
           
-                     
+          
           <li class="mb-3">
             <a class="text-dark d-flex align-items-center" href="mailto:tom890108159@gmail.com">
               <i class="ti-email text-primary"></i>tom890108159@gmail.com
@@ -625,6 +639,9 @@
   </div>
 </footer>
 
+<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+<a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
+
 <script>
   var indexURL = "https://tomisagoodguy.github.io/index.json"
 </script>
@@ -648,26 +665,26 @@
 <!-- Main Script -->
 
 <script src="https://tomisagoodguy.github.io/js/script.min.js"></script>
-<script src="https://tomisagoodguy.github.io/js/theme-switch.js"></script>
+<script src="https://tomisagoodguy.github.io/%20js/theme-switch.js"></script>
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('newsletter-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const response = document.getElementById('newsletter-response');
-      const email = this.querySelector('input[name="email"]').value;
-      
-      
-      
-      
-      response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
-      this.reset();
-    });
-  }
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const response = document.getElementById('newsletter-response');
+        const email = this.querySelector('input[name="email"]').value;
+
+        
+        
+
+        response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
+        this.reset();
+      });
+    }
+  });
 </script>
 
 
@@ -685,118 +702,116 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 <script>
-	(function () {
-		const cookieBox = document.getElementById('js-cookie-box');
-		const cookieButton = document.getElementById('js-cookie-button');
-		if (!Cookies.get('cookie-box')) {
-			cookieBox.classList.remove('cookie-box-hide');
-			cookieButton.onclick = function () {
-				Cookies.set('cookie-box', true, {
-					expires:  2 
-				});
-				cookieBox.classList.add('cookie-box-hide');
-			};
+  (function () {
+    const cookieBox = document.getElementById('js-cookie-box');
+    const cookieButton = document.getElementById('js-cookie-button');
+    if (!Cookies.get('cookie-box')) {
+      cookieBox.classList.remove('cookie-box-hide');
+      cookieButton.onclick = function () {
+        Cookies.set('cookie-box', true, {
+          expires:  2 
+    });
+    cookieBox.classList.add('cookie-box-hide');
+  };
 		}
-	})();
+	}) ();
 </script>
 
 
 <style>
-.cookie-box {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  padding: 1rem 0;
-  background: rgba(51, 51, 51, 0.95);
-  transition: all .75s cubic-bezier(.19, 1, .22, 1);
-  color: #fdfdfd;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
+  .cookie-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 1rem 0;
+    background: rgba(51, 51, 51, 0.95);
+    transition: all .75s cubic-bezier(.19, 1, .22, 1);
+    color: #fdfdfd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-.cookie-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.cookie-content p {
-  margin: 0;
-  padding: 0.5rem 0;
-}
-
-.cookie-buttons {
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-
-.cookie-box-hide {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
   .cookie-content {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-  
+
+  .cookie-content p {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
   .cookie-buttons {
-    margin-top: 1rem;
-    margin-left: 0;
+    white-space: nowrap;
+    margin-left: 1rem;
   }
-}
 
- 
-.footer-logo {
-  max-height: 60px;
-  width: auto;
-}
+  .cookie-box-hide {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
 
-.footer-section {
-  background-color: var(--footer-bg-color, #f8f9fa);
-  padding-top: 3rem;
-  transition: background-color 0.3s;
-}
+  @media (max-width: 768px) {
+    .cookie-content {
+      flex-direction: column;
+      text-align: center;
+    }
 
-.footer-section .text-dark {
-  color: var(--footer-text-color, #343a40);
-  transition: color 0.3s;
-}
+    .cookie-buttons {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
 
-.social-item:hover, 
-.category-item:hover {
-  color: var(--primary-color, #007bff) !important;
-  text-decoration: none;
-}
+   
+  .footer-logo {
+    max-height: 60px;
+    width: auto;
+  }
 
-.category-count {
-  font-size: 0.8rem;
-  color: #6c757d;
-}
+  .footer-section {
+    background-color: var(--footer-bg-color, #f8f9fa);
+    padding-top: 3rem;
+    transition: background-color 0.3s;
+  }
 
-.newsletter-section {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-}
+  .footer-section .text-dark {
+    color: var(--footer-text-color, #343a40);
+    transition: color 0.3s;
+  }
 
-.contact-list i,
-.social-list i,
-.quick-links i {
-  transition: transform 0.3s ease;
-}
+  .social-item:hover,
+  .category-item:hover {
+    color: var(--primary-color, #007bff) !important;
+    text-decoration: none;
+  }
 
-.contact-list a:hover i,
-.social-list a:hover i,
-.quick-links a:hover i {
-  transform: translateX(3px);
-}
+  .category-count {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+
+  .newsletter-section {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .contact-list i,
+  .social-list i,
+  .quick-links i {
+    transition: transform 0.3s ease;
+  }
+
+  .contact-list a:hover i,
+  .social-list a:hover i,
+  .quick-links a:hover i {
+    transform: translateX(3px);
+  }
 </style>
+</body>
 
-<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
-        <a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
-    </body>
 </html>

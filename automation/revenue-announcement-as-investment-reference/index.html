@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>營收公布能為投資參考依據？ | land-knowledege</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="本文的詳細研究與數據分析已整理成論文格式，歡迎參考。
+相關論文下載：
+營收公布能為投資參考依據？以台股為例 (PDF) 台股營收動能策略之風險模型驗證 (PDF) 因子 (Factors)
+市場因子 (Market Factor)：這是最基礎的因子，代表整體市場的風險溢酬。 規模因子 (Size Factor / SMB)：指小型市值公司的股票報酬與大型市值公司股票報酬的差異。這個因子捕捉了公司規模對報酬的影響。 價值因子 (Value Factor / HML)：指高帳面市值比 (B/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異。這代表了價值型股票相對於成長型股票的超額報酬。 獲利因子 (Profitability Factor / ROE / RMW)：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式： Q因子模型：使用最新一季公布的股東權益報酬率 (ROE) 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。 5因子模型：使用上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。 投資因子 (Investment Factor / I/A / CMA)：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式： Q因子模型：使用最新一季公布的總資產除以去年同季度的總資產價值 (I/A) 來決定，資產增長率越高的公司，預期未來報酬越低。 5因子模型：使用去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值來決定。 策略 (Strategies) 來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。">
+  <meta name="author" content="定康">
+  <meta name="theme-color" content="#fff">
+  
+  <!-- canonical link -->
+  <link rel="canonical" href="https://tomisagoodguy.github.io/automation/revenue-announcement-as-investment-reference/">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="liva-hugo" />
+  <meta name="generator" content="Hugo 0.127.0">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:title" content="營收公布能為投資參考依據？ | land-knowledege">
+  <meta property="og:description" content="本文的詳細研究與數據分析已整理成論文格式，歡迎參考。
+相關論文下載：
+營收公布能為投資參考依據？以台股為例 (PDF) 台股營收動能策略之風險模型驗證 (PDF) 因子 (Factors)
+市場因子 (Market Factor)：這是最基礎的因子，代表整體市場的風險溢酬。 規模因子 (Size Factor / SMB)：指小型市值公司的股票報酬與大型市值公司股票報酬的差異。這個因子捕捉了公司規模對報酬的影響。 價值因子 (Value Factor / HML)：指高帳面市值比 (B/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異。這代表了價值型股票相對於成長型股票的超額報酬。 獲利因子 (Profitability Factor / ROE / RMW)：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式： Q因子模型：使用最新一季公布的股東權益報酬率 (ROE) 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。 5因子模型：使用上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。 投資因子 (Investment Factor / I/A / CMA)：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式： Q因子模型：使用最新一季公布的總資產除以去年同季度的總資產價值 (I/A) 來決定，資產增長率越高的公司，預期未來報酬越低。 5因子模型：使用去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值來決定。 策略 (Strategies) 來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tomisagoodguy.github.io/automation/revenue-announcement-as-investment-reference/">
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="營收公布能為投資參考依據？ | land-knowledege">
+  <meta name="twitter:description" content="本文的詳細研究與數據分析已整理成論文格式，歡迎參考。
+相關論文下載：
+營收公布能為投資參考依據？以台股為例 (PDF) 台股營收動能策略之風險模型驗證 (PDF) 因子 (Factors)
+市場因子 (Market Factor)：這是最基礎的因子，代表整體市場的風險溢酬。 規模因子 (Size Factor / SMB)：指小型市值公司的股票報酬與大型市值公司股票報酬的差異。這個因子捕捉了公司規模對報酬的影響。 價值因子 (Value Factor / HML)：指高帳面市值比 (B/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異。這代表了價值型股票相對於成長型股票的超額報酬。 獲利因子 (Profitability Factor / ROE / RMW)：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式： Q因子模型：使用最新一季公布的股東權益報酬率 (ROE) 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。 5因子模型：使用上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。 投資因子 (Investment Factor / I/A / CMA)：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式： Q因子模型：使用最新一季公布的總資產除以去年同季度的總資產價值 (I/A) 來決定，資產增長率越高的公司，預期未來報酬越低。 5因子模型：使用去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值來決定。 策略 (Strategies) 來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。">
+  
+  
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/plugins/bootstrap/bootstrap.min.css" >
+  
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/plugins/slick/slick.css" >
+  
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/plugins/themify-icons/themify-icons.css" >
+  
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/plugins/venobox/venobox.css" >
+  
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/css/custom.css" >
+  
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/scss/style.min.css" media="screen">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="https://tomisagoodguy.github.io/css/custom.css" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+  <!--Favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://tomisagoodguy.github.io/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://tomisagoodguy.github.io/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://tomisagoodguy.github.io/images/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://tomisagoodguy.github.io/images/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="https://tomisagoodguy.github.io/images/site.webmanifest">
+
+  <!-- Structured Data -->
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/tomisagoodguy.github.io\/automation\/revenue-announcement-as-investment-reference\/"
+      },
+      "headline": "營收公布能為投資參考依據？",
+      "description": "本文的詳細研究與數據分析已整理成論文格式，歡迎參考。\n相關論文下載：\n營收公布能為投資參考依據？以台股為例 (PDF) 台股營收動能策略之風險模型驗證 (PDF) 因子 (Factors)\n市場因子 (Market Factor)：這是最基礎的因子，代表整體市場的風險溢酬。 規模因子 (Size Factor \/ SMB)：指小型市值公司的股票報酬與大型市值公司股票報酬的差異。這個因子捕捉了公司規模對報酬的影響。 價值因子 (Value Factor \/ HML)：指高帳面市值比 (B\/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異。這代表了價值型股票相對於成長型股票的超額報酬。 獲利因子 (Profitability Factor \/ ROE \/ RMW)：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式： Q因子模型：使用最新一季公布的股東權益報酬率 (ROE) 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。 5因子模型：使用上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。 投資因子 (Investment Factor \/ I\/A \/ CMA)：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式： Q因子模型：使用最新一季公布的總資產除以去年同季度的總資產價值 (I\/A) 來決定，資產增長率越高的公司，預期未來報酬越低。 5因子模型：使用去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值來決定。 策略 (Strategies) 來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。",
+      
+      "datePublished": "2025-09-21T00:00:00\u002b08:00",
+      "dateModified": "2025-09-21T00:00:00\u002b08:00",
+      "author": {
+        "@type": "Person",
+        "name": "定康"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "land-knowledege",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https:\/\/tomisagoodguy.github.io\/images\/law.png"
+        }
+      }
+    }
+  </script>
+  
+
+  <!-- Google Analytics -->
+  
+  <script>
+    
+    window['ga-disable-G-ZZ3XT9EZKH'] = true;
+    
+    
+    if (localStorage.getItem('cookie-consent') === 'true') {
+      window['ga-disable-G-ZZ3XT9EZKH'] = false;
+    }
+  </script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3XT9EZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZZ3XT9EZKH', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
+  
+</head>
+<body>
+<!-- preloader start -->
+<div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
+  <div class="preloader-content">
+    
+    <div class="preloader-spinner"></div>
+    
+    <p class="preloader-text">加載中...</p>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .preloader-content {
+    text-align: center;
+  }
+  
+  .preloader img {
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    animation: pulse 1.5s ease infinite;
+  }
+  
+  .preloader-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333333;
+    opacity: 0.8;
+  }
+  
+  .preloader-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+   
+  body.loading {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loading');
+    
+    
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        
+        preloader.classList.add('loaded');
+        
+        
+        setTimeout(function() {
+          document.body.classList.remove('loading');
+        }, 500);
+        
+        
+        setTimeout(function() {
+          preloader.parentNode.removeChild(preloader);
+        }, 1000);
+      }
+    });
+    
+    
+    setTimeout(function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader && !preloader.classList.contains('loaded')) {
+        preloader.classList.add('loaded');
+        document.body.classList.remove('loading');
+      }
+    },  8000 );
+  });
+</script>
+<!-- preloader end -->
+
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://tomisagoodguy.github.io/"><img loading="lazy" class="img-fluid"
+          src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/profile.php?id=100005583693079"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/tomisagoodguy?tab=repositories"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://tomisagoodguy.github.io/"><img loading="lazy" class="img-fluid"
+            src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://tomisagoodguy.github.io/">首頁</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://tomisagoodguy.github.io/lifestyle/">廚藝與生活</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://tomisagoodguy.github.io/real-estate/">代書修煉</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://tomisagoodguy.github.io/automation/">自動化實驗室</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link about-me-nav" href="https://tomisagoodguy.github.io/about/">關於</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="https://tomisagoodguy.github.io/links/">相關連結</a>
+            
+          </li>
+          
+          
+        </ul>
+
+        <div class="theme-switch-wrapper pl-lg-4">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://tomisagoodguy.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="輸入關鍵字並按 Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  
+  
+    
+    
+      
+    
+    
+  
+<section class="section-sm category-stock-research">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-3">
+        <div class="toc-placeholder"></div>
+        <div class="toc-container">
+          <div class="toc-title">文章目錄</div>
+          <div class="toc-content">
+            <nav><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#策略-strategies"><strong>策略 (Strategies)</strong></a>
+          <ul>
+            <li><a href="#1-營收動能策略-sales-momentum-strategy"><strong>1. 營收動能策略 (Sales Momentum Strategy)</strong></a></li>
+            <li><a href="#2-月營收公布事件交易策略-基於費雪精確檢定"><strong>2. 月營收公布事件交易策略 (基於費雪精確檢定)</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></nav>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-9">
+        
+        <a href="/categories/stock-research" class="badge badge-primary badge-sm">Stock research</a>
+        
+        <h2>營收公布能為投資參考依據？</h2>
+        <div class="mb-3 post-meta">
+          <span>By 定康</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>21 September 2025</span>
+          
+        </div>
+        
+
+        <div class="content mb-5 post-content">
+          <p>本文的詳細研究與數據分析已整理成論文格式，歡迎參考。</p>
+<p><strong>相關論文下載：</strong></p>
+<ul>
+<li><a href="/automation/revenue-announcement-as-investment-reference/%E7%87%9F%E6%94%B6%E5%85%AC%E5%B8%83%E8%83%BD%E7%82%BA%E6%8A%95%E8%B3%87%E5%8F%83%E8%80%83%E4%BE%9D%E6%93%9A%EF%BC%9F%E4%BB%A5%E5%8F%B0%E8%82%A1%E7%82%BA%E4%BE%8B.pdf">營收公布能為投資參考依據？以台股為例 (PDF)</a></li>
+<li><a href="/automation/revenue-announcement-as-investment-reference/%E5%8F%B0%E8%82%A1%E7%87%9F%E6%94%B6%E5%8B%95%E8%83%BD%E7%AD%96%E7%95%A5%E4%B9%8B%E9%A2%A8%E9%9A%AA%E6%A8%A1%E5%9E%8B%E9%A9%97%E8%AD%89.pdf">台股營收動能策略之風險模型驗證 (PDF)</a></li>
+</ul>
+<p><strong>因子 (Factors)</strong></p>
+<ol>
+<li><strong>市場因子 (Market Factor)</strong>：這是最基礎的因子，代表整體市場的風險溢酬。</li>
+<li><strong>規模因子 (Size Factor / SMB)</strong>：指<strong>小型市值公司的股票報酬與大型市值公司股票報酬的差異</strong>。這個因子捕捉了公司規模對報酬的影響。</li>
+<li><strong>價值因子 (Value Factor / HML)</strong>：指<strong>高帳面市值比 (B/M ratio) 公司的股票報酬與低帳面市值比公司股票報酬的差異</strong>。這代表了價值型股票相對於成長型股票的超額報酬。</li>
+<li><strong>獲利因子 (Profitability Factor / ROE / RMW)</strong>：這個因子是解釋動能策略超額報酬的關鍵。來源中提到了兩種建構方式：
+<ul>
+<li><strong>Q因子模型</strong>：使用<strong>最新一季公布的股東權益報酬率 (ROE)</strong> 來決定，其風險報酬是高 ROE 公司與低 ROE 公司股票報酬的差額。</li>
+<li><strong>5因子模型</strong>：使用<strong>上一年度的營收減去銷貨成本、利息及管銷費用，再除以上一年度的淨值</strong>來建構。其風險溢酬同樣是高獲利公司與低獲利公司股票報酬的差額。</li>
+</ul>
+</li>
+<li><strong>投資因子 (Investment Factor / I/A / CMA)</strong>：這個因子捕捉了企業投資行為所帶來的風險溢酬。同樣有兩種建構方式：
+<ul>
+<li><strong>Q因子模型</strong>：使用<strong>最新一季公布的總資產除以去年同季度的總資產價值 (I/A)</strong> 來決定，資產增長率越高的公司，預期未來報酬越低。</li>
+<li><strong>5因子模型</strong>：使用<strong>去年同一季的資產減去前年同一季度的資產，再除以前年同一季度的資產價值</strong>來決定。</li>
+</ul>
+</li>
+</ol>
+<h3 id="策略-strategies"><strong>策略 (Strategies)</strong></h3>
+<p>來源資料主要圍繞「營收動能」與利用「月營收公布」資訊這兩大核心，發展出可執行的投資策略。</p>
+<h4 id="1-營收動能策略-sales-momentum-strategy"><strong>1. 營收動能策略 (Sales Momentum Strategy)</strong></h4>
+<p>這是一個基於「標準化未預期營收 (SUS)」的中期動能策略，概念上與盈餘動能相似。</p>
+<ul>
+<li><strong>核心指標</strong>：<strong>標準化未預期營收 (Standardized Unexpected Sales, SUS)</strong>。
+<ul>
+<li><strong>計算方式</strong>：先計算「營收變動值」(本月營收 - 去年同月營收)，再減去過去24個月變動值的平均，最後除以過去24個月變動值的標準差。</li>
+</ul>
+</li>
+<li><strong>操作方法</strong>：
+<ol>
+<li>每月根據所有上市櫃公司的 SUS 數值進行排序。</li>
+<li><strong>買進 SUS 數值最高的前 20% 股票（贏家組合）</strong>。</li>
+<li><strong>賣出 SUS 數值最低的後 20% 股票（輸家組合）</strong>。</li>
+<li>持有一個月後，於次月初重新計算並調整投資組合。</li>
+</ol>
+</li>
+<li><strong>關鍵發現與洞察</strong>：
+<ul>
+<li><strong>有效性</strong>：此策略在長達20年的回測期間（1999-2020）皆能產生<strong>顯著為正的超額報酬</strong>，且在近年並未因學術發表而失效。</li>
+<li><strong>營收數據選擇</strong>：使用「單月營收 (M01)」和「近3個月累計營收 (M03)」建構的策略，其平均報酬與顯著性皆優於使用「近12個月累計營收 (M12)」。</li>
+<li><strong>牛熊市表現</strong>：此策略在<strong>牛市和熊市中皆能獲得顯著正報酬</strong>，不像傳統價格動能策略在熊市會出現嚴重衰退。</li>
+<li><strong>效期變化</strong>：近年來，基於 M03 和 M12 的策略效期有<strong>變短的趨勢</strong>。例如，M12 策略持有9個月後，近年累積報酬轉為負值，而過去則為正值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-月營收公布事件交易策略-基於費雪精確檢定"><strong>2. 月營收公布事件交易策略 (基於費雪精確檢定)</strong></h4>
+<p>這是一個利用台灣獨有的每月營收公布制度所設計的短線交易策略。</p>
+<ul>
+<li><strong>核心方法</strong>：<strong>費雪精確檢定 (Fisher&rsquo;s Exact Test)</strong>。
+<ul>
+<li><strong>用途</strong>：用來檢定「月營收月增率/年增率好壞」與「股價漲跌」這兩個類別變數之間是否存在顯著相關性。</li>
+</ul>
+</li>
+<li><strong>操作方法</strong>：
+<ol>
+<li>在每月營收公布日時，針對各產業的股票建立 2x2 列聯表，分析營收好壞與股價漲跌的關係。</li>
+<li>若檢定結果達到顯著水準 (p值小於0.1)，且營收好壞與股價上漲呈現正相關，則執行<strong>買進</strong>策略。</li>
+</ol>
+</li>
+<li><strong>關鍵發現與洞察</strong>：
+<ul>
+<li><strong>交易天期</strong>：此方法在「<strong>隔日沖</strong>」與「<strong>持有5天</strong>」的短線交易中，能獲得比一般單純看營收好壞就買進的方法更高的超額報酬。持有20天的策略效果則不佳。</li>
+<li><strong>產業與月份差異</strong>：不同產業因淡旺季之分，在不同月份的策略表現有顯著差異。投資人可依據此結果，在不同月份針對特定產業調整投資策略。</li>
+<li><strong>高報酬產業</strong>：在回測期間（2013-2014），高報酬產業多集中於<strong>科技業（如電子零組件、半導體、光電）、汽車組件</strong>等，這也與台股的權重分佈相符。</li>
+</ul>
+</li>
+</ul>
+<p>總結來說，來源資料提供了兩種基於營收資訊的實用策略：一種是每月調整一次的<strong>中期動能策略</strong>，另一種是利用每月營收公布事件的<strong>短線交易策略</strong>。兩者都證實了營收資訊在台股市場中具有高度的參考價值。</p>
+
+        </div>
+
+        
+        <div class="navigation-container">
+          
+          <div class="post-navigation">
+            <div class="row">
+              <div class="col-md-6">
+                
+                  <div class="prev-post">
+                    <span>上一篇</span>
+                    <a href="/automation/stock-review-sep/">
+                      <h5>9月月營收股票進場檢討</h5>
+                    </a>
+                  </div>
+                
+              </div>
+              <div class="col-md-6 text-right">
+                
+                  <div class="next-post">
+                    <span>下一篇</span>
+                    <a href="/automation/%E8%8F%B2%E5%BC%8F%E6%80%9D%E8%80%83/">
+                      <h5>「菲式思考」：15個選股策略的條件清單</h5>
+                    </a>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="navigation-tabs mt-5">
+            <ul class="nav nav-tabs" id="navigationTabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="related-tab" data-toggle="tab" href="#related" role="tab">相關文章</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab">最新文章</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="navigationTabsContent">
+              
+              <div class="tab-pane fade show active" id="related" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                    
+                  
+                  
+                    <div class="col-12">
+                      <p class="text-muted">目前沒有相關文章</p>
+                    </div>
+                  
+                </div>
+              </div>
+              
+              
+              <div class="tab-pane fade" id="latest" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E8%8F%AF%E7%88%BE%E9%81%93%E5%A4%AB%E6%B2%99%E6%8B%89%E5%92%8C%E8%8D%89%E8%8E%93%E8%88%92%E8%8A%99%E8%95%BE%E8%9B%8B%E6%8D%B2/">草莓舒芙蕾蛋捲佐華爾道夫沙拉 (Strawberry Soufflé Omelet &amp; Waldorf Salad)</a>
+                      <small>2025-12-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%BE%A9%E5%BC%8F%E8%BE%A3%E5%91%B3%E7%87%89%E7%85%AE%E7%BE%8A%E8%82%89/">義式辣味燉煮羊肉 (Spicy Basilicata Lamb Stew)</a>
+                      <small>2025-12-11</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E5%9F%BA%E8%BC%94%E9%9B%9E%E9%99%84%E7%82%B8%E8%84%86%E8%96%AF%E7%82%92%E7%95%AA%E8%8C%84%E8%88%87%E7%BF%A0%E7%B6%A0%E6%B2%99%E6%8B%89/">基輔雞附炸脆薯炒番茄與翠綠沙拉</a>
+                      <small>2025-12-06</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E4%BF%84%E5%BC%8F%E7%87%B4%E7%89%9B%E8%82%89%E9%99%84%E8%94%AC%E8%8F%9C%E9%A3%AF/">俄式燴牛肉附蔬菜飯</a>
+                      <small>2025-11-27</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E6%8B%BF%E5%9D%A1%E9%87%8C%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E7%82%B8%E6%8A%AB%E8%96%A9/">拿坡里(那不勒斯)炸披薩 Pizza Fritta</a>
+                      <small>2025-11-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/automation/land-share-calculation/">土地持分相加括擴分計算</a>
+                      <small>2025-11-20</small>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tomisagoodguy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-capitalize footer-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="https://tomisagoodguy.github.io/" aria-label="land-knowledege">
+          <img loading="lazy" src="https://tomisagoodguy.github.io/images/law.png" alt="land-knowledege" class="footer-logo">
+        </a>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">聯絡我們</h6>
+        <ul class="list-unstyled contact-list">
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center" href="tel:0911445898">
+              <i class="ti-mobile text-primary"></i>0911445898
+            </a>
+          </li>
+          
+          
+          <li class="mb-3 d-flex align-items-center">
+            <i class="ti-location-pin text-primary"></i>Taiwan
+          </li>
+          
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center" href="mailto:tom890108159@gmail.com">
+              <i class="ti-email text-primary"></i>tom890108159@gmail.com
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">社群連結</h6>
+        <ul class="list-unstyled social-list">
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://www.facebook.com/profile.php?id=100005583693079" >
+              <i class="ti-facebook"></i>facebook
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://github.com/tomisagoodguy?tab=repositories" >
+              <i class="ti-github"></i>github
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">文章分類</h6>
+        <ul class="list-unstyled category-list">
+          <li class="mb-3">
+            <a class="text-dark category-item" href="/categories/">
+              查看所有分類
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">快速連結</h6>
+        <ul class="list-unstyled quick-links">
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/">
+              首頁
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/lifestyle/">
+              廚藝與生活
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/real-estate/">
+              代書修煉
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/automation/">
+              自動化實驗室
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/about/">
+              關於
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://tomisagoodguy.github.io/links/">
+              相關連結
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center footer-copyright">
+        | copyright © 2025 定康的地政筆記 All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+<a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
+
+<script>
+  var indexURL = "https://tomisagoodguy.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://tomisagoodguy.github.io/plugins/jQuery/jquery.min.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/bootstrap/bootstrap.min.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/slick/slick.min.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/venobox/venobox.min.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/search/fuse.min.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/search/mark.js"  ></script>
+
+<script src="https://tomisagoodguy.github.io/plugins/search/search.js"  ></script>
+
+<!-- Main Script -->
+
+<script src="https://tomisagoodguy.github.io/js/script.min.js"></script>
+<script src="https://tomisagoodguy.github.io/%20js/theme-switch.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const response = document.getElementById('newsletter-response');
+        const email = this.querySelector('input[name="email"]').value;
+
+        
+        
+
+        response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
+        this.reset();
+      });
+    }
+  });
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" defer></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+  <div class="container">
+    <div class="cookie-content">
+      <p>本網站使用Cookie來改善您的瀏覽體驗。繼續使用本網站，即表示您同意我們的Cookie使用政策。</p>
+      <div class="cookie-buttons">
+        <button id="js-cookie-button" class="btn btn-sm btn-primary">我接受</button>
+        <a href="" class="btn btn-sm btn-outline-secondary ml-2">了解更多</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    const cookieBox = document.getElementById('js-cookie-box');
+    const cookieButton = document.getElementById('js-cookie-button');
+    if (!Cookies.get('cookie-box')) {
+      cookieBox.classList.remove('cookie-box-hide');
+      cookieButton.onclick = function () {
+        Cookies.set('cookie-box', true, {
+          expires:  2 
+    });
+    cookieBox.classList.add('cookie-box-hide');
+  };
+		}
+	}) ();
+</script>
+
+
+<style>
+  .cookie-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 1rem 0;
+    background: rgba(51, 51, 51, 0.95);
+    transition: all .75s cubic-bezier(.19, 1, .22, 1);
+    color: #fdfdfd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .cookie-content p {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .cookie-buttons {
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .cookie-box-hide {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cookie-buttons {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
+
+   
+  .footer-logo {
+    max-height: 60px;
+    width: auto;
+  }
+
+  .footer-section {
+    background-color: var(--footer-bg-color, #f8f9fa);
+    padding-top: 3rem;
+    transition: background-color 0.3s;
+  }
+
+  .footer-section .text-dark {
+    color: var(--footer-text-color, #343a40);
+    transition: color 0.3s;
+  }
+
+  .social-item:hover,
+  .category-item:hover {
+    color: var(--primary-color, #007bff) !important;
+    text-decoration: none;
+  }
+
+  .category-count {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+
+  .newsletter-section {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .contact-list i,
+  .social-list i,
+  .quick-links i {
+    transition: transform 0.3s ease;
+  }
+
+  .contact-list a:hover i,
+  .social-list a:hover i,
+  .quick-links a:hover i {
+    transform: translateX(3px);
+  }
+</style>
+</body>
+
+</html>
