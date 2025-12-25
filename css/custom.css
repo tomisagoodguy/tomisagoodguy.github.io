@@ -179,57 +179,13 @@
 /* Restore sticky TOC */
 .toc-container {
   position: sticky;
-  top: 80px;
-  /* Adjust based on navbar height */
-  z-index: 1000;
-}
-
-/* Scroll to Top/Bottom Buttons */
-#return-to-top,
-#go-to-bottom {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
-  width: 50px;
-  height: 50px;
-  display: block;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  z-index: 20000 !important;
-}
-
-#return-to-top {
-  bottom: 140px !important;
-}
-
-#go-to-bottom {
-  bottom: 80px !important;
-  /* Position it above the top button */
-}
-
-#return-to-top i,
-#go-to-bottom i {
-  color: #fff;
   margin: 0;
   position: relative;
   left: 16px;
   top: 13px;
   font-size: 19px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  z-index: 2147483647 !important;
+  /* Max z-index to ensure visibility */
 }
 
 #return-to-top:hover,
@@ -379,4 +335,187 @@
   color: #666;
   font-size: 0.95rem;
   margin: 0;
+}
+
+
+/*   - - - - - - - - - - - - - - - - - - - - - - - - - -           Link Card Styles           - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+.link-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure stretched link works even if Bootstrap utility is missing */
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*   - - - - - - - - - - - - - - - - - - - - - - - - - -           Dark Mode Styles           - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .profile-card,
+body.dark-mode .skill-category,
+body.dark-mode .github-project-card,
+body.dark-mode .profile-sidebar {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-body {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card-title,
+body.dark-mode .profile-name,
+body.dark-mode .skill-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .text-dark {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .text-muted {
+  color: #a0a0a0 !important;
+}
+
+body.dark-mode a {
+  color: #64b5f6 !important;
+}
+
+body.dark-mode a:hover {
+  color: #90caf9 !important;
+}
+
+body.dark-mode .btn-outline-primary {
+  color: #64b5f6 !important;
+  border-color: #64b5f6 !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background-color: #64b5f6 !important;
+  color: #121212 !important;
+}
+
+body.dark-mode .footer-section {
+  background-color: #000000 !important;
+  border-top: 1px solid #333 !important;
+}
+
+body.dark-mode .newsletter-section {
+  background-color: #1e1e1e !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+body.dark-mode .timeline-item::before {
+  background-color: #64b5f6 !important;
+  box-shadow: 0 0 0 3px #333 !important;
+}
+
+body.dark-mode .skill-tags li {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .social-links li a {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+}
+
+/*   - - - - - - - - - - - - - - - - - - - - - - - - - -           S c r o l l   B u t t o n s   ( T o p   &   B o t t o m )           - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+#return-to-top,
+#go-to-bottom {
+  position: fixed;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent dark base */
+  border-radius: 50%;
+  z-index: 99999 !important;
+  /* Force on top */
+  transition: all 0.3s ease;
+
+  /* CRITICAL: Override theme's visibility: hidden and opacity: 0 */
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  /* Centering Icons */
+  display: block;
+  /* jQuery fadeIn works best with block/inline */
+  text-align: center;
+  line-height: 50px;
+  /* Vertically center the icon */
+  font-size: 20px;
+  text-decoration: none;
+  /* Remove underline */
+}
+
+/* Positioning */
+#return-to-top {
+  bottom: 30px;
+}
+
+#go-to-bottom {
+  bottom: 90px;
+  /* Stacked above the top button */
+}
+
+/* Icon Styles */
+#return-to-top i,
+#go-to-bottom i {
+  color: #fff;
+  position: static;
+  /* Remove any absolute positioning from theme */
+  margin: 0;
+  line-height: 50px;
+  /* Ensure line-height inheritance/match */
+}
+
+/* Hover Effects */
+#return-to-top:hover,
+#go-to-bottom:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#return-to-top:hover i,
+#go-to-bottom:hover i {
+  color: #fff;
+  /* Keep white */
+}
+
+/* Dark Mode Overrides */
+body.dark-mode #return-to-top,
+body.dark-mode #go-to-bottom {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode #return-to-top:hover,
+body.dark-mode #go-to-bottom:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
