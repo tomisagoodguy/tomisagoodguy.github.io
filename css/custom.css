@@ -519,3 +519,47 @@ body.dark-mode #return-to-top:hover,
 body.dark-mode #go-to-bottom:hover {
   background: rgba(255, 255, 255, 0.4);
 }
+
+/* Links Page Sidebar */
+.sticky-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 15px;
+  z-index: 100;
+}
+
+/* Ensure parent containers allow sticky */
+body,
+html {
+  overflow-x: unset;
+}
+
+.links-page,
+.section-sm,
+.container,
+.row {
+  overflow: visible !important;
+}
+
+.sticky-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sticky-sidebar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* Adjust card z-index for stretched-link + button compatibility */
+.z-index-2 {
+  z-index: 2;
+  position: relative;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
