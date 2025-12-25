@@ -1,0 +1,25 @@
+/* --------------------------
+   Link Card Styles
+   -------------------------- */
+.link-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure stretched link works even if Bootstrap utility is missing */
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+}
