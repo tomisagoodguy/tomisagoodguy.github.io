@@ -254,7 +254,11 @@
 }
 
 .timeline-year {
-  color: #3b71ca;
+  color: #fff;
+  background-color: #3b71ca;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -365,6 +369,7 @@
 /*   - - - - - - - - - - - - - - - - - - - - - - - - - -           Dark Mode Styles           - - - - - - - - - - - - - - - - - - - - - - - - - -   */
 body.dark-mode {
   background-color: #121212 !important;
+  background-image: none !important;
   color: #e0e0e0 !important;
 }
 
@@ -649,3 +654,578 @@ body.dark-mode .featured-post-content h3 a {
     padding-left: 0;
   }
 }
+
+/* --------------------------
+   Recipe Content Styles
+   -------------------------- */
+.recipe-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.recipe-content th {
+  background-color: #3b71ca;
+  color: #ffffff;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.recipe-content td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.recipe-content tr:last-of-type td {
+  border-bottom: 2px solid #3b71ca;
+}
+
+.recipe-content tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.recipe-content h4 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-left: 5px solid #3b71ca;
+  color: #333;
+  font-weight: 700;
+}
+
+.recipe-content img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Dark Mode Support for Recipes */
+body.dark-mode .recipe-content table {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-mode .recipe-content th {
+  background-color: #3b71ca;
+  color: #ffffff;
+}
+
+body.dark-mode .recipe-content td {
+  border-bottom-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .recipe-content tr:last-of-type td {
+  border-bottom-color: #3b71ca;
+}
+
+body.dark-mode .recipe-content tr:nth-of-type(even) {
+  background-color: #2d2d2d;
+}
+
+body.dark-mode .recipe-content h4 {
+  color: #e0e0e0;
+  border-left-color: #64b5f6;
+}
+
+/* Center text in related/recent posts */
+.post-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Orange/Terracotta Utilities for Real Estate Section */
+.text-orange {
+  color: #E07A5F !important;
+}
+
+.btn-outline-orange {
+  color: #E07A5F;
+  border: 1px solid #E07A5F !important;
+  background-color: transparent;
+}
+
+.btn-outline-orange:hover {
+  color: #fff;
+  background-color: #E07A5F;
+  border-color: #E07A5F;
+}
+
+/* --------------------------
+   Navigation Hover Effects
+   -------------------------- */
+.navbar-nav .nav-item .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  /* Adjust spacing from text */
+  left: 50%;
+  background-color: #3b71ca;
+  /* Primary Blue */
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Bouncy effect */
+  opacity: 0;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link:focus {
+  color: #3b71ca !important;
+  /* Change text color on hover */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Subtle grey background on hover */
+  border-radius: 4px;
+  /* Rounded corners for the background */
+}
+
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item .nav-link:focus::after {
+  width: 80%;
+  /* Don't span full width to differentiate from borders */
+  left: 10%;
+  opacity: 1;
+}
+
+/* Dark Mode Navigation Support */
+body.dark-mode .navbar-nav .nav-item .nav-link:hover {
+  color: #64b5f6 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Subtle light background in dark mode */
+}
+
+body.dark-mode .navbar-nav .nav-item .nav-link::after {
+  background-color: #64b5f6;
+}
+
+/* --------------------------
+   Dropdown Hover Support (Desktop)
+   -------------------------- */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    animation: fadeInSlide 0.3s ease forwards;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for dropdown items on hover - More Grey */
+  .dropdown-item:hover {
+    background-color: #e9ecef;
+    /* Distinct grey background */
+    color: #3b71ca;
+    /* Primary blue text */
+    padding-left: 1.5rem;
+    /* Slight indent effect */
+    transition: all 0.2s ease;
+  }
+
+  /* Dark mode dropdown item hover */
+  body.dark-mode .dropdown-item:hover {
+    background-color: #333;
+    color: #64b5f6;
+  }
+
+  /* Keep parent link active while menu is open */
+  .dropdown:hover>.nav-link {
+    color: #3b71ca !important;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dropdown:hover>.nav-link::after {
+    width: 80%;
+    left: 10%;
+    opacity: 1;
+    background-color: #3b71ca;
+  }
+
+  /* Dark mode support for dropdown hover parent */
+  body.dark-mode .dropdown:hover>.nav-link {
+    color: #64b5f6 !important;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  body.dark-mode .dropdown:hover>.nav-link::after {
+    background-color: #64b5f6;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------
+   Links Page Sidebar Animation
+   -------------------------- */
+.sticky-sidebar .nav-link {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-left: 3px solid transparent;
+}
+
+.sticky-sidebar .nav-link:hover {
+  color: #3b71ca !important;
+  background-color: rgba(59, 113, 202, 0.15);
+  /* Increased opacity from 0.08 */
+  border-left-color: #3b71ca;
+  font-weight: 600;
+  /* Add font weight for extra pop */
+  padding-left: 1.25rem;
+  /* Slide right effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow for depth */
+}
+
+/* Specific adjustment for sub-links to maintain hierarchy */
+.sticky-sidebar .pl-3 .nav-link:hover {
+  padding-left: 0.75rem !important;
+  /* Adjust based on original padding? original is nav-link (1rem px usually) */
+  /* Bootstrap nav-link has 1rem padding-left by default? No, usually 1rem. */
+  /* Let's just trust the relative movement. */
+  border-left-width: 2px;
+}
+
+/* Dark Mode Support for Sidebar */
+body.dark-mode .sticky-sidebar .nav-link:hover {
+  color: #64b5f6 !important;
+  background-color: rgba(100, 181, 246, 0.1);
+  border-left-color: #64b5f6;
+}
+
+/* --------------------------
+   Hero Section Animations (Tech / Cyberpunk)
+   -------------------------- */
+
+/* 1. Tech Background Grid */
+.hero-section {
+  background:
+    linear-gradient(rgba(59, 113, 202, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 113, 202, 0.1) 1px, transparent 1px),
+    linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  background-size: 30px 30px, 30px 30px, 100% 100% !important;
+  border: 1px solid rgba(59, 113, 202, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. Holographic Shimmer Title (Cleaner Tech Effect) */
+.hero-title {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(to right, #fff 20%, #3b71ca 40%, #E07A5F 60%, #fff 80%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+.hero-title::before,
+.hero-title::after {
+  display: none;
+  /* Remove chaotic glitch layers */
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.hero-title:hover {
+  text-shadow: 0 0 15px rgba(59, 113, 202, 0.5);
+  transform: scale(1.05);
+  /* Smooth zoom */
+}
+
+/* 3. Typewriter Subtitle */
+.hero-subtitle {
+  font-family: 'Courier New', Courier, monospace;
+  border-right: 2px solid #E07A5F;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto 2rem auto;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  max-width: fit-content;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #E07A5F;
+  }
+}
+
+/* --------------------------
+   Footer Tech Styling
+   -------------------------- */
+
+/* Animated Scrolling Grid Background */
+@keyframes gridScroll {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  to {
+    background-position: 40px 40px, 40px 40px, 0 0;
+  }
+}
+
+.footer-section {
+  /* Light Mode Default: Light gray background with faint blue grid */
+  background:
+    linear-gradient(rgba(59, 113, 202, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 113, 202, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%) !important;
+  background-size: 40px 40px, 40px 40px, 100% 100% !important;
+  border-top: 1px solid rgba(59, 113, 202, 0.2);
+  /* Subtle divider */
+  position: relative;
+  color: #555 !important;
+  /* Darker text for light mode */
+  animation: gridScroll 4s linear infinite;
+}
+
+/* Footer Headings */
+.footer-section h6 {
+  color: #333;
+  /* Dark title */
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h6::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: #E07A5F;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 5px #E07A5F;
+}
+
+.footer-section .col-lg-3:hover h6::after {
+  width: 100%;
+}
+
+/* Footer Links & Rows */
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #666 !important;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  /* Flex for icon alignment */
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.footer-section a:hover {
+  color: #3b71ca !important;
+  background: rgba(59, 113, 202, 0.05);
+  /* Lighter hover bg */
+  border-color: rgba(59, 113, 202, 0.2);
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(59, 113, 202, 0.1);
+}
+
+.footer-section i {
+  color: #3b71ca;
+  /* Tech blue icons */
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover i {
+  color: #E07A5F;
+  /* Orange on hover */
+  transform: rotate(360deg) scale(1.2);
+  /* Tech spin & pop */
+  text-shadow: 0 0 5px #E07A5F;
+}
+
+/* Newsletter in Footer */
+.newsletter-section {
+  background: #121212 !important;
+  border-bottom: 1px solid #333;
+  padding: 40px 0;
+}
+
+.newsletter-section h2 {
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+
+/* Cookie Box Styles (Restored & Tech-ified) */
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  padding: 1rem 0;
+  background: rgba(20, 20, 20, 0.98);
+  border-top: 1px solid #3b71ca;
+  color: #fdfdfd;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1140px;
+  /* Container width */
+  padding: 0 15px;
+}
+
+.cookie-box-hide {
+  display: none !important;
+}
+
+/* Dark Mode Overrides for Footer */
+body.dark-mode .footer-section {
+  /* Dark Mode: Deep black/grey with clearer grid */
+  background:
+    linear-gradient(rgba(59, 113, 202, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 113, 202, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, #1a1a1a 0%, #000 100%) !important;
+  background-size: 40px 40px, 40px 40px, 100% 100% !important;
+  color: #a0a0a0 !important;
+  border-top-color: #64b5f6;
+}
+
+body.dark-mode .footer-section h6 {
+  color: #fff;
+}
+
+body.dark-mode .footer-section a {
+  color: #a0a0a0 !important;
+}
+
+body.dark-mode .footer-section a:hover {
+  color: #fff !important;
+  background: rgba(59, 113, 202, 0.2);
+  border-color: rgba(59, 113, 202, 0.4);
+}
+
+/* --------------------------
+   Content & Card Animations (Tech)
+   -------------------------- */
+
+/* Category/Topic Cards */
+.category-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(59, 113, 202, 0.2);
+  border-color: #3b71ca;
+  background: rgba(59, 113, 202, 0.05);
+  /* Subtle tech fill */
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b71ca, transparent);
+  transition: left 0.5s;
+}
+
+.category-card:hover::before {
+  left: 100%;
+  transition: left 0.5s;
+}
+
+/* General Post Cards */
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid #e1e4e8;
+  /* Base border */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #3b71ca;
+  /* Tech blue border on hover */
+}
+
+/* Dark Mode Tech Card Adjustments */
+body.dark-mode .card:hover,
+body.dark-mode .category-card:hover {
+  border-color: #64b5f6;
+  box-shadow: 0 5px 15px rgba(100, 181, 246, 0.2);
+  background-color: #2d2d2d !important;
+  /* Slightly lighter than bg */
+}
+
+```

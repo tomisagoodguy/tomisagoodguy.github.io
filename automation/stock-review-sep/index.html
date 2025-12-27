@@ -88,7 +88,7 @@
       "description": "記憶體 、 碳化矽族群 觀察營收創新高、虧轉盈 成交金額市場PR90的個股\n2344 華邦電 2408 南亞科 5443 均豪 5483 中美晶 6488 環球晶 8299 群聯 ",
       
       "datePublished": "2025-09-10T00:00:00\u002b08:00",
-      "dateModified": "2025-09-10T00:00:00\u002b08:00",
+      "dateModified": "2025-10-26T11:02:07\u002b08:00",
       "author": {
         "@type": "Person",
         "name": "定康"
@@ -730,7 +730,7 @@
 <a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
 
 <script>
-  var indexURL = "https://tomisagoodguy.github.io/index.json"
+  var indexURL = "https:\/\/tomisagoodguy.github.io\/index.json"
 </script>
 
 <!-- JS Plugins -->
@@ -752,7 +752,48 @@
 <!-- Main Script -->
 
 <script src="https://tomisagoodguy.github.io/js/script.min.js"></script>
-<script src="https://tomisagoodguy.github.io/%20js/theme-switch.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('checkbox');
+    const body = document.body;
+    const themeClass = 'dark-mode';
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add(themeClass);
+        if (themeToggle) themeToggle.checked = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove(themeClass);
+        if (themeToggle) themeToggle.checked = false;
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || savedTheme === 'dark-mode') {
+      applyTheme('dark');
+    } else if (!savedTheme && prefersDark) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+
+    
+    if (themeToggle) {
+      themeToggle.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          applyTheme('dark');
+        } else {
+          applyTheme('light');
+        }
+      });
+    }
+  });
+</script>
 
 
 <script>
@@ -804,101 +845,6 @@
 	}) ();
 </script>
 
-
-<style>
-  .cookie-box {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    padding: 1rem 0;
-    background: rgba(51, 51, 51, 0.95);
-    transition: all .75s cubic-bezier(.19, 1, .22, 1);
-    color: #fdfdfd;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .cookie-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .cookie-content p {
-    margin: 0;
-    padding: 0.5rem 0;
-  }
-
-  .cookie-buttons {
-    white-space: nowrap;
-    margin-left: 1rem;
-  }
-
-  .cookie-box-hide {
-    transform: translateY(100%);
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
-    .cookie-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .cookie-buttons {
-      margin-top: 1rem;
-      margin-left: 0;
-    }
-  }
-
-   
-  .footer-logo {
-    max-height: 60px;
-    width: auto;
-  }
-
-  .footer-section {
-    background-color: var(--footer-bg-color, #f8f9fa);
-    padding-top: 3rem;
-    transition: background-color 0.3s;
-  }
-
-  .footer-section .text-dark {
-    color: var(--footer-text-color, #343a40);
-    transition: color 0.3s;
-  }
-
-  .social-item:hover,
-  .category-item:hover {
-    color: var(--primary-color, #007bff) !important;
-    text-decoration: none;
-  }
-
-  .category-count {
-    font-size: 0.8rem;
-    color: #6c757d;
-  }
-
-  .newsletter-section {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
-  }
-
-  .contact-list i,
-  .social-list i,
-  .quick-links i {
-    transition: transform 0.3s ease;
-  }
-
-  .contact-list a:hover i,
-  .social-list a:hover i,
-  .quick-links a:hover i {
-    transform: translateX(3px);
-  }
-</style>
 </body>
 
 </html>
