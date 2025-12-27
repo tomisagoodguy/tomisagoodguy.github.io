@@ -304,18 +304,32 @@
           
           
           
-          <li class="nav-item">
-            
-            <a class="nav-link" href="https://tomisagoodguy.github.io/real-estate/">代書修煉</a>
-            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://tomisagoodguy.github.io/real-estate/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              代書修煉
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/real-estate/exam-notes/">考試筆記</a>
+              
+            </div>
           </li>
           
           
           
-          <li class="nav-item">
-            
-            <a class="nav-link" href="https://tomisagoodguy.github.io/automation/">自動化實驗室</a>
-            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://tomisagoodguy.github.io/automation/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              自動化實驗室
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/automation/">所有文章</a>
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/tools/property-tax.html">房地稅務試算</a>
+              
+            </div>
           </li>
           
           
@@ -328,10 +342,24 @@
           
           
           
-          <li class="nav-item">
-            
-            <a class="nav-link" href="https://tomisagoodguy.github.io/links/">相關連結</a>
-            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://tomisagoodguy.github.io/links/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              相關連結
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/links/#%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7">實用工具</a>
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/links/#%E5%9C%B0%E6%94%BF%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">地政相關網站</a>
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/links/#%E7%90%86%E8%B2%A1%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">理財相關網站</a>
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/links/#%E6%B1%82%E8%81%B7%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">求職相關網站</a>
+              
+              <a class="dropdown-item" href="https://tomisagoodguy.github.io/links/#%E5%85%B6%E4%BB%96">其他</a>
+              
+            </div>
           </li>
           
           
@@ -400,6 +428,7 @@
       <ul>
         <li><a href="#專案與模組">專案與模組</a></li>
         <li><a href="#程序-sub--function">程序 (Sub / Function)</a></li>
+        <li><a href="#模組化程式設計-call">模組化程式設計 (Call)</a></li>
         <li><a href="#變數-variables-與資料型別">變數 (Variables) 與資料型別</a></li>
         <li><a href="#註解-comments">註解 (Comments)</a></li>
       </ul>
@@ -408,6 +437,16 @@
       <ul>
         <li><a href="#核心物件工作表-worksheet-與儲存格-range--cells">核心物件：工作表 (Worksheet) 與儲存格 (Range / Cells)</a></li>
         <li><a href="#互動與除錯及時運算視窗-immediate-window">互動與除錯：及時運算視窗 (Immediate Window)</a></li>
+      </ul>
+    </li>
+    <li><a href="#條件判斷-conditional-logic">條件判斷 (Conditional Logic)</a>
+      <ul>
+        <li><a href="#if--then--else">If &hellip; Then &hellip; Else</a></li>
+      </ul>
+    </li>
+    <li><a href="#迴圈控制-loops">迴圈控制 (Loops)</a>
+      <ul>
+        <li><a href="#for-each--next-迴圈">For Each &hellip; Next 迴圈</a></li>
       </ul>
     </li>
     <li><a href="#excel-vba-網路爬蟲">Excel VBA 網路爬蟲</a>
@@ -419,8 +458,11 @@
           <ul>
             <li><a href="#a-html-格式">A. HTML 格式</a></li>
             <li><a href="#b-json-格式">B. JSON 格式</a></li>
-            <li><a href="#c-csv-格式">C. CSV 格式</a></li>
+            <li><a href="#c-csv-格式逗號分隔值">C. CSV 格式/逗號分隔值</a></li>
             <li><a href="#d-暴力解決法">D. 暴力解決法</a></li>
+            <li><a href="#e-字串處理split-函數">E. 字串處理：Split 函數</a></li>
+            <li><a href="#f-字串處理replace-函數">F. 字串處理：Replace 函數</a></li>
+            <li><a href="#g-進階字串處理chr34-與雙引號的處理">G. 進階字串處理：Chr(34) 與雙引號的處理</a></li>
           </ul>
         </li>
       </ul>
@@ -431,6 +473,7 @@
       <ul>
         <li><a href="#q1-字串與變數如何連接">Q1: 字串與變數如何連接？</a></li>
         <li><a href="#q2-爬蟲請求方法-get-與-post-有何差異">Q2: 爬蟲請求方法 GET 與 POST 有何差異？</a></li>
+        <li><a href="#5-進階技巧http-headers-設定-request-headers">5. 進階技巧：HTTP Headers 設定 (Request Headers)</a></li>
       </ul>
     </li>
     <li><a href="#實用工具連結">實用工具連結</a></li>
@@ -453,12 +496,14 @@
           <span class="border-bottom border-primary px-2 mx-1"></span>
           <span>08 November 2025</span>
           
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>7 min read</span>
         </div>
-        
+
 
         <div class="content mb-5 post-content">
           <p><em>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。</em></p>
-<p>11/7上到第三章單元8抓取上市公司或成交價排行榜</p>
+<p>12/25上到4-2</p>
 <h2 id="學習資源">學習資源</h2>
 <blockquote>
 <h3 id="excel-vba-金融資料抓取--打造股票研究系統">Excel VBA 金融資料抓取 | 打造股票研究系統</h3>
@@ -522,6 +567,29 @@ End Function
 </code></pre></li>
 <li>
 <p><strong>命名規則</strong>：必須以字母開頭，且不能包含空格或特殊符號 (<code>.</code>、<code>!</code>、<code>@</code>、<code>&amp;</code>、<code>$</code>、<code>#</code>)，亦不可使用 VBA 的保留關鍵字。</p>
+</li>
+</ul>
+<h3 id="模組化程式設計-call">模組化程式設計 (Call)</h3>
+<p>當程式越來越龐大時，我們會將功能拆分成多個 Sub，並透過 <code>Call</code> 來互相呼叫與傳遞變數。</p>
+<ul>
+<li>
+<p><strong>語法</strong>：<code>Call Sub名稱(參數1, 參數2...)</code></p>
+</li>
+<li>
+<p><strong>範例</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub Main()
+    Dim myName As String
+    myName = &#34;Tom&#34;
+    &#39; 呼叫另一個 Sub，並將變數傳遞過去
+    Call GreetUser(myName)
+End Sub
+
+Sub GreetUser(name As String)
+    MsgBox &#34;Hello, &#34; &amp; name
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：執行後會跳出視窗顯示 <code>Hello, Tom</code>。</p>
+</blockquote>
 </li>
 </ul>
 <h3 id="變數-variables-與資料型別">變數 (Variables) 與資料型別</h3>
@@ -607,8 +675,88 @@ End Sub
 </code></pre></li>
 </ol>
 <hr>
+<h2 id="條件判斷-conditional-logic">條件判斷 (Conditional Logic)</h2>
+<h3 id="if--then--else">If &hellip; Then &hellip; Else</h3>
+<p>這是寫程式最基本的邏輯判斷，讓程式能夠根據不同情況執行不同的動作。</p>
+<ul>
+<li>
+<p><strong>語法</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">If 條件 Then
+    &#39; 條件成立時執行
+ElseIf 其他條件 Then
+    &#39; 其他條件成立時執行
+Else
+    &#39; 以上皆不成立時執行
+End If
+</code></pre></li>
+<li>
+<p><strong>範例</strong>：檢查儲存格 A1 的內容是否符合以下條件：</p>
+<ol>
+<li>必為 4 個字元 (<code>Len</code>)</li>
+<li>必為數字 (<code>IsNumeric</code>)</li>
+<li>開頭第一個字不可為 0 (<code>Left</code>)</li>
+</ol>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub CheckInput()
+    Dim content As String
+    content = Range(&#34;A1&#34;).Value
+
+    &#39; 使用 And 來連接多個條件 (全部都要符合)
+    If Len(content) = 4 And IsNumeric(content) And Left(content, 1) &lt;&gt; &#34;0&#34; Then
+        MsgBox &#34;格式正確&#34;
+    Else
+        MsgBox &#34;格式錯誤&#34;
+    End If
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：</p>
+<ul>
+<li>輸入 <code>1234</code> -&gt; 跳出「格式正確」</li>
+<li>輸入 <code>0123</code> -&gt; 跳出「格式錯誤」 (開頭是 0)</li>
+<li>輸入 <code>ABCD</code> -&gt; 跳出「格式錯誤」 (非數字)</li>
+<li>輸入 <code>123</code> -&gt; 跳出「格式錯誤」 (長度不足)</li>
+</ul>
+<p><img alt="IF判斷式" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/IF%E5%88%A4%E6%96%B7%E5%BC%8F.png"></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="迴圈控制-loops">迴圈控制 (Loops)</h2>
+<h3 id="for-each--next-迴圈">For Each &hellip; Next 迴圈</h3>
+<p>此迴圈適用於遍歷「集合」或「陣列」中的每一個元素。在 Excel VBA 中，最常用來遍歷 <strong>Range (儲存格範圍)</strong>。</p>
+<ul>
+<li>
+<p><strong>語法</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">For Each 變數名稱 In Cells
+    &#39; 對 變數名稱 執行動作
+Next [變數名稱]
+</code></pre><blockquote>
+<p>[!WARNING] <strong>致命陷阱</strong>
+雖然語法可以使用 <code>For Each ... In Cells</code>，但 <strong>Cells</strong> 代表整張工作表的所有儲存格 (1,048,576 列 x 16,384 欄)，直接執行會導致 Excel <strong>當機</strong>。
+<strong>請務必指定明確的範圍</strong>，例如 <code>Selection</code> (目前選取範圍) 或 <code>Range(&quot;A1:C10&quot;)</code>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>範例</strong>：將選取範圍內數值大於 60 的儲存格標示為紅色字。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub HighlightScores()
+    Dim cell As Range
+
+    &#39; 建議：明確指定範圍 (例如 Selection 或 Range(&#34;A1:A10&#34;))
+    For Each cell In Selection
+        If cell.Value &lt; 60 Then
+            cell.Font.Color = vbRed &#39; 不及格標紅字
+        End If
+    Next cell
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：執行程式後，您選取範圍內數值小於 60 的儲存格，文字顏色將會變成<strong>紅色</strong>。</p>
+</blockquote>
+<p><img alt="1766820757724" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/FOR_EACH.png"></p>
+</li>
+</ul>
+<hr>
 <h2 id="excel-vba-網路爬蟲">Excel VBA 網路爬蟲</h2>
 <p>本章節整理使用 VBA 進行網路資料抓取的概念與實作流程。</p>
+<p><img alt="1766832946907" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/Request.png"></p>
 <h3 id="1-網路爬蟲核心概念">1. 網路爬蟲核心概念</h3>
 <ul>
 <li><strong>網路溝通原理</strong>：網路溝通基於「Request (請求)」與「Response (回應)」。瀏覽器向伺服器發送請求，伺服器回傳資料。</li>
@@ -731,17 +879,107 @@ End Sub
 </ul>
 </li>
 </ul>
-<h4 id="c-csv-格式">C. CSV 格式</h4>
+<h4 id="c-csv-格式逗號分隔值">C. CSV 格式/逗號分隔值</h4>
+<p><img alt="1766667758141" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/csv%E9%87%8D%E8%A6%81%E5%88%87%E5%AD%97.png"></p>
 <ul>
 <li>可使用 <code>Split</code> 函數搭配換行符號 (<code>vbLf</code> 或 <code>Chr(10)</code>) 將資料切成多列。</li>
 <li>再對每一列使用 <code>Split</code> 函數搭配逗號 <code>,</code> 將其切成多個欄位。</li>
 </ul>
 <h4 id="d-暴力解決法">D. 暴力解決法</h4>
 <p>當標準解析方法不適用時，可直接使用 <code>Split</code> 函數，以特定字串為切割點，強行擷取所需資料片段。</p>
+<h4 id="e-字串處理split-函數">E. 字串處理：Split 函數</h4>
+<p>當資料混在一段長字串中，且有固定的分隔符號（如逗號、空白、斜線）時，<code>Split</code> 是最用的工具。</p>
+<p><img alt="Split語法說明" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/split%E8%AA%9E%E6%B3%95.png"></p>
+<ul>
+<li>
+<p><strong>語法</strong>：<code>Split(原始字串, &quot;分隔符號&quot;)</code> -&gt; 回傳一個陣列</p>
+</li>
+<li>
+<p><strong>範例</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub SplitExample()
+    Dim rawText As String
+    Dim dataArray() As String
+
+    rawText = &#34;Apple,Banana,Orange&#34;
+
+    &#39; 使用逗號切割字串
+    dataArray = Split(rawText, &#34;,&#34;)
+
+    &#39; 取出陣列中的資料 (索引從 0 開始)
+    MsgBox &#34;第二個水果是: &#34; &amp; dataArray(1) 
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：執行後會跳出視窗顯示 <code>第二個水果是: Banana</code>。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="f-字串處理replace-函數">F. 字串處理：Replace 函數</h4>
+<p>用來將字串中的某些文字<strong>取代</strong>成新的文字。常用於清理資料（如去除空白、替換符號）。</p>
+<ul>
+<li>
+<p><strong>語法</strong>：<code>Replace(原始字串, &quot;想被換掉的舊字&quot;, &quot;想換成的新字&quot;)</code></p>
+</li>
+<li>
+<p><strong>範例</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub ReplaceExample()
+    Dim money As String
+    Dim cleanMoney As String
+
+    money = &#34;NT$ 1,200&#34;
+
+    &#39; 1. 去除 &#34;NT$ &#34; (換成空字串)
+    cleanMoney = Replace(money, &#34;NT$ &#34;, &#34;&#34;)
+
+    &#39; 2. 去除 &#34;,&#34; (換成空字串)
+    cleanMoney = Replace(cleanMoney, &#34;,&#34;, &#34;&#34;)
+
+    MsgBox &#34;清理後的數字: &#34; &amp; cleanMoney
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：執行後會跳出視窗顯示 <code>清理後的數字: 1200</code>。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="g-進階字串處理chr34-與雙引號的處理">G. 進階字串處理：Chr(34) 與雙引號的處理</h4>
+<p>在 VBA (或大多數程式語言) 中，雙引號 <code>&quot;</code> 是用來包住字串的符號。這導致一個常見問題：<strong>如果我的字串內容本身就包含雙引號，該怎麼辦？</strong></p>
+<p>例如，我想用程式寫出 HTML：<code>&lt;div class=&quot;box&quot;&gt;</code>。</p>
+<ul>
+<li>
+<p><strong>災難寫法 (Escaping)</strong>：
+若直接寫 <code>s = &quot;&lt;div class=&quot;box&quot;&gt;&quot;</code>，程式會報錯，因為它以為 <code>&quot;box&quot;</code> 是程式碼。
+VBA 規定：要顯示一個雙引號，必須連續打兩個雙引號 <code>&quot;&quot;</code>。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">s = &#34;&lt;div class=&#34;&#34;box&#34;&#34;&gt;&#34; &#39; 超級容易看錯
+</code></pre></li>
+<li>
+<p><strong>救星寫法：Chr(34)</strong>：
+<code>Chr(34)</code> 是 ASCII code 中的第 34 號字元，也就是雙引號 <code>&quot;</code>。使用變數連接的方式，程式碼會清晰非常多。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">s = &#34;&lt;div class=&#34; &amp; Chr(34) &amp; &#34;box&#34; &amp; Chr(34) &amp; &#34;&gt;&#34;
+</code></pre></li>
+<li>
+<p><strong>與 Replace 搭配使用</strong>：
+當我們要清理資料中的雙引號時 (例如 CSV 內容常見 <code>Result=&quot;Pass&quot;</code> 這種格式)，<code>Chr(34)</code> 特別好用。</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub CleanQuotes()
+    Dim rawData As String
+    Dim cleanData As String
+
+    rawData = &#34;Name=&#34;&#34;Tom&#34;&#34;&#34; &#39; 模擬資料：Name=&#34;Tom&#34;
+
+    &#39; 方法1：看得眼花撩亂
+    cleanData = Replace(rawData, &#34;&#34;&#34;&#34;, &#34;&#34;)
+
+    &#39; 方法2：清楚易讀 (推薦)
+    cleanData = Replace(rawData, Chr(34), &#34;&#34;)
+
+    MsgBox cleanData &#39; 輸出: Name=Tom
+End Sub
+</code></pre></li>
+</ul>
 <hr>
 <h2 id="附錄資源連結">附錄：資源連結</h2>
 <ul>
 <li><strong>製作流程說明文件</strong>：<a href="https://www.dropbox.com/scl/fi/v7vwjdo7jeekkt1zm865j/_.paper?rlkey=kk8yifxbabsrt8sohdpch49sr&dl=0">Dropbox Paper</a></li>
+<li><strong>JSON 簡介</strong>：<a href="https://blog.wu-boy.com/2011/04/%E4%BD%A0%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84-json-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">不可不知的 JSON 基本介紹</a></li>
+<li><strong>財經參考</strong>：<a href="https://www.macromicro.me/spotlights/43/guan-jian-tu-biao-kan-dong-zhang-duan-qi-de-zhai-quan-li-cha-tou-lu-de-xun-xi">看懂長短期的債券利差透露的訊息</a></li>
 </ul>
 <hr>
 <h2 id="範例檔案下載">範例檔案下載</h2>
@@ -776,6 +1014,93 @@ MsgBox url &#39; 輸出: https://tw.stock.yahoo.com/quote/2330.TW
 <li><strong>用途</strong>：通常用於<strong>提交</strong>資料（登入帳號、填寫表單、上傳檔案）。</li>
 <li><strong>優點</strong>：較適合傳遞敏感或大量資料。</li>
 </ul>
+</li>
+</ul>
+<h3 id="5-進階技巧http-headers-設定-request-headers">5. 進階技巧：HTTP Headers 設定 (Request Headers)</h3>
+<p>在模仿瀏覽器發送請求時，「標頭 (Headers)」是用來告訴伺服器「我是誰」、「我想要什麼格式的資料」或「我從哪裡來」的重要名片。</p>
+<ul>
+<li>
+<p><strong>設定方法</strong>：
+使用 <code>objHTTP.setRequestHeader &quot;Header名稱&quot;, &quot;值&quot;</code> 來設定。
+<strong>注意</strong>：<code>setRequestHeader</code> 必須在 <code>Open</code> 之後，<code>Send</code> 之前執行。</p>
+</li>
+<li>
+<p><strong>常見且重要的 Headers</strong>：</p>
+<ol>
+<li>
+<p><strong>Content-Type</strong> (內容類型)：</p>
+<ul>
+<li><strong>用途</strong>：告訴伺服器我們傳送過去的資料 (Payload) 是什麼格式。</li>
+<li><strong>常見值</strong>：
+<ul>
+<li><code>application/x-www-form-urlencoded</code>：一般的表單提交 (Form Data)。</li>
+<li><code>application/json</code>：傳送 JSON 格式資料。</li>
+</ul>
+</li>
+<li><strong>時機</strong>：通常在 <code>POST</code> 請求時必須設定。</li>
+</ul>
+</li>
+<li>
+<p><strong>User-Agent</strong> (使用者代理)：</p>
+<p><img alt="User-Agent設定說明" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/user-agent.png"></p>
+<ul>
+<li><strong>用途</strong>：告訴伺服器我使用的瀏覽器與作業系統資訊。</li>
+<li><strong>重要性</strong>：許多網站會封鎖沒有此標頭的請求（視為機器人）。</li>
+<li><strong>範例</strong>：<code>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Referer</strong> (來源頁面)：</p>
+<ul>
+<li>
+<p><strong>用途</strong>：告訴伺服器我是從哪個頁面連結過來的。</p>
+</li>
+<li>
+<p><strong>重要性</strong>：有些網站會檢查此標頭以防止盜連。</p>
+<p><img alt="1766667355238" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/referer.png"></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cookie</strong>：</p>
+<ul>
+<li><strong>用途</strong>：包含使用者身分驗證或追蹤資訊。</li>
+<li><strong>時機</strong>：抓取需登入的網站時必備。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>程式碼範例</strong>：</p>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub SendPostRequestWithHeaders()
+    Dim objHTTP As Object
+    Dim strURL As String
+    Dim strBody As String
+
+    strURL = &#34;https://example.com/api/login&#34;
+    strBody = &#34;username=tom&amp;password=123&#34; &#39; 模擬表單資料
+
+    Set objHTTP = CreateObject(&#34;MSXML2.XMLHTTP&#34;)
+
+    objHTTP.Open &#34;POST&#34;, strURL, False
+
+    &#39; --- 設定 Headers (重點) ---
+    &#39; 1. 偽裝成 Chrome 瀏覽器
+    objHTTP.setRequestHeader &#34;User-Agent&#34;, &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&#34;
+    &#39; 2. 宣告傳送的資料是表單格式
+    objHTTP.setRequestHeader &#34;Content-Type&#34;, &#34;application/x-www-form-urlencoded&#34;
+    &#39; 3. 宣告來源 (如果需要)
+    objHTTP.setRequestHeader &#34;Referer&#34;, &#34;https://example.com/login&#34;
+    &#39; ---------------------------
+
+    objHTTP.send strBody &#39; POST 請求需傳入 Body
+
+    Debug.Print objHTTP.responseText
+    Set objHTTP = Nothing
+End Sub
+</code></pre><blockquote>
+<p><strong>輸出結果</strong>：程式執行完畢後，<strong>及時運算視窗</strong> (Immediate Window) 會顯示伺服器回傳的 HTML 或 JSON 內容。</p>
+</blockquote>
 </li>
 </ul>
 <hr>
@@ -819,12 +1144,12 @@ MsgBox url &#39; 輸出: https://tw.stock.yahoo.com/quote/2330.TW
             <div class="row">
               <div class="col-md-6">
                 
-                  <div class="prev-post">
-                    <span>上一篇</span>
-                    <a href="/automation/office%E5%AD%B8%E7%BF%92/">
-                      <h5>OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</h5>
-                    </a>
-                  </div>
+                <div class="prev-post">
+                  <span>上一篇</span>
+                  <a href="/automation/office%E5%AD%B8%E7%BF%92/">
+                    <h5>OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</h5>
+                  </a>
+                </div>
                 
               </div>
               <div class="col-md-6 text-right">
@@ -832,7 +1157,7 @@ MsgBox url &#39; 輸出: https://tw.stock.yahoo.com/quote/2330.TW
               </div>
             </div>
           </div>
-          
+
           
           <div class="navigation-tabs mt-5">
             <ul class="nav nav-tabs" id="navigationTabs" role="tablist">
@@ -849,21 +1174,21 @@ MsgBox url &#39; 輸出: https://tw.stock.yahoo.com/quote/2330.TW
                 <div class="row mt-4">
                   
                   
-                    
                   
                   
-                    
-                    <div class="col-md-6 mb-3">
-                      <div class="post-item">
-                        <a href="/automation/office%E5%AD%B8%E7%BF%92/">OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</a>
-                        <small>2025-11-08</small>
-                      </div>
+                  
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/automation/office%E5%AD%B8%E7%BF%92/">OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</a>
+                      <small>2025-11-08</small>
                     </div>
-                    
+                  </div>
+                  
                   
                 </div>
               </div>
-              
+
               
               <div class="tab-pane fade" id="latest" role="tabpanel">
                 <div class="row mt-4">
