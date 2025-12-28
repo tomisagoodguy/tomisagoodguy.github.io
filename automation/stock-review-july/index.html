@@ -111,6 +111,7 @@
   
 
   <!-- Google Analytics -->
+  
   <script>
     
     window['ga-disable-G-ZZ3XT9EZKH'] = true;
@@ -131,6 +132,7 @@
       'cookie_flags': 'SameSite=None;Secure'
     });
   </script>
+  
 </head><body>
 <!-- preloader start -->
 <div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
@@ -839,7 +841,7 @@
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <div id="js-cookie-box" class="cookie-box cookie-box-hide">
   <div class="container">
     <div class="cookie-content">
@@ -855,20 +857,32 @@
   (function () {
     const cookieBox = document.getElementById('js-cookie-box');
     const cookieButton = document.getElementById('js-cookie-button');
-    if (!Cookies.get('cookie-box')) {
-      cookieBox.classList.remove('cookie-box-hide');
-      cookieButton.onclick = function () {
-        Cookies.set('cookie-box', true, {
-          expires:  2 
-    });
-    
-    localStorage.setItem('cookie-consent', 'true');
-    window['ga-disable-G-ZZ3XT9EZKH'] = false;
 
-    cookieBox.classList.add('cookie-box-hide');
-  };
-		}
-	}) ();
+    function initCookieBox() {
+      if (typeof Cookies === 'undefined') {
+        setTimeout(initCookieBox, 100);
+        return;
+      }
+
+      if (!Cookies.get('cookie-box')) {
+        cookieBox.classList.remove('cookie-box-hide');
+        cookieButton.onclick = function () {
+          Cookies.set('cookie-box', true, {
+            expires:  2 
+      });
+      
+      localStorage.setItem('cookie-consent', 'true');
+      if (typeof window['ga-disable-G-ZZ3XT9EZKH'] !== 'undefined') {
+        window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      }
+
+      cookieBox.classList.add('cookie-box-hide');
+    };
+  }
+    }
+  initCookieBox();
+
+  }) ();
 </script>
 
 </body>
