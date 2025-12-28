@@ -6,7 +6,7 @@
     <description>Recent content on 定康筆記 | Tom&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Dec 2025 18:01:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Dec 2025 18:30:14 +0800</lastBuildDate>
     <atom:link href="https://tomisagoodguy.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>土地法(一)</title>
@@ -315,6 +315,20 @@
       <pubDate>Sun, 27 Jul 2025 00:00:00 +0800</pubDate>
       <guid>https://tomisagoodguy.github.io/automation/stock-review-july/</guid>
       <description>7月份策略強勢股觀察&#xA;2059 川湖 2404 漢唐 2449 京元電子 3032 偉訓 3037 欣興 3167 大量 3543 未知 4721 美琪瑪 4931 新盛力 6191 精成科 8358 金居 </description>
+    </item>
+    <item>
+      <title>繼承登記實務案例</title>
+      <link>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</link>
+      <pubDate>Sat, 13 Jul 2024 00:00:00 +0800</pubDate>
+      <guid>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</guid>
+      <description>這是繼承登記的實務案例範例文章內容。</description>
+    </item>
+    <item>
+      <title>How To Use Checklists To Improve Your UX</title>
+      <link>https://tomisagoodguy.github.io/blog/demo/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      <guid>https://tomisagoodguy.github.io/blog/demo/</guid>
+      <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
     </item>
   </channel>
 </rss>

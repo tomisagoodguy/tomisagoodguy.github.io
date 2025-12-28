@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go Language on land-knowledege</title>
-    <link>http://localhost:3921/categories/go-language/</link>
-    <description>Recent content in Go Language on land-knowledege</description>
+    <title>Go Language on 定康筆記 | Tom&#39;s Note</title>
+    <link>https://tomisagoodguy.github.io/categories/go-language/</link>
+    <description>Recent content in Go Language on 定康筆記 | Tom&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 29 Oct 2019 10:07:47 +0600</lastBuildDate>
-    <atom:link href="http://localhost:3921/categories/go-language/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Dec 2025 18:30:14 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/go-language/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How To Use Checklists To Improve Your UX</title>
-      <link>http://localhost:3921/blog/demo/</link>
+      <link>https://tomisagoodguy.github.io/blog/demo/</link>
       <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
-      <guid>http://localhost:3921/blog/demo/</guid>
+      <guid>https://tomisagoodguy.github.io/blog/demo/</guid>
       <description>Heading 1 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
     </item>
   </channel>
