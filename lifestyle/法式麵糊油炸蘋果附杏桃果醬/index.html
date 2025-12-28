@@ -40,6 +40,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   
 
   <!-- plugins -->
@@ -939,7 +945,7 @@
 
 <script src="https://tomisagoodguy.github.io/plugins/search/mark.js"  ></script>
 
-<script src="https://tomisagoodguy.github.io/plugins/search/search.js"  ></script>
+<script src="https://tomisagoodguy.github.io/plugins/search/search-v2.js"  ></script>
 
 <!-- Main Script -->
 
@@ -984,6 +990,35 @@
         }
       });
     }
+
+    
+    const codeBlocks = document.querySelectorAll('pre');
+    codeBlocks.forEach(function (pre) {
+      
+      const button = document.createElement('button');
+      button.className = 'copy-button';
+      button.innerText = 'Copy';
+
+      
+      pre.appendChild(button);
+
+      button.addEventListener('click', function () {
+        
+        const code = pre.querySelector('code');
+        const textToCopy = code ? code.innerText : pre.innerText;
+
+        
+        navigator.clipboard.writeText(textToCopy).then(function () {
+          button.innerText = 'Copied!';
+          setTimeout(function () {
+            button.innerText = 'Copy';
+          }, 2000);
+        }).catch(function (err) {
+          console.error('Failed to copy: ', err);
+          button.innerText = 'Error';
+        });
+      });
+    });
   });
 </script>
 

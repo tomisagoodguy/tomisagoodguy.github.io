@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <title>Google Maps 地點清單自動爬蟲 (JavaScript Snippet) | Land-Knowledge</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description"
+    content="一支能在 Chrome Console 執行的 JavaScript，解決 Google Maps 虛擬捲動無法抓取完整清單的問題，支援多國貨幣與圖片抓取。">
+  
+  <meta name="author" content="定康">
+  <meta name="theme-color" content=" #fff">
+
+  <!-- canonical link -->
+  <link rel="canonical" href="http://localhost:1313/automation/auto-download-google-food-list/">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="liva-hugo" />
+  <meta name="generator" content="Hugo 0.127.0">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:title" content="Google Maps 地點清單自動爬蟲 (JavaScript Snippet) | Land-Knowledge">
+  <meta property="og:description"
+    content="一支能在 Chrome Console 執行的 JavaScript，解決 Google Maps 虛擬捲動無法抓取完整清單的問題，支援多國貨幣與圖片抓取。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:1313/automation/auto-download-google-food-list/">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Maps 地點清單自動爬蟲 (JavaScript Snippet) | Land-Knowledge">
+  <meta name="twitter:description"
+    content="一支能在 Chrome Console 執行的 JavaScript，解決 Google Maps 虛擬捲動無法抓取完整清單的問題，支援多國貨幣與圖片抓取。">
+  
+  
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/slick/slick.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/venobox/venobox.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" >
+  
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/style.min.css" media="screen">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+
+  <!--Favicon-->
+  <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+
+  <!-- Structured Data -->
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/localhost:1313\/automation\/auto-download-google-food-list\/"
+      },
+      "headline": "Google Maps 地點清單自動爬蟲 (JavaScript Snippet)",
+      "description": "一支能在 Chrome Console 執行的 JavaScript，解決 Google Maps 虛擬捲動無法抓取完整清單的問題，支援多國貨幣與圖片抓取。",
+      
+      "datePublished": "2025-12-28T00:00:00\u002b00:00",
+      "dateModified": "2025-12-28T12:11:18\u002b08:00",
+      "author": {
+        "@type": "Person",
+        "name": "定康"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Land-Knowledge",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "http:\/\/localhost:1313\/"
+        }
+      }
+    }
+  </script>
+  
+
+  <!-- Google Analytics -->
+  
+</head><body>
+<!-- preloader start -->
+<div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
+  <div class="preloader-content">
+    
+    <div class="preloader-spinner"></div>
+    
+    <p class="preloader-text">加載中...</p>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .preloader-content {
+    text-align: center;
+  }
+  
+  .preloader img {
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    animation: pulse 1.5s ease infinite;
+  }
+  
+  .preloader-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333333;
+    opacity: 0.8;
+  }
+  
+  .preloader-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+   
+  body.loading {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loading');
+    
+    
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        
+        preloader.classList.add('loaded');
+        
+        
+        setTimeout(function() {
+          document.body.classList.remove('loading');
+        }, 500);
+        
+        
+        setTimeout(function() {
+          preloader.parentNode.removeChild(preloader);
+        }, 1000);
+      }
+    });
+    
+    
+    setTimeout(function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader && !preloader.classList.contains('loaded')) {
+        preloader.classList.add('loaded');
+        document.body.classList.remove('loading');
+      }
+    },  8000 );
+  });
+</script>
+<!-- preloader end -->
+
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="http://localhost:1313/">
+        
+        <h3>Land-Knowledge</h3>
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/profile.php?id=100005583693079"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/tomisagoodguy?tab=repositories"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/">
+          
+          <h3>Land-Knowledge</h3>
+          
+        </a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/">首頁</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/lifestyle/">廚藝與生活</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/real-estate/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              代書修煉
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/real-estate/exam-notes/">考試筆記</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/automation/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              自動化實驗室
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/automation/">所有文章</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/tools/property-tax.html">房地稅務試算</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link about-me-nav" href="http://localhost:1313/about/">關於</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/links/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              相關連結
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/links/#%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7">實用工具</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/links/#%E5%9C%B0%E6%94%BF%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">地政相關網站</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/links/#%E7%90%86%E8%B2%A1%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">理財相關網站</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/links/#%E6%B1%82%E8%81%B7%E7%9B%B8%E9%97%9C%E7%B6%B2%E7%AB%99">求職相關網站</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/links/#%E5%85%B6%E4%BB%96">其他</a>
+              
+            </div>
+          </li>
+          
+          
+        </ul>
+
+        <div class="theme-switch-wrapper pl-lg-4">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+              <i class="fas fa-sun sun-icon"></i>
+              <i class="fas fa-moon moon-icon"></i>
+            </div>
+          </label>
+        </div>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="http://localhost:1313//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="輸入關鍵字並按 Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<section class="section-sm category-coding">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-3">
+        <div class="toc-placeholder"></div>
+        <div class="toc-container">
+          <div class="toc-title">文章目錄</div>
+          <div class="toc-content">
+            <nav><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景與痛點">背景與痛點</a></li>
+    <li><a href="#解決方案">解決方案</a></li>
+    <li><a href="#程式碼-v30-穩定版">程式碼 (V3.0 穩定版)</a></li>
+  </ul>
+</nav></nav>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-9">
+        
+        <a href="/categories/coding" class="badge badge-primary badge-sm">Coding</a>
+        
+        <a href="/categories/productivity" class="badge badge-primary badge-sm">Productivity</a>
+        
+        <h2>Google Maps 地點清單自動爬蟲 (JavaScript Snippet)</h2>
+        <div class="mb-3 post-meta">
+          <span>By 定康</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>28 December 2025</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>3 min read</span>
+        </div>
+
+
+        <div class="content mb-5 post-content">
+          <h2 id="背景與痛點">背景與痛點</h2>
+<p>Google Maps 的地點清單（List）沒有內建匯出功能。如果想把收藏的餐廳整理成試算表進行篩選（例如依據價格、評分），只能手動複製貼上。</p>
+<p>此外，Google Maps 使用了<strong>虛擬捲動 (Virtual Scrolling)</strong> 技術，若直接抓取 DOM 元素，只能抓到當前螢幕顯示的幾筆，上面的資料會被移除。且 Class 名稱（如 <code>MW4etd</code>）經常變動，導致爬蟲失效。</p>
+<h2 id="解決方案">解決方案</h2>
+<p>這是一支 <strong>JavaScript Snippet</strong>，直接在 Chrome 開發者工具執行。它具備以下功能：</p>
+<ol>
+<li><strong>自動捲動</strong>：模擬使用者行為往下滑，觸發資料載入。</li>
+<li><strong>邊捲邊抓</strong>：使用 <code>Map</code> 資料結構儲存，解決虛擬捲動導致元素消失的問題。</li>
+<li><strong>強健解析</strong>：改用 <code>aria-label</code> 抓取評分與評論數，不依賴隨機 CSS Class。</li>
+<li><strong>多國貨幣</strong>：支援日幣 (¥)、美金 ($)、歐元 (€) 等符號識別。</li>
+<li><strong>圖片備份</strong>：同時偵測 <code>img src</code> 與 <code>background-image</code>。</li>
+</ol>
+<h2 id="程式碼-v30-穩定版">程式碼 (V3.0 穩定版)</h2>
+<p>將以下程式碼貼入 Chrome DevTools 的 <strong>Sources &gt; Snippets</strong> 中儲存，或直接在 <strong>Console</strong> 執行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// === 設定區 ===
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">SCROLL_STEP</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>;     <span style="color:#75715e">// 每次捲動距離
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WAIT_TIME</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>;      <span style="color:#75715e">// 等待載入時間 (秒數加長以確保圖片載入)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MAX_NO_NEW_DATA</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;   <span style="color:#75715e">// 連續幾次沒新資料就停止
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// === 自動尋找捲動容器 ===
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findScrollContainer</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div[role=&#34;feed&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">el</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">el</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;button[class*=&#34;SMP2wb&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">item</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">parent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">parentElement</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">parent</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">parent</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">clientHeight</span>) <span style="color:#f92672">&amp;&amp;</span> 
+</span></span><span style="display:flex;"><span>                (<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">overflowY</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;auto&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">overflowY</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;scroll&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;m6QErb&#39;</span>))) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">parent</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">parent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent</span>.<span style="color:#a6e22e">parentElement</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">parent</span> <span style="color:#f92672">===</span> document.<span style="color:#a6e22e">body</span>) <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scrollContainer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">findScrollContainer</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">scrollContainer</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;❌ 找不到捲動區塊！請確認左側清單是否已顯示。&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;🚀 啟動 V3.0 強力抓取模式...&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">savedData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">noNewDataCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">previousScrollTop</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// === 主迴圈 ===
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;button[class*=&#34;SMP2wb&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 1. 店名 (最穩定的錨點)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameEl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.fontHeadlineSmall&#39;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nameEl</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">nameEl</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>() <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;未命名&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 只有新資料才處理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">savedData</span>.<span style="color:#a6e22e">has</span>(<span style="color:#a6e22e">name</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;未命名&#39;</span>) {
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 2. 評價與評論數 (改用 aria-label 解析，最穩定)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rating</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">reviews</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ariaEl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[aria-label*=&#34;星&#34;], [aria-label*=&#34;stars&#34;], [aria-label*=&#34;評論&#34;], [aria-label*=&#34;reviews&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ariaEl</span>) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">label</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ariaEl</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-label&#39;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ratingMatch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">label</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/([\d\.]+)\s*(?:顆星|stars)/</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reviewMatch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">label</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/([\d,]+)\s*(?:則評論|reviews)/</span>);
+</span></span><span style="display:flex;"><span>                        
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ratingMatch</span>) <span style="color:#a6e22e">rating</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ratingMatch</span>[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reviewMatch</span>) <span style="color:#a6e22e">reviews</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reviewMatch</span>[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/,/g</span>, <span style="color:#e6db74">&#39;&#39;</span>); 
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">// 備用方案：舊式 Class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ratingEl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.MW4etd&#39;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ratingEl</span>) <span style="color:#a6e22e">rating</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ratingEl</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reviewEl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.UY7F9&#39;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reviewEl</span>) <span style="color:#a6e22e">reviews</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reviewEl</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[(),]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 3. 圖片 (雙重偵測)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">imgUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgEl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;img&#39;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">imgEl</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">imgEl</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">imgEl</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;data:image&#39;</span>)) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">imgUrl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">imgEl</span>.<span style="color:#a6e22e">src</span>;
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">// 嘗試找背景圖
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bgDiv</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div[style*=&#34;background-image&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">bgDiv</span>) {
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">style</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bgDiv</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;style&#39;</span>);
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">match</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/url\(&#34;?(.+?)&#34;?\)/</span>);
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">match</span>) <span style="color:#a6e22e">imgUrl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">match</span>[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 4. 價格 (支援多國貨幣)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allSpans</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;span&#39;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">span</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">allSpans</span>) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">span</span>.<span style="color:#a6e22e">innerText</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">/[¥$€£₩]/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">text</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;NT$&#39;</span>)) {
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 存入 Map
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">savedData</span>.<span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">name</span>, {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">rating</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">rating</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">reviews</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">reviews</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">price</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">imgUrl</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">imgUrl</span>
+</span></span><span style="display:flex;"><span>                    });
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 忽略單筆錯誤
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`📦 目前收集: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">savedData</span>.<span style="color:#a6e22e">size</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 筆 | 最新: </span><span style="color:#e6db74">${</span>Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">savedData</span>.<span style="color:#a6e22e">keys</span>()).<span style="color:#a6e22e">pop</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 檢查是否到底
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">scrollContainer</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">previousScrollTop</span>) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">noNewDataCount</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">noNewDataCount</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">MAX_NO_NEW_DATA</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;✅ 判定已達底部。&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">noNewDataCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">previousScrollTop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scrollContainer</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 執行捲動
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">scrollContainer</span>.<span style="color:#a6e22e">scrollBy</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">SCROLL_STEP</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">r</span> =&gt; <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">WAIT_TIME</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// === 匯出 CSV ===
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">results</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">savedData</span>.<span style="color:#a6e22e">values</span>());
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">csvHeader</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;\ufeff店名,評價,評論數,價格帶,圖片網址\n&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">csvBody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">row</span> =&gt; 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">rating</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">reviews</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">price</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">imgUrl</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>    ).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blob</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">csvHeader</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">csvBody</span>], { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/csv;charset=utf-8;&#39;</span> });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">blob</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`GoogleMaps_V3_</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>().<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv`</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">link</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">click</span>();
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">link</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`🎉 抓取完成！共 </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> 筆資料。`</span>);
+</span></span><span style="display:flex;"><span>})();
+</span></span></code></pre></div>
+        </div>
+
+        
+        <div class="navigation-container">
+          
+          <div class="post-navigation">
+            <div class="row">
+              <div class="col-md-6">
+                
+                <div class="prev-post">
+                  <span>上一篇</span>
+                  <a href="/automation/excel-vba%E5%AD%B8%E7%BF%92/">
+                    <h5>Excel VBA 學習筆記：從入門到網路爬蟲</h5>
+                  </a>
+                </div>
+                
+              </div>
+              <div class="col-md-6 text-right">
+                
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="navigation-tabs mt-5">
+            <ul class="nav nav-tabs" id="navigationTabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="related-tab" data-toggle="tab" href="#related" role="tab">相關文章</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab">最新文章</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="navigationTabsContent">
+              
+              <div class="tab-pane fade show active" id="related" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/automation/excel-vba%E5%AD%B8%E7%BF%92/">Excel VBA 學習筆記：從入門到網路爬蟲</a>
+                      <small>2025-11-08</small>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+
+              
+              <div class="tab-pane fade" id="latest" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E8%8F%AF%E7%88%BE%E9%81%93%E5%A4%AB%E6%B2%99%E6%8B%89%E5%92%8C%E8%8D%89%E8%8E%93%E8%88%92%E8%8A%99%E8%95%BE%E8%9B%8B%E6%8D%B2/">草莓舒芙蕾蛋捲佐華爾道夫沙拉 (Strawberry Soufflé Omelet &amp; Waldorf Salad)</a>
+                      <small>2025-12-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%BE%A9%E5%BC%8F%E8%BE%A3%E5%91%B3%E7%87%89%E7%85%AE%E7%BE%8A%E8%82%89/">義式辣味燉煮羊肉 (Spicy Basilicata Lamb Stew)</a>
+                      <small>2025-12-11</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E5%9F%BA%E8%BC%94%E9%9B%9E%E9%99%84%E7%82%B8%E8%84%86%E8%96%AF%E7%82%92%E7%95%AA%E8%8C%84%E8%88%87%E7%BF%A0%E7%B6%A0%E6%B2%99%E6%8B%89/">基輔雞附炸脆薯炒番茄與翠綠沙拉</a>
+                      <small>2025-12-06</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E4%BF%84%E5%BC%8F%E7%87%B4%E7%89%9B%E8%82%89%E9%99%84%E8%94%AC%E8%8F%9C%E9%A3%AF/">俄式燴牛肉附蔬菜飯</a>
+                      <small>2025-11-27</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E6%8B%BF%E5%9D%A1%E9%87%8C%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E7%82%B8%E6%8A%AB%E8%96%A9/">拿坡里(那不勒斯)炸披薩 Pizza Fritta</a>
+                      <small>2025-11-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%B6%AD%E4%B9%9F%E7%B4%8D%E5%BC%8F%E7%85%8E%E8%B1%AC%E6%8E%92%E9%99%84%E7%95%AA%E8%8C%84%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/">維也納式煎豬排附番茄義大利麵</a>
+                      <small>2025-11-15</small>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tomisagoodguy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-capitalize footer-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="http://localhost:1313/" aria-label="Land-Knowledge">
+          
+          <h3>Land-Knowledge</h3>
+          
+        </a>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">聯絡我們</h6>
+        <ul class="list-unstyled contact-list">
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center" href="tel:0911445898">
+              <i class="ti-mobile text-primary"></i>0911445898
+            </a>
+          </li>
+          
+          
+          <li class="mb-3 d-flex align-items-center">
+            <i class="ti-location-pin text-primary"></i>Taiwan
+          </li>
+          
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center" href="mailto:tom890108159@gmail.com">
+              <i class="ti-email text-primary"></i>tom890108159@gmail.com
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">社群連結</h6>
+        <ul class="list-unstyled social-list">
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://www.facebook.com/profile.php?id=100005583693079" >
+              <i class="ti-facebook"></i>facebook
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://github.com/tomisagoodguy?tab=repositories" >
+              <i class="ti-github"></i>github
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">文章分類</h6>
+        <ul class="list-unstyled category-list">
+          <li class="mb-3">
+            <a class="text-dark category-item" href="/categories/">
+              查看所有分類
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">快速連結</h6>
+        <ul class="list-unstyled quick-links">
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/">
+              首頁
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/lifestyle/">
+              廚藝與生活
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/real-estate/">
+              代書修煉
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/automation/">
+              自動化實驗室
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/about/">
+              關於
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/links/">
+              相關連結
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center footer-copyright">
+        | copyright © 2025 定康的學習筆記 All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+<a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
+
+<script>
+  var indexURL = "http:\/\/localhost:1313\/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jQuery/jquery.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/slick/slick.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/venobox/venobox.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/fuse.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/mark.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/search.js"  ></script>
+
+<!-- Main Script -->
+
+<script src="http://localhost:1313/js/script.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('checkbox');
+    const body = document.body;
+    const themeClass = 'dark-mode';
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add(themeClass);
+        if (themeToggle) themeToggle.checked = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.remove(themeClass);
+        if (themeToggle) themeToggle.checked = false;
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || savedTheme === 'dark-mode') {
+      applyTheme('dark');
+    } else if (!savedTheme && prefersDark) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+
+    
+    if (themeToggle) {
+      themeToggle.addEventListener('change', function (e) {
+        if (e.target.checked) {
+          applyTheme('dark');
+        } else {
+          applyTheme('light');
+        }
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const response = document.getElementById('newsletter-response');
+        const email = this.querySelector('input[name="email"]').value;
+
+        
+        
+
+        response.innerHTML = '<p class="text-success">感謝您的訂閱！</p>';
+        this.reset();
+      });
+    }
+  });
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+  <div class="container">
+    <div class="cookie-content">
+      <p>本網站使用Cookie來改善您的瀏覽體驗。繼續使用本網站，即表示您同意我們的Cookie使用政策。</p>
+      <div class="cookie-buttons">
+        <button id="js-cookie-button" class="btn btn-sm btn-primary">我接受</button>
+        <a href="" class="btn btn-sm btn-outline-secondary ml-2">了解更多</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    const cookieBox = document.getElementById('js-cookie-box');
+    const cookieButton = document.getElementById('js-cookie-button');
+
+    function initCookieBox() {
+      if (typeof Cookies === 'undefined') {
+        setTimeout(initCookieBox, 100);
+        return;
+      }
+
+      if (!Cookies.get('cookie-box')) {
+        cookieBox.classList.remove('cookie-box-hide');
+        cookieButton.onclick = function () {
+          Cookies.set('cookie-box', true, {
+            expires:  2 
+      });
+      
+      localStorage.setItem('cookie-consent', 'true');
+      if (typeof window['ga-disable-G-ZZ3XT9EZKH'] !== 'undefined') {
+        window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      }
+
+      cookieBox.classList.add('cookie-box-hide');
+    };
+  }
+    }
+  initCookieBox();
+
+  }) ();
+</script>
+
+</body>
+
+</html>

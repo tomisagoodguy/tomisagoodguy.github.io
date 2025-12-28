@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on Land-Knowledge</title>
+    <link>https://tomisagoodguy.github.io/categories/coding/</link>
+    <description>Recent content in Coding on Land-Knowledge</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 28 Dec 2025 13:27:01 +0800</lastBuildDate>
+    <atom:link href="https://tomisagoodguy.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Maps 地點清單自動爬蟲 (JavaScript Snippet)</title>
+      <link>https://tomisagoodguy.github.io/automation/google-food-list-scraper/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://tomisagoodguy.github.io/automation/google-food-list-scraper/</guid>
+      <description>背景與痛點 Google Maps 的地點清單（List）沒有內建匯出功能。如果想把收藏的餐廳整理成試算表進行篩選（例如依據價格、評分），只能手動複製貼上。&#xA;此外，Google Maps 使用了虛擬捲動 (Virtual Scrolling) 技術，若直接抓取 DOM 元素，只能抓到當前螢幕顯示的幾筆，上面的資料會被移除。且 Class 名稱（如 MW4etd）經常變動，導致爬蟲失效。</description>
+    </item>
+  </channel>
+</rss>

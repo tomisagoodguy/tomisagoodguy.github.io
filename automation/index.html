@@ -37,6 +37,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   
 
   <!-- plugins -->
@@ -960,6 +966,26 @@
             <div class="col-md-6 col-lg-4 mb-4">
               <article class="card h-100">
                 <div class="card-body px-0">
+                  <a href="https://tomisagoodguy.github.io/automation/google-food-list-scraper/" class="h5 d-block my-3">Google Maps 地點清單自動爬蟲 (JavaScript Snippet)</a>
+                  <div class="mb-3 post-meta">
+                    <time class="text-muted small" datetime="2025-12-28 00:00:00 &#43;0000 UTC">December 28, 2025</time>
+                    <span class="border-bottom border-primary px-2 mx-1"></span>
+                    <span class="text-muted small">3 min read</span>
+                  </div>
+                  <p class="card-text">
+                    
+                    背景與痛點 Google Maps 的地點清單（List）沒有內建匯出功能。如果想把收藏的餐廳整理成試算表進行篩選（例如依據價格、評分），只能手動複製貼上。
+此 …
+                    
+                  </p>
+                  <a href="https://tomisagoodguy.github.io/automation/google-food-list-scraper/" class="btn btn-outline-primary btn-sm mt-auto">read more</a>
+                </div>
+              </article>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4">
+              <article class="card h-100">
+                <div class="card-body px-0">
                   <a href="https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/" class="h5 d-block my-3">Excel VBA 學習筆記：從入門到網路爬蟲</a>
                   <div class="mb-3 post-meta">
                     <time class="text-muted small" datetime="2025-11-08 00:00:00 &#43;0800 CST">November 8, 2025</time>
@@ -1249,7 +1275,7 @@
 
 <script src="https://tomisagoodguy.github.io/plugins/search/mark.js"  ></script>
 
-<script src="https://tomisagoodguy.github.io/plugins/search/search.js"  ></script>
+<script src="https://tomisagoodguy.github.io/plugins/search/search-v2.js"  ></script>
 
 <!-- Main Script -->
 
@@ -1294,6 +1320,35 @@
         }
       });
     }
+
+    
+    const codeBlocks = document.querySelectorAll('pre');
+    codeBlocks.forEach(function (pre) {
+      
+      const button = document.createElement('button');
+      button.className = 'copy-button';
+      button.innerText = 'Copy';
+
+      
+      pre.appendChild(button);
+
+      button.addEventListener('click', function () {
+        
+        const code = pre.querySelector('code');
+        const textToCopy = code ? code.innerText : pre.innerText;
+
+        
+        navigator.clipboard.writeText(textToCopy).then(function () {
+          button.innerText = 'Copied!';
+          setTimeout(function () {
+            button.innerText = 'Copy';
+          }, 2000);
+        }).catch(function (err) {
+          console.error('Failed to copy: ', err);
+          button.innerText = 'Error';
+        });
+      });
+    });
   });
 </script>
 

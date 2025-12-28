@@ -1329,3 +1329,843 @@ input:checked+.slider .moon-icon {
   transform: translateY(-50%) rotate(90deg);
   /* Rotate out effect */
 }
+
+/* Copy Button Styles */
+.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+pre:hover .copy-button {
+  display: block;
+}
+
+.copy-button:hover {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+}
+
+body.dark-mode .copy-button {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-mode .copy-button:hover {
+  background-color: #444;
+}
+
+pre {
+  position: relative;
+  /* Crucial for absolute positioning of the button */
+}
+
+/* --------------------------
+   Blackboard Theme for Articles
+   -------------------------- */
+.post-content {
+  background-color: #2b3e50;
+  /* Dark slate chalkboard color */
+  /* Reduced noise for better readability */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center top;
+
+  color: #ffffff;
+  /* Pure white for maximum contrast */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Readable standard font */
+  font-size: 1.1rem;
+  /* Standard comfortable reading size */
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+
+  padding: 40px;
+  border: 12px solid #5d4037;
+  /* Wood frame */
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.6),
+    /* Deep inner shadow */
+    0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+/* Headings retain the "Chalk" feel */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: #fff9c4;
+  /* Light chalk yellow for headings */
+  font-family: 'Caveat', cursive, sans-serif;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.post-content h1 {
+  font-size: 2.5rem;
+}
+
+.post-content h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.post-content h3 {
+  font-size: 1.75rem;
+}
+
+/* Links */
+.post-content a {
+  color: #81ecec;
+  text-decoration: none;
+  border-bottom: 1px dashed #81ecec;
+  transition: all 0.3s ease;
+}
+
+.post-content a:hover {
+  color: #4bcffa;
+  border-bottom-style: solid;
+  background-color: rgba(129, 236, 236, 0.1);
+}
+
+/* Code blocks look like attached papers or monitors */
+.post-content pre {
+  background-color: #1e1e1e !important;
+  border: 1px solid #444;
+  border-left: 4px solid #3b71ca;
+  /* Accent color */
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.95rem;
+  margin: 30px 0;
+  color: #e0e0e0;
+}
+
+.post-content code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #ffd700;
+  /* Gold color for inline code */
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* List handling */
+.post-content ul,
+.post-content ol {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.post-content li {
+  margin-bottom: 10px;
+}
+
+/* Dark mode compatibility */
+body.dark-mode .post-content {
+  border-color: #3e2723;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Force high contrast for all semantic text elements */
+.post-content em,
+.post-content i,
+.post-content small,
+.post-content span,
+.post-content p {
+  color: #e0e0e0 !important;
+  /* Extremely light grey/white */
+}
+
+/* Make emphasis text (italics) pop a bit more with a chalky yellow-white */
+.post-content em,
+.post-content i {
+  color: #fffde7 !important;
+  opacity: 0.9;
+}
+
+
+/* Blackboard Table Styles - Aggressive Override */
+.post-content table,
+.post-content table>*,
+.post-content .table,
+.post-content .table>* {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+.post-content table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.post-content th,
+.post-content thead th {
+  border-bottom: 2px solid #fff9c4 !important;
+  /* Yellow chalk line */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  /* Slight highlight */
+  font-weight: 700 !important;
+  color: #fff9c4 !important;
+  font-family: 'Caveat', cursive, sans-serif !important;
+  font-size: 1.3rem !important;
+  padding: 15px !important;
+}
+
+.post-content td,
+.post-content tbody td {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3) !important;
+  padding: 12px 15px !important;
+  color: #e0e0e0 !important;
+  background-color: transparent !important;
+}
+
+.post-content tr,
+.post-content tbody tr,
+.post-content thead tr,
+.post-content .table-striped tbody tr:nth-of-type(odd) {
+  background-color: transparent !important;
+  background: none !important;
+}
+
+.post-content tr:hover td {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* --------------------------
+   TOC Hover Animations
+   -------------------------- */
+.toc-content a {
+  display: block;
+  padding: 5px 0;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.toc-content a:hover {
+  color: #3b71ca !important;
+  padding-left: 12px;
+  /* Slide effect */
+  border-left-color: #3b71ca;
+  background: linear-gradient(90deg, rgba(59, 113, 202, 0.05) 0%, transparent 100%);
+}
+
+.toc-content ul {
+  padding-left: 20px;
+}
+
+/* --------------------------
+   Reinforce Copy Button Visibility
+   -------------------------- */
+/* Ensure pre blocks are positioned to hold the button */
+pre,
+.highlight {
+  position: relative !important;
+}
+
+/* Ensure button is always on top and visible */
+.copy-button {
+  z-index: 1000 !important;
+  opacity: 0;
+  /* Hidden by default */
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+}
+
+/* Show on hover of the pre/highlight container */
+pre:hover .copy-button,
+.highlight:hover .copy-button {
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix for nested code blocks (Hugo often wraps pre in div.highlight) */
+
+
+/* --------------------------
+   Fix Slick Slider Overflow & Layout
+   -------------------------- */
+.real-estate-slider,
+.automation-slider,
+.lifestyle-slider {
+  max-width: 100%;
+  position: relative;
+  /* Add padding to the sides to reserve space for arrows so they don't block content */
+  padding: 0 70px;
+  margin-bottom: 30px;
+}
+
+/* --- Equal Height Cards (Flexbox Magic) - SCOPED --- */
+.real-estate-slider .slick-track,
+.automation-slider .slick-track,
+.lifestyle-slider .slick-track {
+  display: flex !important;
+}
+
+.real-estate-slider .slick-slide,
+.automation-slider .slick-slide,
+.lifestyle-slider .slick-slide {
+  height: auto !important;
+  /* Let flexbox determine height */
+  display: flex !important;
+  justify-content: center;
+}
+
+/* The wrapper div inside the slide */
+.real-estate-slider .slick-slide>div,
+.automation-slider .slick-slide>div,
+.lifestyle-slider .slick-slide>div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* Fill the slide */
+}
+
+/* The card itself matches the height */
+.real-estate-slider .slick-slide>div>.card,
+.automation-slider .slick-slide>div>.card,
+.lifestyle-slider .slick-slide>div>.card {
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  /* Ensure it fills the height */
+}
+
+.real-estate-slider .slick-slide>div>.card .card-body,
+.automation-slider .slick-slide>div>.card .card-body,
+.lifestyle-slider .slick-slide>div>.card .card-body {
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* --- Improved Arrow Styling & Positioning --- */
+.slick-prev,
+.slick-next {
+  width: 30px;
+  height: 30px;
+  z-index: 20;
+  /* Center vertically */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Position them in the padded area we created */
+.slick-prev {
+  left: 20px !important;
+}
+
+.slick-next {
+  right: 20px !important;
+}
+
+/* Style the arrow icons (Pseudo-elements) */
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'Font Awesome 5 Free';
+  /* Use FontAwesome if available, or fallback */
+  font-weight: 900;
+  font-size: 20px;
+  color: #adb5bd;
+  /* Neutral grey, not ugly blue */
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.slick-prev:before {
+  content: "←";
+  /* Fallback to standard arrow if FA fails */
+}
+
+.slick-next:before {
+  content: "→";
+}
+
+/* Hover effects for arrows */
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #3b71ca;
+  /* Primary color on hover */
+  transform: scale(1.2);
+}
+
+/* Ensure the track doesn't calculate wild widths */
+.slick-list {
+  margin: 0 -10px;
+  /* Counteract padding if needed */
+}
+
+/* Fix for slick track width calculation issues */
+.slick-slider {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent body horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* --- Compact Card Styling for Slider --- */
+.slick-slide .card-body {
+  padding: 1rem !important;
+  /* Reduce padding from default */
+}
+
+.slick-slide .h5 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.1rem;
+  /* Slightly smaller title */
+}
+
+.slick-slide .post-meta {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.85rem;
+}
+
+.slick-slide .card-text {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.slick-slide .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+
+  /* --- Tighten Homepage Layout --- */
+  .hero-section {
+    padding-bottom: 20px !important;
+    /* Reduce space below hero */
+  }
+
+  /* Reduce top padding for category section (Topic Explorer) */
+  section.section.pb-0 {
+    padding-top: 40px !important;
+    /* Was ~80-100px */
+  }
+
+  /* Reduce gap between category slider and next content */
+  .category-slider {
+    margin-bottom: 30px !important;
+    /* Tighten up */
+  }
+
+  /* Reduce space below "Topic Explorer" title */
+  .col-12.mb-4 h3.section-title {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* --- Compact Footer Layout --- */
+footer .h5,
+footer .h4 {
+  margin-bottom: 1rem !important;
+  /* Reduce space below headers */
+}
+
+/* Reduce spacing in lists */
+footer ul li {
+  margin-bottom: 0.25rem !important;
+  /* Was mb-3 (1rem) */
+}
+
+footer ul li a {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  display: inline-block !important;
+  /* Prevent full-width flex stretching if applicable */
+}
+
+/* Reduce column margins */
+footer .mb-5 {
+  margin-bottom: 1.5rem !important;
+  /* Reduce space between rows/columns */
+}
+
+/* Reduce logo section margin */
+footer .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+/* Compact the logo image if needed */
+footer img {
+  margin-bottom: 1rem !important;
+}
+
+/* Multi-column layout for Quick Links to save vertical space */
+footer .quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  /* Adjust gap as needed */
+}
+
+footer .quick-links li {
+  width: 48%;
+  /* 2 items per row ~50% each */
+  margin-bottom: 0.25rem !important;
+}
+
+/* Ensure nice alignment */
+footer .quick-links li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+
+}
+
+/* --- Domineering Sliders (Beast Mode) --- */
+.real-estate-slider .card,
+.automation-slider .card,
+.lifestyle-slider .card {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27), box-shadow 0.3s ease;
+  border: none;
+  /* Remove default border for cleaner look */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* Soft initial shadow */
+}
+
+/* Hover effect: Scale up and lift */
+.real-estate-slider .card:hover,
+.automation-slider .card:hover,
+.lifestyle-slider .card:hover {
+  transform: scale(1.05);
+  /* Slight zoom */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  /* Deep shadow */
+  z-index: 5;
+}
+
+/* Larger Section Titles */
+h3.section-title {
+  font-size: 2rem !important;
+  /* Bigger title */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Add a colored bar next to titles for "霸氣" look */
+h3.section-title.text-orange {
+  border-left: 6px solid #fd7e14;
+}
+
+h3.section-title.text-success {
+  border-left: 6px solid #28a745;
+}
+
+h3.section-title.text-danger {
+  border-left: 6px solid #dc3545;
+}
+
+/* --- Further Compact Footer --- */
+.footer-section {
+  padding-top: 40px !important;
+  /* Reduce top padding */
+  padding-bottom: 20px !important;
+  /* Reduce bottom padding */
+}
+
+/* --- Dark Mode Search Button Fix --- */
+body.dark-mode .btn-search,
+body.dark-mode .input-group-text,
+body.dark-mode .newsletter-form button {
+  color: #fff !important;
+  /* White text */
+  background-color: #3b71ca;
+  /* Ensure background is visible */
+  border-color: #3b71ca;
+}
+
+/* Ensure input text is visible in dark mode too */
+body.dark-mode .newsletter-form input {
+  color: #fff;
+  background-color: #333;
+  border-color: #555;
+}
+
+/* --- Fix Search Input in Dark Mode --- */
+/* The input field in the overlay */
+#search-query {
+  color: #333;
+  /* Default dark text for light mode */
+}
+
+body.dark-mode #search-query {
+  color: #fff !important;
+  /* Force white text in dark mode */
+  background-color: transparent;
+  /* Or match the dark background */
+}
+
+/* Ensure the placeholder is also visible */
+body.dark-mode #search-query::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Redesign Header Search Button --- */
+/* The magnifying glass button in the nav */
+/* --- Simple Header Search Button --- */
+button.search-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
+  color: #333;
+  /* Default text color */
+  transition: color 0.3s ease;
+}
+
+button.search-btn:hover {
+  color: #3b71ca;
+}
+
+/* Dark mode visibility */
+body.dark-mode button.search-btn {
+  color: #fff !important;
+  /* Force white text */
+}
+
+body.dark-mode button.search-btn:hover {
+  color: #3b71ca !important;
+}
+
+
+
+
+/* --- Revamped Search Modal (Full Screen + Clean) --- */
+/* --- Top-Bar Search Overlay (Only Top Half) --- */
+.search-wrapper {
+  background-color: #000 !important;
+  /* Force black background */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 140px;
+  /* Only top part */
+  z-index: 9999;
+  display: flex !important;
+  /* Override theme's display logic */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-wrapper.open {
+  opacity: 1;
+  /* Fully opaque bar */
+  visibility: visible;
+}
+
+/* Dark mode override */
+body.dark-mode .search-wrapper {
+  background-color: #1a1a1a !important;
+  /* Dark grey */
+}
+
+/* Form Container */
+.search-wrapper form {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 40px;
+  /* Space for close button */
+}
+
+/* Ensure input text is visible */
+#search-query {
+  color: #fff !important;
+  background-color: transparent !important;
+  font-size: 1.5rem;
+  /* Slightly smaller than full-screen */
+  border-bottom: 1px solid #555;
+  height: 60px;
+}
+
+/* Ensure placeholder is visible */
+#search-query::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Close button - Enhanced Visibility */
+.search-close {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  /* Make it a visible circular button */
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Target the icon specifically to override text-dark or other font classes */
+.search-close i {
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.search-close:hover {
+  background-color: #dc3545;
+  /* Red background on hover */
+  border-color: #dc3545;
+  transform: translateY(-50%) rotate(90deg);
+  /* Rotate effect */
+  color: #fff !important;
+}
+
+/* Force the overlay to break out of any parent constraints */
+.search {
+  position: static !important;
+}
+
+/* We don't need to lock scroll for just a top bar, but it helps focus */
+body.search-open {
+  overflow: hidden;
+}
+
+/* --- Search Result Card Enhancements & Animations --- */
+.search-result-card {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px !important;
+}
+
+body.dark-mode .search-result-card {
+  background: #23201d;
+  color: #fff;
+}
+
+.search-result-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-wrapper {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.search-result-card:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Staggered Fade-in Animation */
+@keyframes fadeInUpSearch {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-item-fade {
+  opacity: 0;
+  animation: fadeInUpSearch 0.6s ease forwards;
+}
+
+/* Stagger delay for items */
+.search-item-fade:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.search-item-fade:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.search-item-fade:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.search-item-fade:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.search-item-fade:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.search-item-fade:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.search-item-fade:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.search-item-fade:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.hover-blue:hover {
+  color: #3b71ca !important;
+  text-decoration: none;
+}
