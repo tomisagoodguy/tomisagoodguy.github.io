@@ -2169,3 +2169,47 @@ body.dark-mode .search-result-card {
   color: #3b71ca !important;
   text-decoration: none;
 }
+
+/* About Page Bulletin Board Style */
+.about-page-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.about-bulletin-board {
+    background: #ffffff !important;
+    padding: 50px !important;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08) !important;
+    position: relative;
+    border-left: 12px solid #E07A5F !important;
+    margin-bottom: 40px;
+}
+
+.about-bulletin-board::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 40px;
+    background: rgba(224, 122, 95, 0.15);
+    border: 1px dashed rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    z-index: 2;
+}
+
+body.dark-mode .about-page-section {
+    background-color: #121212 !important;
+}
+
+body.dark-mode .about-bulletin-board {
+    background: #1e1e1e !important;
+    border-color: #E07A5F !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .about-bulletin-board::before {
+    background: rgba(224, 122, 95, 0.3);
+}

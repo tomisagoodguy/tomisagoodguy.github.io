@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Excel Vba on Land-Knowledge</title>
-    <link>https://tomisagoodguy.github.io/categories/excel-vba/</link>
-    <description>Recent content in Excel Vba on Land-Knowledge</description>
+    <title>Excel Vba on 定康筆記 | Tom&#39;s Note</title>
+    <link>http://localhost:1313/categories/excel-vba/</link>
+    <description>Recent content in Excel Vba on 定康筆記 | Tom&#39;s Note</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 27 Dec 2025 18:57:08 +0800</lastBuildDate>
-    <atom:link href="https://tomisagoodguy.github.io/categories/excel-vba/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/excel-vba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Excel VBA 學習筆記：從入門到網路爬蟲</title>
-      <link>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</link>
+      <link>http://localhost:1313/automation/excel-vba%E5%AD%B8%E7%BF%92/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</guid>
+      <guid>http://localhost:1313/automation/excel-vba%E5%AD%B8%E7%BF%92/</guid>
       <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;12/25上到4-2&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description>
     </item>
   </channel>
