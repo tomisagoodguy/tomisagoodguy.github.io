@@ -23,9 +23,13 @@
   color: #ffffff !important;
   margin-bottom: 2rem;
   max-width: 600px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .hero-buttons {
@@ -1228,4 +1232,100 @@ body.dark-mode .category-card:hover {
   /* Slightly lighter than bg */
 }
 
-```
+/* --------------------------
+   Theme Switch Icons & Visibility Enhancements
+   -------------------------- */
+.theme-switch {
+  width: 60px !important;
+  /* Wider switch */
+  height: 30px !important;
+  /* Taller switch */
+  margin-bottom: 0 !important;
+  /* Fix Bootstrap label margin */
+  margin-top: 4px;
+  /* Optically center it lower */
+}
+
+/* Fix Navbar Vertical Alignment */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    align-items: center !important;
+  }
+}
+
+.theme-switch .slider {
+  position: relative;
+  border: 2px solid #ddd;
+  /* Subtle border to define edges */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Inner shadow for depth */
+}
+
+/* Light Mode Background (Default) - Sky Blue */
+.theme-switch .slider {
+  background-color: #87CEEB;
+}
+
+/* Dark Mode Background (Checked) - Deep Space Blue */
+input:checked+.slider {
+  background-color: #1a1a2e !important;
+  border-color: #555;
+}
+
+.theme-switch .slider:before {
+  /* Adjust knob size and position for new dimensions */
+  height: 22px !important;
+  width: 22px !important;
+  left: 2px !important;
+  bottom: 2px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked+.slider:before {
+  transform: translateX(30px) !important;
+  /* Adjust travel distance */
+}
+
+.theme-switch .sun-icon,
+.theme-switch .moon-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  /* Larger icons */
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sun Icon (Left) - Shows in Dark Mode */
+.theme-switch .sun-icon {
+  left: 8px;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  /* Glow effect */
+  opacity: 0;
+  transform: translateY(-50%) rotate(-90deg);
+  /* Rotate in effect */
+}
+
+/* Moon Icon (Right) - Shows in Light Mode */
+.theme-switch .moon-icon {
+  right: 8px;
+  color: #f1c40f;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+  opacity: 1;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* Interaction States */
+input:checked+.slider .sun-icon {
+  opacity: 1;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+input:checked+.slider .moon-icon {
+  opacity: 0;
+  transform: translateY(-50%) rotate(90deg);
+  /* Rotate out effect */
+}
