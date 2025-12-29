@@ -44,6 +44,9 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
 
   <!-- plugins -->
   
@@ -96,7 +99,7 @@
       "description": "本筆記整理了 Excel VBA 的學習資源、環境設定、基礎語法、物件操作與網路爬蟲實作，適合作為入門到進階的學習參考。",
       
       "datePublished": "2025-11-08T00:00:00\u002b08:00",
-      "dateModified": "2025-12-28T18:01:11\u002b08:00",
+      "dateModified": "2025-12-28T21:28:40\u002b08:00",
       "author": {
         "@type": "Person",
         "name": "定康"
@@ -115,22 +118,23 @@
 
   <!-- Google Analytics -->
   
+  
   <script>
     
-    window['ga-disable-G-ZZ3XT9EZKH'] = true;
+    window['ga-disable-G-NPL83YJT0E'] = true;
 
     
     if (localStorage.getItem('cookie-consent') === 'true') {
-      window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      window['ga-disable-G-NPL83YJT0E'] = false;
     }
   </script>
   
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3XT9EZKH"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPL83YJT0E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-ZZ3XT9EZKH', {
+    gtag('config', 'G-NPL83YJT0E', {
       'anonymize_ip': true,
       'cookie_flags': 'SameSite=None;Secure'
     });
@@ -550,7 +554,7 @@
 <li>將 <strong>字形 (Font)</strong> 設定為 <strong>Consolas</strong> 或 <strong>微軟正黑體</strong>，<strong>大小 (Size)</strong> 設定為 <strong>12</strong> 或 <strong>14</strong>。</li>
 <li>您可以根據個人喜好調整程式碼的顏色配置。</li>
 </ol>
-<p><img alt="顏色配置" src="/automation/excel-vba%E5%AD%B8%E7%BF%92/image/index/%E9%A1%8F%E8%89%B2%E9%85%8D%E7%BD%AE.png"></p>
+<p><img alt="顏色配置" src="image/%E9%A1%8F%E8%89%B2%E9%85%8D%E7%BD%AE.png"></p>
 <hr>
 <h2 id="vba-基礎概念">VBA 基礎概念</h2>
 <h3 id="專案與模組">專案與模組</h3>
@@ -863,6 +867,9 @@ End Sub
 </ul>
 <h3 id="4-解析不同格式的資料">4. 解析不同格式的資料</h3>
 <p>取得回應資料後，需根據其格式進行整理與解析。</p>
+<p><img alt="1766927445060" src="image/index/1766927445060.png"></p>
+<p><img alt="1766927500681" src="image/index/1766927500681.png"></p>
+<p><img alt="1766927820414" src="image/index/1766927820414.png"></p>
 <h4 id="a-html-格式">A. HTML 格式</h4>
 <ul>
 <li><strong>核心物件</strong>：邀請 <code>HTMLFile</code> 小幫手。</li>
@@ -870,7 +877,7 @@ End Sub
 <li><strong>取得元素的方法</strong>：
 <ul>
 <li><code>getElementById(id)</code>: 透過 ID 取得單一元素 (不常用)。</li>
-<li><code>getElementsByTagName(tag)</code>: 透過標籤名稱 (如 <code>tr</code>, <code>td</code>, <code>a</code>) 取得元素集合 (常用)。</li>
+<li><code>getElementsByTagName(tag)</code>: 透過標籤名稱 (如 <code>tr</code>, <code>td</code>, <code>a</code>) 取得元素集合 (常用)。&ndash;&gt;記得要加s</li>
 <li><code>getElementsByClassName(class)</code>: 透過 Class 名稱取得元素集合 (常用)。</li>
 </ul>
 </li>
@@ -1537,6 +1544,7 @@ End Sub
     </div>
   </div>
 </div>
+
 <script>
   (function () {
     const cookieBox = document.getElementById('js-cookie-box');
@@ -1544,7 +1552,7 @@ End Sub
 
     function initCookieBox() {
       if (typeof Cookies === 'undefined') {
-        setTimeout(initCookieBox, 100);
+        setTimeout(initCookieBox, 1000);
         return;
       }
 
@@ -1554,10 +1562,11 @@ End Sub
           Cookies.set('cookie-box', true, {
             expires:  2 
       });
+
       
       localStorage.setItem('cookie-consent', 'true');
-      if (typeof window['ga-disable-G-ZZ3XT9EZKH'] !== 'undefined') {
-        window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      if (typeof window['ga-disable-G-NPL83YJT0E'] !== 'undefined') {
+        window['ga-disable-G-NPL83YJT0E'] = false;
       }
 
       cookieBox.classList.add('cookie-box-hide');
@@ -1565,7 +1574,6 @@ End Sub
   }
     }
   initCookieBox();
-
   }) ();
 </script>
 

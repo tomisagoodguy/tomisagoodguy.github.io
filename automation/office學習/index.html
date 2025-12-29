@@ -44,6 +44,9 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
 
   <!-- plugins -->
   
@@ -115,22 +118,23 @@
 
   <!-- Google Analytics -->
   
+  
   <script>
     
-    window['ga-disable-G-ZZ3XT9EZKH'] = true;
+    window['ga-disable-G-NPL83YJT0E'] = true;
 
     
     if (localStorage.getItem('cookie-consent') === 'true') {
-      window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      window['ga-disable-G-NPL83YJT0E'] = false;
     }
   </script>
   
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3XT9EZKH"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPL83YJT0E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-ZZ3XT9EZKH', {
+    gtag('config', 'G-NPL83YJT0E', {
       'anonymize_ip': true,
       'cookie_flags': 'SameSite=None;Secure'
     });
@@ -2820,6 +2824,7 @@
     </div>
   </div>
 </div>
+
 <script>
   (function () {
     const cookieBox = document.getElementById('js-cookie-box');
@@ -2827,7 +2832,7 @@
 
     function initCookieBox() {
       if (typeof Cookies === 'undefined') {
-        setTimeout(initCookieBox, 100);
+        setTimeout(initCookieBox, 1000);
         return;
       }
 
@@ -2837,10 +2842,11 @@
           Cookies.set('cookie-box', true, {
             expires:  2 
       });
+
       
       localStorage.setItem('cookie-consent', 'true');
-      if (typeof window['ga-disable-G-ZZ3XT9EZKH'] !== 'undefined') {
-        window['ga-disable-G-ZZ3XT9EZKH'] = false;
+      if (typeof window['ga-disable-G-NPL83YJT0E'] !== 'undefined') {
+        window['ga-disable-G-NPL83YJT0E'] = false;
       }
 
       cookieBox.classList.add('cookie-box-hide');
@@ -2848,7 +2854,6 @@
   }
     }
   initCookieBox();
-
   }) ();
 </script>
 
