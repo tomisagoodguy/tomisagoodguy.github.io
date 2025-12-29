@@ -214,6 +214,11 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   text-align: center;
+  /* Sticky Position - Adjusted for better breathing room */
+  position: sticky !important;
+  top: 130px;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-links li a {
@@ -967,18 +972,111 @@ body.dark-mode .sticky-sidebar .nav-link:hover {
   /* Smooth zoom */
 }
 
-/* 3. Typewriter Subtitle */
+/* 3. Realistic Typing Reveal - Multi-line compatible */
 .hero-subtitle {
-  font-family: 'Courier New', Courier, monospace;
-  border-right: 2px solid #E07A5F;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+  font-family: inherit;
+  color: #fff !important;
+  line-height: 1.8;
   margin: 0 auto 2rem auto;
+  max-width: 800px;
+  position: relative;
+  display: inline-block;
+
+  /* The Reveal: Using clip-path for character-by-character feel */
+  clip-path: inset(0 100% 0 0);
+  animation: revealSteps 4s steps(100) forwards;
+  animation-delay: 0.8s;
+
+  /* Ensure it wraps nicely on all screens */
+  white-space: normal;
+  overflow: visible;
+}
+
+/* The Cursor: Only appears after typing is done */
+.hero-subtitle::after {
+  content: '|';
+  color: #E07A5F;
+  font-weight: 900;
+  display: inline-block;
+  margin-left: 2px;
+  opacity: 0;
+  /* Hidden at start */
   animation:
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-  max-width: fit-content;
+    showCursor 0s forwards,
+    blink-caret 0.75s step-end infinite;
+  animation-delay: 4.8s;
+  /* Appears exactly when typing ends (0.8 + 4) */
+}
+
+@keyframes revealSteps {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes showCursor {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 4. Holographic Title Glow - Enhanced */
+.hero-title {
+  position: relative;
+  background: linear-gradient(45deg,
+      #ffffff 20%,
+      #64b5f6 40%,
+      #ffffff 50%,
+      #64b5f6 60%,
+      #ffffff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  text-shadow: 0 0 25px rgba(100, 181, 246, 0.4) !important;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Tweak: Ensure animation doesn't kill contrast on small screens */
+@media (max-width: 768px) {
+  .hero-subtitle {
+    background-position: 0 0;
+    /* Fully visible by default or simpler animation */
+    -webkit-text-fill-color: #fff;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    animation: fadeInUp 1s ease-out forwards;
+  }
 }
 
 @keyframes typing {
@@ -1479,6 +1577,25 @@ pre {
   color: inherit;
 }
 
+/* Blockquote in Blackboard */
+.post-content blockquote {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-left: 4px solid #fff9c4 !important;
+  /* Chalk yellow border */
+  padding: 15px 25px !important;
+  margin: 20px 0 !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.post-content blockquote p {
+  color: #fffde7 !important;
+  /* Chalky white-yellow */
+  font-family: 'Noto Serif TC', serif !important;
+  font-size: 1.2rem !important;
+  font-style: italic;
+  margin-bottom: 0 !important;
+}
+
 /* List handling */
 .post-content ul,
 .post-content ol {
@@ -1770,29 +1887,29 @@ body {
 .slick-slide .btn-sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.8rem;
+}
 
-  /* --- Tighten Homepage Layout --- */
-  .hero-section {
-    padding-bottom: 20px !important;
-    /* Reduce space below hero */
-  }
+/* --- Tighten Homepage Layout --- */
+.hero-section {
+  padding-bottom: 20px !important;
+  /* Reduce space below hero */
+}
 
-  /* Reduce top padding for category section (Topic Explorer) */
-  section.section.pb-0 {
-    padding-top: 40px !important;
-    /* Was ~80-100px */
-  }
+/* Reduce top padding for category section (Topic Explorer) */
+section.section.pb-0 {
+  padding-top: 40px !important;
+  /* Was ~80-100px */
+}
 
-  /* Reduce gap between category slider and next content */
-  .category-slider {
-    margin-bottom: 30px !important;
-    /* Tighten up */
-  }
+/* Reduce gap between category slider and next content */
+.category-slider {
+  margin-bottom: 30px !important;
+  /* Tighten up */
+}
 
-  /* Reduce space below "Topic Explorer" title */
-  .col-12.mb-4 h3.section-title {
-    margin-bottom: 0.5rem !important;
-  }
+/* Reduce space below "Topic Explorer" title */
+.col-12.mb-4 h3.section-title {
+  margin-bottom: 0.5rem !important;
 }
 
 /* --- Compact Footer Layout --- */
@@ -2170,46 +2287,328 @@ body.dark-mode .search-result-card {
   text-decoration: none;
 }
 
-/* About Page Bulletin Board Style */
+/* --------------------------
+   About Page: Modern Editorial Design
+   -------------------------- */
+
 .about-page-section {
-    background-color: #f8f9fa;
-    padding: 60px 0;
+  background-color: var(--primary-bg-color);
+  /* Matches theme background */
+  padding: 80px 0;
 }
 
-.about-bulletin-board {
-    background: #ffffff !important;
-    padding: 50px !important;
-    border-radius: 4px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08) !important;
-    position: relative;
-    border-left: 12px solid #E07A5F !important;
-    margin-bottom: 40px;
+/* --------------------------
+   About Page: Premium Card Design
+   -------------------------- */
+
+.premium-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
 }
 
-.about-bulletin-board::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 40px;
-    background: rgba(224, 122, 95, 0.15);
-    border: 1px dashed rgba(0,0,0,0.1);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    z-index: 2;
+.premium-card {
+  background: var(--secondary-bg-color, #ffffff);
+  border-radius: 16px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color, #f0f0f0);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  height: 100%;
 }
 
-body.dark-mode .about-page-section {
-    background-color: #121212 !important;
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-body.dark-mode .about-bulletin-board {
-    background: #1e1e1e !important;
-    border-color: #E07A5F !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+.card-icon-box {
+  width: 50px;
+  height: 50px;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: var(--primary-color);
 }
 
-body.dark-mode .about-bulletin-board::before {
-    background: rgba(224, 122, 95, 0.3);
+.premium-card.professional .card-icon-box {
+  background: rgba(107, 144, 128, 0.1);
+  color: #6B9080;
+}
+
+.premium-card.tech .card-icon-box {
+  background: rgba(74, 144, 226, 0.1);
+  color: #4A90E2;
+}
+
+.premium-card.lifestyle .card-icon-box {
+  background: rgba(224, 122, 95, 0.1);
+  color: #E07A5F;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--primary-text-color);
+  line-height: 1.4;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+  margin: 0;
+}
+
+.card-footer-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.premium-card.professional:hover .card-footer-glow {
+  background: #6B9080;
+}
+
+.premium-card.tech:hover .card-footer-glow {
+  background: #4A90E2;
+}
+
+.premium-card.lifestyle:hover .card-footer-glow {
+  background: #E07A5F;
+}
+
+/* About Page Typography */
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--primary-text-color);
+}
+
+.section-divider-long {
+  width: 80px;
+  height: 3px;
+  background: var(--primary-color);
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.intro-text {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--primary-text-color);
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-main-card {
+  border-left: 6px solid var(--primary-color);
+  background: var(--secondary-bg-color);
+}
+
+.contact-card {
+  padding: 20px 30px !important;
+  background: linear-gradient(to right, rgba(var(--primary-color-rgb), 0.05), transparent);
+}
+
+.contact-card .card-icon-box {
+  flex-shrink: 0;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .premium-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .card-title {
+  color: #fff;
+}
+
+body.dark-mode .card-text {
+  color: #A8A4A0;
+}
+
+@media (max-width: 768px) {
+  .premium-card {
+    padding: 25px;
+  }
+}
+
+/* --------------------------
+   Related Links: Ethereal Cloud Style
+   -------------------------- */
+
+.link-premium-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  /* Maximum Softness: Pill Shape */
+  border-radius: 100px;
+  padding: 12px 40px 12px 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: auto;
+  min-height: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* Weightless Shadow */
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.link-premium-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 30px 60px -12px rgba(var(--primary-color-rgb), 0.12),
+    inset 0 0 30px rgba(255, 255, 255, 1);
+  border-color: rgba(var(--primary-color-rgb), 0.2);
+}
+
+.link-card-visual {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.6s ease;
+}
+
+.link-premium-card:hover .link-card-visual {
+  transform: rotate(10deg);
+  box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.link-img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%) opacity(0.8);
+}
+
+.link-premium-card:hover .link-img {
+  filter: grayscale(0%) opacity(1);
+}
+
+.link-img-placeholder {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  opacity: 0.4;
+}
+
+.link-card-body {
+  padding: 0;
+  z-index: 1;
+  text-align: left;
+}
+
+.link-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--primary-text-color);
+  transition: color 0.3s ease;
+}
+
+.link-desc {
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+  line-height: 1.4;
+  margin-bottom: 0;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+/* Moving Aura in Background */
+.link-premium-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(var(--primary-color-rgb), 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.link-premium-card:hover::before {
+  opacity: 1;
+  animation: drift 10s infinite linear;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark Mode: "Void Glass" */
+body.dark-mode .link-premium-card {
+  background: rgba(30, 30, 30, 0.4);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .link-card-visual {
+  background: #2a2a2a;
+}
+
+@media (max-width: 768px) {
+  .link-premium-card {
+    padding: 10px 25px 10px 10px;
+    border-radius: 50px;
+  }
+
+  .link-desc {
+    max-width: 150px;
+  }
 }
