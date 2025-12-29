@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>【程式與生產力】 on 定康筆記 | Tom&#39;s Note</title>
-    <link>https://tomisagoodguy.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%88%87%E7%94%9F%E7%94%A2%E5%8A%9B/</link>
-    <description>Recent content in 【程式與生產力】 on 定康筆記 | Tom&#39;s Note</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Dec 2025 21:28:40 +0800</lastBuildDate>
-    <atom:link href="https://tomisagoodguy.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%88%87%E7%94%9F%E7%94%A2%E5%8A%9B/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Excel VBA 學習筆記：從入門到網路爬蟲</title>
-      <link>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</guid>
-      <description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。&#xA;12/25上到4-2&#xA;學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description>
-    </item>
-    <item>
-      <title>OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</title>
-      <link>https://tomisagoodguy.github.io/automation/office%E5%AD%B8%E7%BF%92/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/automation/office%E5%AD%B8%E7%BF%92/</guid>
-      <description>本頁面整理了常用的 Office 軟體快速鍵，包含 Windows 與 Mac 的對照。&#xA;1. 檔案 常用 頻率 功能 Win-1 Win-2 Mac-1 Mac-2 Mac-3 Mac 補充說明 v 關檔案或軟體 Alt+ F4 Cmd+ Q v 開啟舊檔：從目前檔案的 Folder Ctrl+ F12 Cmd+ O 跳下一 Word 檔案：檔案總管非 Word Ctrl+ F6 v 開新檔 Ctrl+ N Cmd+ N v 開啟舊檔：從近期開過的檔案 Ctrl+ O Cmd+ O v 存檔 Ctrl+ S Cmd+ S v 關檔案 Ctrl+ W Cmd+ W v 叫出檔案總管 Win+ E Cmd+Shft+ F v 另存新檔 F12 Cmd+Shft+ S 2.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>【程式與生產力】 on 定康筆記 | Tom's Note</title><link>https://tomisagoodguy.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%88%87%E7%94%9F%E7%94%A2%E5%8A%9B/</link><description>Recent content in 【程式與生產力】 on 定康筆記 | Tom's Note</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Sun, 28 Dec 2025 21:28:40 +0800</lastBuildDate><atom:link href="https://tomisagoodguy.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%88%87%E7%94%9F%E7%94%A2%E5%8A%9B/index.xml" rel="self" type="application/rss+xml"/><item><title>Excel VBA 學習筆記：從入門到網路爬蟲</title><link>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</link><pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate><guid>https://tomisagoodguy.github.io/automation/excel-vba%E5%AD%B8%E7%BF%92/</guid><description>此為個人學習筆記，內容主要整理自相關課程與網路資源，僅供學習與參考之用。
+12/25上到4-2
+學習資源 Excel VBA 金融資料抓取 | 打造股票研究系統 課程網站：Hahow 好學校 VBA 環境設置 在開始撰寫 VBA 程式碼之前，需要先設定好開發環境。</description></item><item><title>OFFICE 學習筆記：Word、PPT、Excel 快速鍵整理</title><link>https://tomisagoodguy.github.io/automation/office%E5%AD%B8%E7%BF%92/</link><pubDate>Sat, 08 Nov 2025 00:00:00 +0800</pubDate><guid>https://tomisagoodguy.github.io/automation/office%E5%AD%B8%E7%BF%92/</guid><description>本頁面整理了常用的 Office 軟體快速鍵，包含 Windows 與 Mac 的對照。
+1. 檔案 常用 頻率 功能 Win-1 Win-2 Mac-1 Mac-2 Mac-3 Mac 補充說明 v 關檔案或軟體 Alt+ F4 Cmd+ Q v 開啟舊檔：從目前檔案的 Folder Ctrl+ F12 Cmd+ O 跳下一 Word 檔案：檔案總管非 Word Ctrl+ F6 v 開新檔 Ctrl+ N Cmd+ N v 開啟舊檔：從近期開過的檔案 Ctrl+ O Cmd+ O v 存檔 Ctrl+ S Cmd+ S v 關檔案 Ctrl+ W Cmd+ W v 叫出檔案總管 Win+ E Cmd+Shft+ F v 另存新檔 F12 Cmd+Shft+ S 2.</description></item></channel></rss>

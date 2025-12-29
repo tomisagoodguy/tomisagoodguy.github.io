@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>代書修煉日記 on 定康筆記 | Tom&#39;s Note</title>
-    <link>https://tomisagoodguy.github.io/real-estate/</link>
-    <description>Recent content in 代書修煉日記 on 定康筆記 | Tom&#39;s Note</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <atom:link href="https://tomisagoodguy.github.io/real-estate/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>繼承登記實務案例</title>
-      <link>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</link>
-      <pubDate>Sat, 13 Jul 2024 00:00:00 +0800</pubDate>
-      <guid>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</guid>
-      <description>這是繼承登記的實務案例範例文章內容。</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>代書修煉日記 on 定康筆記 | Tom's Note</title><link>https://tomisagoodguy.github.io/real-estate/</link><description>Recent content in 代書修煉日記 on 定康筆記 | Tom's Note</description><generator>Hugo</generator><language>zh-tw</language><atom:link href="https://tomisagoodguy.github.io/real-estate/index.xml" rel="self" type="application/rss+xml"/><item><title>繼承登記實務案例</title><link>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</link><pubDate>Sat, 13 Jul 2024 00:00:00 +0800</pubDate><guid>https://tomisagoodguy.github.io/real-estate/inheritance-case-study/</guid><description>這是繼承登記的實務案例範例文章內容。</description></item></channel></rss>
