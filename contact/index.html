@@ -88,8 +88,7 @@
   <!-- Structured Data -->
   
 
-  <!-- Google Analytics -->
-  
+  <!-- Google Analytics (Always On for Verification) -->
   
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPL83YJT0E"></script>
@@ -102,7 +101,6 @@
       'cookie_flags': 'SameSite=None;Secure'
     });
   </script>
-  
 </head><body>
 <!-- preloader start -->
 <div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
@@ -559,7 +557,7 @@
 <a href="#" id="go-to-bottom"><i class="fas fa-arrow-down"></i></a>
 
 <script>
-  var indexURL = "https:\/\/tomisagoodguy.github.io\/index.json"
+  var indexURL = https://tomisagoodguy.github.io/index.json;
 </script>
 
 <!-- JS Plugins -->
@@ -687,7 +685,6 @@
     </div>
   </div>
 </div>
-
 <script>
   (function () {
     const cookieBox = document.getElementById('js-cookie-box');
@@ -699,16 +696,13 @@
         return;
       }
 
-      if (!Cookies.get('cookie-box')) {
+      if (cookieBox && !Cookies.get('cookie-box')) {
         cookieBox.classList.remove('cookie-box-hide');
         cookieButton.onclick = function () {
           Cookies.set('cookie-box', true, {
             expires:  2 
       });
-
-      
       localStorage.setItem('cookie-consent', 'true');
-
       cookieBox.classList.add('cookie-box-hide');
     };
   }
@@ -716,7 +710,6 @@
   initCookieBox();
   }) ();
 </script>
-
 </body>
 
 </html>
