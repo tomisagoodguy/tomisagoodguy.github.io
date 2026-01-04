@@ -352,14 +352,73 @@
 
 
 /*   - - - - - - - - - - - - - - - - - - - - - - - - - -           Link Card Styles           - - - - - - - - - - - - - - - - - - - - - - - - - -   */
+/* --- Advanced 3D Link Cards --- */
+.links-page .row {
+  perspective: 2000px;
+  /* 為整區容器開啟 3D 空間視角 */
+}
+
 .link-card {
-  transition: all 0.3s ease;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.8s ease;
   cursor: pointer;
+  transform-style: preserve-3d;
+  /* 核心：允許子元素在 3D 空間中定位 */
+  backface-visibility: hidden;
+  will-change: transform;
+  /* 關鍵修復：確保 hover 感應穩定 */
+  pointer-events: auto;
+  /* 確保卡片本身接收事件 */
+}
+
+/* 確保內部所有元素都不會干擾 hover 感應區域 */
+.link-card>* {
+  pointer-events: none;
+}
+
+/* 但要保留按鈕的可點擊性 */
+.link-card .btn,
+.link-card a {
+  pointer-events: auto;
 }
 
 .link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* 移除 translateZ(15px)，改用單純的傾斜，防止卡片「撞到」或「逃離」鼠標導致閃爍 */
+  transform: rotateX(6deg) rotateY(-4deg);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(59, 113, 202, 0.1) !important;
+  z-index: 10;
+}
+
+/* 內容層級深度感 (Parallax Effect) */
+.link-card .card-body {
+  transform: translateZ(40px);
+  /* 讓內容浮出平面 40px */
+  transform-style: preserve-3d;
+}
+
+.link-card .link-icon {
+  transform: translateZ(60px);
+  /* 讓圖示浮得最高 */
+  filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25));
+  transition: transform 0.6s ease;
+}
+
+.link-card .card-title {
+  transform: translateZ(50px);
+  /* 標題深度介於圖示與內容之間 */
+  font-weight: 800;
+}
+
+.link-card .btn {
+  transform: translateZ(35px);
+  /* 按鈕稍微浮起 */
+}
+
+/* 點擊後的觸感反饋 */
+.link-card:active {
+  transform: rotateX(2deg) rotateY(-1deg) translateZ(5px);
+  transition: transform 0.1s ease;
 }
 
 /* Ensure stretched link works even if Bootstrap utility is missing */
@@ -1272,53 +1331,80 @@ body.dark-mode .footer-section a:hover {
 }
 
 /* --------------------------
-   Content & Card Animations (Tech)
+   Content & Card Animations (Tech 3D)
    -------------------------- */
 
-/* Category/Topic Cards */
+/* 全站文章與分類卡片通用的 3D 效果 */
+.card,
 .category-card {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid transparent;
-  position: relative;
-  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.8s ease;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
+/* 鎖定感應區域，防止 3D 位移導致的 Hover 迴圈 */
+.card>*,
+.category-card>* {
+  pointer-events: none;
+}
+
+.card a,
+.card .btn,
+.category-card a {
+  pointer-events: auto;
+}
+
+.card:hover,
 .category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(59, 113, 202, 0.2);
+  /* 移除會導致元素高度變化的位移，只保留旋轉，穩定 hover 狀態 */
+  transform: rotateX(5deg) rotateY(-2deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
   border-color: #3b71ca;
-  background: rgba(59, 113, 202, 0.05);
-  /* Subtle tech fill */
 }
 
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #3b71ca, transparent);
-  transition: left 0.5s;
+/* 卡片內部的深度分層 */
+.card-body {
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
 }
 
-.category-card:hover::before {
-  left: 100%;
-  transition: left 0.5s;
+.card img,
+.card-title {
+  transform: translateZ(40px);
+  transition: transform 0.8s ease;
 }
 
-/* General Post Cards */
-.card {
-  transition: all 0.3s ease;
-  border: 1px solid #e1e4e8;
-  /* Base border */
+.card:hover img {
+  transform: translateZ(50px) scale(1.05);
 }
 
-.card:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border-color: #3b71ca;
-  /* Tech blue border on hover */
+/* 側邊欄 3D 懸浮 */
+.sidebar-nav .nav-link {
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-nav .nav-link:hover {
+  transform: translateZ(10px) translateX(5px);
+  background-color: rgba(59, 113, 202, 0.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 按鈕按壓 3D 效果 */
+.btn {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.btn:hover {
+  transform: translateZ(15px) translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateZ(2px) translateY(0);
 }
 
 /* Dark Mode Tech Card Adjustments */
@@ -1327,7 +1413,6 @@ body.dark-mode .category-card:hover {
   border-color: #64b5f6;
   box-shadow: 0 5px 15px rgba(100, 181, 246, 0.2);
   background-color: #2d2d2d !important;
-  /* Slightly lighter than bg */
 }
 
 /* --------------------------
@@ -2612,58 +2697,104 @@ body.dark-mode .link-card-visual {
     max-width: 150px;
   }
 }
- / *   L i n k s   P a g e   E n h a n c e d   S i d e b a r   * / 
- . s i d e b a r - n a v   . c a t e g o r y - g r o u p   { 
-         b o r d e r - l e f t :   3 p x   s o l i d   t r a n s p a r e n t ; 
-         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ; 
-         p a d d i n g - l e f t :   1 0 p x ; 
- } 
- 
- . s i d e b a r - n a v   . c a t e g o r y - g r o u p : h o v e r   { 
-         p a d d i n g - l e f t :   1 5 p x ; 
- } 
- 
- . c o l o r - d o t   { 
-         d i s p l a y :   i n l i n e - b l o c k ; 
-         w i d t h :   8 p x ; 
-         h e i g h t :   8 p x ; 
-         b o r d e r - r a d i u s :   5 0 % ; 
-         m a r g i n - r i g h t :   1 0 p x ; 
-         v e r t i c a l - a l i g n :   m i d d l e ; 
- } 
- 
- . c a t e g o r y - l i n k   { 
-         d i s p l a y :   f l e x ; 
-         a l i g n - i t e m s :   c e n t e r ; 
-         p a d d i n g :   8 p x   1 2 p x   ! i m p o r t a n t ; 
-         b o r d e r - r a d i u s :   6 p x ; 
-         t r a n s i t i o n :   a l l   0 . 2 s   e a s e ; 
- } 
- 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' p r i m a r y ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 5 9 ,   1 1 3 ,   2 0 2 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # 3 b 7 1 c a ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' s u c c e s s ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 4 0 ,   1 6 7 ,   6 9 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # 2 8 a 7 4 5 ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' w a r n i n g ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 2 5 5 ,   1 9 3 ,   7 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # f f c 1 0 7 ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' d a n g e r ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 2 2 0 ,   5 3 ,   6 9 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # d c 3 5 4 5 ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' i n f o ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 2 3 ,   1 6 2 ,   1 8 4 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # 1 7 a 2 b 8 ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' s e c o n d a r y ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 1 0 8 ,   1 1 7 ,   1 2 5 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # 6 c 7 5 7 d ;   } 
- . c a t e g o r y - g r o u p [ d a t a - c o l o r = ' d a r k ' ] : h o v e r   . c a t e g o r y - l i n k   {   b a c k g r o u n d - c o l o r :   r g b a ( 5 2 ,   5 8 ,   6 4 ,   0 . 1 ) ;   b o r d e r - l e f t :   4 p x   s o l i d   # 3 4 3 a 4 0 ;   } 
- 
- . s i d e b a r - n a v   . h o v e r - p r i m a r y : h o v e r   {   c o l o r :   # 3 b 7 1 c a   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - s u c c e s s : h o v e r   {   c o l o r :   # 2 8 a 7 4 5   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - w a r n i n g : h o v e r   {   c o l o r :   # f f c 1 0 7   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - d a n g e r : h o v e r   {   c o l o r :   # d c 3 5 4 5   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - i n f o : h o v e r   {   c o l o r :   # 1 7 a 2 b 8   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - s e c o n d a r y : h o v e r   {   c o l o r :   # 6 c 7 5 7 d   ! i m p o r t a n t ;   } 
- . s i d e b a r - n a v   . h o v e r - d a r k : h o v e r   {   c o l o r :   # 3 4 3 a 4 0   ! i m p o r t a n t ;   } 
- 
- . s u b - l i n k s   { 
-         m a x - h e i g h t :   0 ; 
-         o v e r f l o w :   h i d d e n ; 
-         t r a n s i t i o n :   m a x - h e i g h t   0 . 4 s   e a s e - o u t ; 
- } 
- 
- . c a t e g o r y - g r o u p : h o v e r   . s u b - l i n k s   { 
-         m a x - h e i g h t :   5 0 0 p x ; 
- } 
-  
- 
+
+/* Links Page Enhanced Sidebar */
+.sidebar-nav .category-group {
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+}
+
+.sidebar-nav .category-group:hover {
+  padding-left: 15px;
+}
+
+.color-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.category-group[data-color='primary']:hover .category-link {
+  background-color: rgba(59, 113, 202, 0.1);
+  border-left: 4px solid #3b71ca;
+}
+
+.category-group[data-color='success']:hover .category-link {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid #28a745;
+}
+
+.category-group[data-color='warning']:hover .category-link {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+}
+
+.category-group[data-color='danger']:hover .category-link {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-left: 4px solid #dc3545;
+}
+
+.category-group[data-color='info']:hover .category-link {
+  background-color: rgba(23, 162, 184, 0.1);
+  border-left: 4px solid #17a2b8;
+}
+
+.category-group[data-color='secondary']:hover .category-link {
+  background-color: rgba(108, 117, 125, 0.1);
+  border-left: 4px solid #6c757d;
+}
+
+.category-group[data-color='dark']:hover .category-link {
+  background-color: rgba(52, 58, 64, 0.1);
+  border-left: 4px solid #343a40;
+}
+
+.sidebar-nav .hover-primary:hover {
+  color: #3b71ca !important;
+}
+
+.sidebar-nav .hover-success:hover {
+  color: #28a745 !important;
+}
+
+.sidebar-nav .hover-warning:hover {
+  color: #ffc107 !important;
+}
+
+.sidebar-nav .hover-danger:hover {
+  color: #dc3545 !important;
+}
+
+.sidebar-nav .hover-info:hover {
+  color: #17a2b8 !important;
+}
+
+.sidebar-nav .hover-secondary:hover {
+  color: #6c757d !important;
+}
+
+.sidebar-nav .hover-dark:hover {
+  color: #343a40 !important;
+}
+
+.sub-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.category-group:hover .sub-links {
+  max-height: 500px;
+}
