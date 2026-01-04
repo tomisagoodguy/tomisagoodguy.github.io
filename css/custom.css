@@ -2724,41 +2724,72 @@ body.dark-mode .link-card-visual {
   padding: 8px 12px !important;
   border-radius: 6px;
   transition: all 0.2s ease;
+  color: #212529;
+  /* 白天模式預設深色 */
+}
+
+/* 確保導覽列標題在白天模式也是深色 */
+.sticky-sidebar h4 {
+  color: #212529;
+}
+
+/* 黑夜模式下的文字顏色 */
+body.dark-mode .category-link,
+body.dark-mode .sticky-sidebar h4 {
+  color: #f8f9fa;
+}
+
+/* 子連結在白天模式的顏色增強 */
+.sub-links .nav-link {
+  color: #6c757d !important;
+}
+
+body.dark-mode .sub-links .nav-link {
+  color: #adb5bd !important;
 }
 
 .category-group[data-color='primary']:hover .category-link {
   background-color: rgba(59, 113, 202, 0.1);
   border-left: 4px solid #3b71ca;
+  color: #3b71ca;
+  /* Hover 時變色 */
 }
 
 .category-group[data-color='success']:hover .category-link {
   background-color: rgba(40, 167, 69, 0.1);
   border-left: 4px solid #28a745;
+  color: #28a745;
+  /* Hover 時變色 */
 }
 
 .category-group[data-color='warning']:hover .category-link {
   background-color: rgba(255, 193, 7, 0.1);
   border-left: 4px solid #ffc107;
+  color: #ffc107;
 }
 
 .category-group[data-color='danger']:hover .category-link {
   background-color: rgba(220, 53, 69, 0.1);
   border-left: 4px solid #dc3545;
+  color: #dc3545;
 }
 
 .category-group[data-color='info']:hover .category-link {
   background-color: rgba(23, 162, 184, 0.1);
   border-left: 4px solid #17a2b8;
+  color: #17a2b8;
 }
 
 .category-group[data-color='secondary']:hover .category-link {
   background-color: rgba(108, 117, 125, 0.1);
   border-left: 4px solid #6c757d;
+  color: #6c757d;
 }
 
 .category-group[data-color='dark']:hover .category-link {
   background-color: rgba(52, 58, 64, 0.1);
   border-left: 4px solid #343a40;
+  color: #343a40;
 }
 
 .sidebar-nav .hover-primary:hover {
