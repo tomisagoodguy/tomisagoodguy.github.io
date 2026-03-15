@@ -372,14 +372,19 @@ code { background:rgba(196,123,90,.1); color:var(--terra); padding:1px 5px; bord
     <div class="sec">
       <div class="sec-t">① 搜尋地址或地名</div>
       <div class="search-wrap">
-        <div class="search-row">
-          <input type="text" id="s-input"
-            placeholder="例：台北市大安區師大路165號"
-            autocomplete="off">
+        <div class="search-box">
+        <div style="display:flex; gap:8px; margin-bottom:8px;">
+          <input type="text" id="s-input" placeholder="輸入地址、地名，或點擊右側定位" style="flex:1">
+          <button class="btn-geo" onclick="locateMe()" title="抓取目前 GPS 位置">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            定位
+          </button>
+        </div>
+        <div class="search-actions">
           <button id="s-btn" onclick="doSearch()">搜尋</button>
         </div>
-        <div class="search-status" id="s-status">輸入地址或店名，按搜尋</div>
-        <div class="results" id="s-results"></div>
+        <div id="s-status" class="search-status"></div>
+        <div id="s-results" class="search-results"></div>
       </div>
     </div>
 
@@ -399,6 +404,10 @@ code { background:rgba(196,123,90,.1); color:var(--terra); padding:1px 5px; bord
       <div class="row">
         <label class="req">地點名稱</label>
         <input type="text" id="f-name" placeholder="例：師大巷弄老麵攤">
+      </div>
+      <div class="row">
+        <label>地址</label>
+        <input type="text" id="f-addr" placeholder="搜尋後自動填入或手動輸入">
       </div>
       <div class="row">
         <label class="req">類別</label>
@@ -483,14 +492,14 @@ code { background:rgba(196,123,90,.1); color:var(--terra); padding:1px 5px; bord
       <div class="photo-dir-row" id="photo-dir-row">
         <button class="btn-pick" onclick="pickImgDir()">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          選擇照片儲存資料夾
+          (選填) 連結照片資料夾
         </button>
-        <div class="file-status tip" id="dir-status">static/images/places 資料夾（只選一次）</div>
+        <div class="file-status tip" id="dir-status">若連結 <code>static/images/places</code>，系統會自動幫你備份照片</div>
       </div>
       <!-- 加入照片 -->
-      <button class="btn-add-photo" id="btn-add-photo" onclick="addPhotos()" disabled>
+      <button class="btn-add-photo" id="btn-add-photo" onclick="addPhotos()">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        加入照片（可多選）
+        選取照片（可多選）
       </button>
       <!-- 縮圖預覽 -->
       <div class="photo-preview" id="photo-preview"></div>
@@ -701,6 +710,52 @@ function searchArcGIS(q) {
     });
 }
 
+/* ── GPS 定位功能 ── */
+function locateMe() {
+  if (!navigator.geolocation) {
+    setStatus('瀏覽器不支援定位功能', 'error');
+    return;
+  }
+  
+  setStatus('正在獲取 GPS 座標...', 'loading');
+  
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    var lat = pos.coords.latitude;
+    var lng = pos.coords.longitude;
+    setCoord(lat, lng, true);
+    setStatus('GPS 定位成功！正在抓取地址...', 'ok');
+    
+    // 定位後，自動反向搜尋地址
+    reverseGeocode(lat, lng);
+  }, function(err) {
+    var msg = '定位失敗：' + err.message;
+    if(err.code === 1) msg = '請允許瀏覽器定位權限';
+    setStatus(msg, 'error');
+  }, { enableHighAccuracy: true, timeout: 5000 });
+}
+
+/* 反向地理編碼：從座標反查地址 */
+async function reverseGeocode(lat, lng) {
+  var url = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode'
+    + '?f=json&location=' + lng + ',' + lat + '&langCode=zht';
+    
+  try {
+    var res = await fetch(url);
+    var data = await res.json();
+    if (data && data.address) {
+      var addr = data.address.Match_addr || data.address.LongLabel || '';
+      document.getElementById('f-addr').value = addr;
+      // 如果名稱還空著，放個提示或暫用地址
+      if(!document.getElementById('f-name').value) {
+        document.getElementById('f-name').value = data.address.Address || '';
+      }
+      setStatus('定位成功：' + addr, 'ok');
+    }
+  } catch(e) {
+    console.error('反向地址查詢失敗', e);
+  }
+}
+
 /* Nominatim 備援（地名/景點效果好）*/
 function searchNominatim(q) {
   var base = 'https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&limit=5&accept-language=zh-TW,zh,en';
@@ -734,6 +789,7 @@ function renderResults(items) {
         document.getElementById('f-name').value = item.name;
       }
       setStatus('已選取：' + item.name, 'ok');
+      document.getElementById('f-addr').value = item.address;
       sResults.classList.remove('show');
       sInput.value = item.name;
     });
@@ -809,9 +865,9 @@ async function pickImgDir() {
   try {
     imgDirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
     var st = document.getElementById('dir-status');
-    st.textContent = '✓ 已連接：' + imgDirHandle.name;
+    st.textContent = '✓ 已連結錄入目錄：' + imgDirHandle.name;
     st.className = 'file-status ok';
-    document.getElementById('btn-add-photo').disabled = false;
+    toast('已啟用照片自動複製功能');
   } catch(e) {
     if (e.name !== 'AbortError') toast('無法開啟資料夾：' + e.message);
   }
@@ -861,12 +917,14 @@ function buildEntry() {
   var why   = document.getElementById('f-why').value.trim();
   var time  = document.getElementById('f-time').value.trim();
   var added = document.getElementById('f-added').value.trim();
+  var addr  = document.getElementById('f-addr').value.trim();
 
   if (!name)                    { toast('請填寫地點名稱'); return null; }
   if (isNaN(lat) || isNaN(lng)) { toast('請先搜尋地址，或點擊地圖選取位置'); return null; }
 
   var obj = { id: Date.now(), name: name, category: selCat, lat: lat, lng: lng };
   if (desc)  obj.description = desc;
+  if (addr)  obj.address = addr;
   if (why)   obj.why = why;
   if (time)  obj.best_time = time;
   obj.status = selSt;
@@ -876,11 +934,23 @@ function buildEntry() {
 
   if (selSt==='done' && currentVisits.length > 0) {
     obj.visits = currentVisits;
-    // 為了向下相容，保留最後一個紀錄在 top-level (非必要但對舊地圖友善)
     var last = currentVisits[currentVisits.length - 1];
     obj.done_note = last.note;
     obj.done_date = last.date;
   }
+
+  // 處理照片路徑
+  if (selectedPhotos.length > 0) {
+    obj.photos = selectedPhotos.map(function(p){
+      // 如果還沒真正寫入，先預覽檔名
+      if (p.savedName) return 'images/places/' + p.savedName;
+      // 這裡先暫定一個檔名，實際寫入時會更新
+      var ext = p.file.name.split('.').pop().toLowerCase();
+      var dummyName = 'temp-' + p.file.name;
+      return 'images/places/' + dummyName;
+    });
+  }
+
   return obj;
 }
 
@@ -902,17 +972,23 @@ async function generateAndWrite() {
 
   try {
     /* 複製照片到 static/images/places */
-    if (imgDirHandle && selectedPhotos.length > 0) {
+    if (selectedPhotos.length > 0) {
       var photoPaths = [];
-      for (var i = 0; i < selectedPhotos.length; i++) {
-        var item  = selectedPhotos[i];
-        var ext   = item.file.name.split('.').pop().toLowerCase();
-        var fname = Date.now() + '-' + Math.random().toString(36).substr(2,5) + '.' + ext;
-        var fh    = await imgDirHandle.getFileHandle(fname, { create: true });
-        var wr    = await fh.createWritable();
-        await wr.write(await item.file.arrayBuffer());
-        await wr.close();
-        photoPaths.push('images/places/' + fname);
+      if (!imgDirHandle) {
+        toast('警告：未連結照片資料夾，請手動將照片放入 static/images/places', 'error');
+        // 依然保留檔名路徑，但無法複製檔案
+        photoPaths = selectedPhotos.map(function(p){ return 'images/places/' + p.file.name; });
+      } else {
+        for (var i = 0; i < selectedPhotos.length; i++) {
+          var item  = selectedPhotos[i];
+          var ext   = item.file.name.split('.').pop().toLowerCase();
+          var fname = Date.now() + '-' + Math.random().toString(36).substr(2,5) + '.' + ext;
+          var fh    = await imgDirHandle.getFileHandle(fname, { create: true });
+          var wr    = await fh.createWritable();
+          await wr.write(await item.file.arrayBuffer());
+          await wr.close();
+          photoPaths.push('images/places/' + fname);
+        }
       }
       if (photoPaths.length > 0) entry.photos = photoPaths;
     }
@@ -1076,6 +1152,7 @@ function loadForEdit(id) {
   document.getElementById('f-why').value   = p.why  || '';
   document.getElementById('f-time').value  = p.best_time || '';
   document.getElementById('f-added').value = p.added || '';
+  document.getElementById('f-addr').value  = p.address || '';
 
   // 類別
   selCat = p.category;
