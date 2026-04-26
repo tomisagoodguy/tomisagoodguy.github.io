@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diary on 定康筆記 | Tom&#39;s Note</title>
+    <link>http://localhost:1313/categories/diary/</link>
+    <description>Recent content in Diary on 定康筆記 | Tom&#39;s Note</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 21 Mar 2026 16:37:19 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/diary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>全端代書控案系統 - 開發實錄</title>
+      <link>http://localhost:1313/automation/full-stack-development-record/</link>
+      <pubDate>Sat, 21 Mar 2026 15:52:21 +0800</pubDate>
+      <guid>http://localhost:1313/automation/full-stack-development-record/</guid>
+      <description>這裡是未來專案開發時可以隨時參考的筆記心得與架構指南。&#xA;一、軟體開發生命周期 (SDLC) 每個專案都應該遵循這個流程，避免走彎路：&#xA;計畫：釐清現況、找出落差並設定期待的目標。 需求分析：深度分析使用者的需求與痛點。 解法設計：設計能填補「現況」與「期待」落差的整體架構。 實作：開始撰寫程式碼並建立系統。 測試：確保系統功能正常運作，排查邊界案例與錯誤。 部署：將系統發布到正式環境，並上線提供使用。 維護：持續監控系統，更新與修復後續的問題。 二、技術與架構評估（對應 SDLC：計畫 &amp;amp; 需求分析） 在動手前先決定要用什麼工具，避免中途換技術造成浪費。</description>
+    </item>
+  </channel>
+</rss>

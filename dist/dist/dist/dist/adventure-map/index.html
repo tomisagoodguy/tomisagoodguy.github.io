@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <title>破關地圖 | 定康筆記 | Tom&#39;s Note</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description"
+    content="慢慢收集，等人一起解鎖。">
+  
+  <meta name="author" content="定康">
+  <meta name="theme-color" content=" #fff">
+
+  <!-- canonical link -->
+  <link rel="canonical" href="http://localhost:1313/adventure-map/">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="liva-hugo" />
+  <meta name="generator" content="Hugo 0.127.0">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:title" content="破關地圖 | 定康筆記 | Tom&#39;s Note">
+  <meta property="og:description"
+    content="慢慢收集，等人一起解鎖。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:1313/adventure-map/">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="破關地圖 | 定康筆記 | Tom&#39;s Note">
+  <meta name="twitter:description"
+    content="慢慢收集，等人一起解鎖。">
+  
+  
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/slick/slick.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/venobox/venobox.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" >
+  
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/style.min.css" media="screen">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+
+  <!--Favicon-->
+  <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+
+  <!-- Structured Data -->
+  
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3XT9EZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZZ3XT9EZKH');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
+  <div class="preloader-content">
+    
+    <div class="preloader-spinner"></div>
+    
+    <p class="preloader-text">加載中...</p>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .preloader-content {
+    text-align: center;
+  }
+  
+  .preloader img {
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    animation: pulse 1.5s ease infinite;
+  }
+  
+  .preloader-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333333;
+    opacity: 0.8;
+  }
+  
+  .preloader-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+   
+  body.loading {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loading');
+    
+    
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        
+        preloader.classList.add('loaded');
+        
+        
+        setTimeout(function() {
+          document.body.classList.remove('loading');
+        }, 500);
+        
+        
+        setTimeout(function() {
+          preloader.parentNode.removeChild(preloader);
+        }, 1000);
+      }
+    });
+    
+    
+    setTimeout(function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader && !preloader.classList.contains('loaded')) {
+        preloader.classList.add('loaded');
+        document.body.classList.remove('loading');
+      }
+    },  8000 );
+  });
+</script>
+<!-- preloader end -->
+
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="http://localhost:1313/">
+        
+        <h3>定康筆記 | Tom&#39;s Note</h3>
+        
+      </a>
+      <button class="navbar-toggler border-0 cursor-pointer" type="button" data-toggle="collapse"
+        data-target="#navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          style="width: 24px; height: 24px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/profile.php?id=100005583693079"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/tomisagoodguy?tab=repositories"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/">
+          
+          <h3>定康筆記 | Tom&#39;s Note</h3>
+          
+        </a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/">首頁</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/lifestyle/">廚藝與生活</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/adventure-map/">破關地圖</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/real-estate/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              代書修煉
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/real-estate/exam-notes/">考試筆記</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/automation/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              自動化實驗室
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/automation/">所有文章</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/tools/property-tax.html">房地稅務試算</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link about-me-nav" href="http://localhost:1313/about/">關於</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/links/">相關連結</a>
+            
+          </li>
+          
+          
+        </ul>
+
+        <div class="theme-switch-wrapper pl-lg-4">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+              <i class="fas fa-sun sun-icon"></i>
+              <i class="fas fa-moon moon-icon"></i>
+            </div>
+          </label>
+        </div>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" style="width: 20px; height: 20px;">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
+          <div class="search-wrapper">
+            <form action="http://localhost:1313//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="輸入關鍵字並按 Enter...">
+            </form>
+            <button id="searchClose" class="search-close cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-dark" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="">
+<link rel="stylesheet" href="http://localhost:1313/css/adventure-map.bundle.css">
+
+
+<script>
+  window.PLACES_DATA = [{"added":"2026-03","address":"新北市三峽區光明路100號, 23742","category":"food","id":1773555752698,"lat":24.92819,"lng":121.37579,"name":"老虎麵","status":"done"}];
+</script>
+
+<style>
+   
+  .adv-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; 
+    height: 650px !important;
+    margin: 0 20px !important;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--adv-glass);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .adv-map-wrap {
+    border-right: 1px solid var(--adv-glass-border);
+  }
+
+   
+  @media (max-width: 900px) {
+    .adv-layout {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 300px 1fr !important;
+      height: auto !important;
+    }
+  }
+</style>
+
+<section class="adv-page">
+
+  
+  <div class="adv-hero">
+    <div class="adv-hero__inner">
+      <div class="adv-hero__text">
+        <h1 class="adv-hero__title">破關地圖</h1>
+        <p class="adv-hero__subtitle">喔，你也在這裡嗎?</p>
+      </div>
+      <div class="adv-hero__stats">
+        <div class="adv-stat">
+          <span class="adv-stat__num" id="total-count">0</span>
+          <span class="adv-stat__label">收藏地點</span>
+        </div>
+        <div class="adv-stat adv-stat--done">
+          <span class="adv-stat__num" id="done-count">0</span>
+          <span class="adv-stat__label">已破關</span>
+        </div>
+      </div>
+    </div>
+    <div class="adv-hero__progress-wrap">
+      <div class="adv-hero__progress-bar">
+        <div class="adv-hero__progress-fill" id="progress-bar"></div>
+      </div>
+      <span class="adv-hero__progress-label" id="progress-label">0% 解鎖</span>
+    </div>
+  </div>
+
+  
+  <div class="adv-filter-bar">
+    <button class="adv-filter-btn adv-filter-btn--active" data-cat="all" id="filter-all">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      全部
+    </button>
+    <button class="adv-filter-btn" data-cat="food" id="filter-food">美食</button>
+    <button class="adv-filter-btn" data-cat="scenery" id="filter-scenery">風景</button>
+    <button class="adv-filter-btn" data-cat="oldshop" id="filter-oldshop">老店</button>
+    <button class="adv-filter-btn" data-cat="walk" id="filter-walk">散步</button>
+    <button class="adv-filter-btn" data-cat="cafe" id="filter-cafe">咖啡</button>
+    <button class="adv-filter-btn" data-cat="shop" id="filter-shop">購物</button>
+    <button class="adv-filter-btn" data-cat="stay" id="filter-stay">住宿</button>
+    <button class="adv-filter-btn" data-cat="quest" id="filter-quest">破關任務</button>
+  </div>
+
+  <div class="adv-filter-bar adv-filter-bar--seasons" style="margin-top:-8px; padding-top:0;">
+    <span style="font-size:.7rem; color:var(--brown-lt); margin-right:8px; font-weight:600;">適合季節：</span>
+    <button class="adv-season-btn active" data-season="all">全部</button>
+    <button class="adv-season-btn" data-season="spring">🌸 春</button>
+    <button class="adv-season-btn" data-season="summer">☀️ 夏</button>
+    <button class="adv-season-btn" data-season="autumn">🍂 秋</button>
+    <button class="adv-season-btn" data-season="winter">❄️ 冬</button>
+  </div>
+
+  
+  <div class="adv-layout">
+    
+    
+    <div class="adv-map-wrap">
+      <div id="adventure-map"></div>
+    </div>
+
+    
+    <div class="adv-sidebar" id="adv-sidebar">
+
+      
+      <div class="adv-sidebar__default" id="sidebar-default">
+        <div class="adv-sidebar__default-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        </div>
+        <h4 class="adv-sidebar__default-title">選一個地點</h4>
+        <p class="adv-sidebar__default-desc">點擊地圖上的圖釘，<br>探索這份不完整的清單。</p>
+        <div class="adv-legend">
+          <div class="adv-legend__item">
+            <span class="adv-legend__dot adv-legend__dot--pending"></span>待解鎖
+          </div>
+          <div class="adv-legend__item">
+            <span class="adv-legend__dot adv-legend__dot--done"></span>已破關
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="adv-sidebar__detail" id="sidebar-detail"></div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<script type="module" src="http://localhost:1313/js/adventure-map.bundle.js"></script>
+
+
+
+<footer class="text-capitalize footer-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="http://localhost:1313/" aria-label="定康筆記 | Tom&#39;s Note">
+          
+          <h3>定康筆記 | Tom&#39;s Note</h3>
+          
+        </a>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">聯絡我們</h6>
+        <ul class="list-unstyled contact-list">
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center cursor-pointer" href="tel:0911445898">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+              </svg>
+              0911445898
+            </a>
+          </li>
+          
+          
+          <li class="mb-3 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Taiwan
+          </li>
+          
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center cursor-pointer" href="mailto:tom890108159@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              tom890108159@gmail.com
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">社群連結</h6>
+        <ul class="list-unstyled social-list">
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://www.facebook.com/profile.php?id=100005583693079" >
+              <i class="ti-facebook"></i>facebook
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://github.com/tomisagoodguy?tab=repositories" >
+              <i class="ti-github"></i>github
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">文章分類</h6>
+        <ul class="list-unstyled category-list">
+          <li class="mb-3">
+            <a class="text-dark category-item" href="/categories/">
+              查看所有分類
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">快速連結</h6>
+        <ul class="list-unstyled quick-links">
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/">
+              首頁
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/lifestyle/">
+              廚藝與生活
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/real-estate/">
+              代書修煉
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/automation/">
+              自動化實驗室
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/adventure-map/">
+              破關地圖
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/about/">
+              關於
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/links/">
+              相關連結
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://security.lucas-futures.com/">
+              網站安全報告
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center footer-copyright">
+        | copyright © 2025 定康筆記 | Tom&rsquo;s Note All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="return-to-top" class="cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+    style="width: 24px; height: 24px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+  </svg>
+</a>
+<a href="#" id="go-to-bottom" class="cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+    style="width: 24px; height: 24px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+  </svg>
+</a>
+
+<script id="index-script" data-index-url="http://localhost:1313/index.json">
+  var indexURL = document.currentScript.dataset.indexUrl;
+</script>
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jQuery/jquery.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/slick/slick.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/venobox/venobox.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/fuse.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/mark.js"  ></script>
+
+
+<!-- Main script with TypeScript support -->
+
+<script src="http://localhost:1313/js/script.js"></script>
+
+<!-- UI logic bundle with TypeScript -->
+
+<script src="http://localhost:1313/js/index.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide"
+  data-cookie-expire="2">
+  <div class="container">
+    <div class="cookie-content">
+      <p>本網站使用Cookie來改善您的瀏覽體驗。繼續使用本網站，即表示您同意我們的Cookie使用政策。</p>
+      <div class="cookie-buttons">
+        <button id="js-cookie-button" class="btn btn-sm btn-primary">我接受</button>
+        <a href="" class="btn btn-sm btn-outline-secondary ml-2">了解更多</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

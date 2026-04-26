@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <title>全端代書控案系統 - 開發實錄 | 定康筆記 | Tom&#39;s Note</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description"
+    content="新增筆記心得幫助我以後做專案可以用">
+  
+  <meta name="author" content="定康">
+  <meta name="theme-color" content=" #fff">
+
+  <!-- canonical link -->
+  <link rel="canonical" href="http://localhost:1313/automation/full-stack-development-record/">
+
+  <!-- theme meta -->
+  <meta name="theme-name" content="liva-hugo" />
+  <meta name="generator" content="Hugo 0.127.0">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:title" content="全端代書控案系統 - 開發實錄 | 定康筆記 | Tom&#39;s Note">
+  <meta property="og:description"
+    content="新增筆記心得幫助我以後做專案可以用">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:1313/automation/full-stack-development-record/">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="全端代書控案系統 - 開發實錄 | 定康筆記 | Tom&#39;s Note">
+  <meta name="twitter:description"
+    content="新增筆記心得幫助我以後做專案可以用">
+  
+  
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/slick/slick.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/plugins/venobox/venobox.css" >
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" >
+  
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/style.min.css" media="screen">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css" media="screen">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+
+  <!--Favicon-->
+  <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="http://localhost:1313/images/favicon.png">
+
+  <!-- Structured Data -->
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/localhost:1313\/automation\/full-stack-development-record\/"
+      },
+      "headline": "全端代書控案系統 - 開發實錄",
+      "description": "新增筆記心得幫助我以後做專案可以用",
+      
+      "datePublished": "2026-03-21T15:52:21\u002b08:00",
+      "dateModified": "2026-03-21T16:37:19\u002b08:00",
+      "author": {
+        "@type": "Person",
+        "name": "定康"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "定康筆記 | Tom\u0027s Note",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "http:\/\/localhost:1313\/"
+        }
+      }
+    }
+  </script>
+  
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3XT9EZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZZ3XT9EZKH');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader" id="preloader" aria-hidden="true" aria-label="頁面加載中">
+  <div class="preloader-content">
+    
+    <div class="preloader-spinner"></div>
+    
+    <p class="preloader-text">加載中...</p>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  .preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .preloader-content {
+    text-align: center;
+  }
+  
+  .preloader img {
+    max-width: 80px;
+    width: auto;
+    height: auto;
+    animation: pulse 1.5s ease infinite;
+  }
+  
+  .preloader-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333333;
+    opacity: 0.8;
+  }
+  
+  .preloader-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+   
+  body.loading {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loading');
+    
+    
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        
+        preloader.classList.add('loaded');
+        
+        
+        setTimeout(function() {
+          document.body.classList.remove('loading');
+        }, 500);
+        
+        
+        setTimeout(function() {
+          preloader.parentNode.removeChild(preloader);
+        }, 1000);
+      }
+    });
+    
+    
+    setTimeout(function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader && !preloader.classList.contains('loaded')) {
+        preloader.classList.add('loaded');
+        document.body.classList.remove('loading');
+      }
+    },  8000 );
+  });
+</script>
+<!-- preloader end -->
+
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="http://localhost:1313/">
+        
+        <h3>定康筆記 | Tom&#39;s Note</h3>
+        
+      </a>
+      <button class="navbar-toggler border-0 cursor-pointer" type="button" data-toggle="collapse"
+        data-target="#navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          style="width: 24px; height: 24px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/profile.php?id=100005583693079"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/tomisagoodguy?tab=repositories"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="http://localhost:1313/">
+          
+          <h3>定康筆記 | Tom&#39;s Note</h3>
+          
+        </a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/">首頁</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/lifestyle/">廚藝與生活</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/adventure-map/">破關地圖</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/real-estate/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              代書修煉
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/real-estate/exam-notes/">考試筆記</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://localhost:1313/automation/" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              自動化實驗室
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" href="http://localhost:1313/automation/">所有文章</a>
+              
+              <a class="dropdown-item" href="http://localhost:1313/tools/property-tax.html">房地稅務試算</a>
+              
+            </div>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link about-me-nav" href="http://localhost:1313/about/">關於</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            
+            <a class="nav-link" href="http://localhost:1313/links/">相關連結</a>
+            
+          </li>
+          
+          
+        </ul>
+
+        <div class="theme-switch-wrapper pl-lg-4">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+              <i class="fas fa-sun sun-icon"></i>
+              <i class="fas fa-moon moon-icon"></i>
+            </div>
+          </label>
+        </div>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" style="width: 20px; height: 20px;">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
+          <div class="search-wrapper">
+            <form action="http://localhost:1313//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="輸入關鍵字並按 Enter...">
+            </form>
+            <button id="searchClose" class="search-close cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-dark" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<section class="section-sm category-coding">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-3">
+        <div class="toc-placeholder"></div>
+        <div class="toc-container">
+          <div class="toc-title">文章目錄</div>
+          <div class="toc-content">
+            <nav><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一軟體開發生命周期-sdlc">一、軟體開發生命周期 (SDLC)</a></li>
+    <li><a href="#二技術與架構評估對應-sdlc計畫--需求分析">二、技術與架構評估（對應 SDLC：計畫 &amp; 需求分析）</a>
+      <ul>
+        <li><a href="#平台定位">平台定位</a></li>
+        <li><a href="#資料儲存">資料儲存</a></li>
+        <li><a href="#資料庫選擇-db-options">資料庫選擇 (DB Options)</a></li>
+        <li><a href="#權限管理與身分驗證-auth">權限管理與身分驗證 (Auth)</a></li>
+      </ul>
+    </li>
+    <li><a href="#三規格驅動開發對應-sdlc解法設計">三、規格驅動開發（對應 SDLC：解法設計）</a>
+      <ul>
+        <li><a href="#什麼是-openspec">什麼是 OpenSpec？</a></li>
+        <li><a href="#初始化openspec-init">初始化：<code>openspec init</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#四開發環境建置對應-sdlc實作準備">四、開發環境建置（對應 SDLC：實作準備）</a>
+      <ul>
+        <li><a href="#nodejs-基礎環境">Node.js 基礎環境</a></li>
+      </ul>
+    </li>
+    <li><a href="#五網域與部署策略對應-sdlc部署">五、網域與部署策略（對應 SDLC：部署）</a>
+      <ul>
+        <li><a href="#購買網域平台">購買網域平台</a></li>
+        <li><a href="#部署平台選擇">部署平台選擇</a></li>
+      </ul>
+    </li>
+    <li><a href="#六資料庫設計原則對應-sdlc解法設計--實作">六、資料庫設計原則（對應 SDLC：解法設計 &amp; 實作）</a>
+      <ul>
+        <li><a href="#設計前要問的問題">設計前要問的問題</a></li>
+        <li><a href="#命名慣例">命名慣例</a></li>
+        <li><a href="#常見欄位模板">常見欄位模板</a></li>
+        <li><a href="#supabase-快速上手提醒">Supabase 快速上手提醒</a></li>
+      </ul>
+    </li>
+    <li><a href="#七版本控制與-git-工作流程對應-sdlc實作">七、版本控制與 Git 工作流程（對應 SDLC：實作）</a>
+      <ul>
+        <li><a href="#基本分支策略">基本分支策略</a></li>
+        <li><a href="#commit-訊息格式conventional-commits">Commit 訊息格式（Conventional Commits）</a></li>
+        <li><a href="#常用指令速查">常用指令速查</a></li>
+      </ul>
+    </li>
+    <li><a href="#八api-設計原則對應-sdlc解法設計">八、API 設計原則（對應 SDLC：解法設計）</a>
+      <ul>
+        <li><a href="#restful-路由慣例">RESTful 路由慣例</a></li>
+        <li><a href="#回傳格式統一">回傳格式統一</a></li>
+      </ul>
+    </li>
+    <li><a href="#九測試策略對應-sdlc測試">九、測試策略（對應 SDLC：測試）</a>
+      <ul>
+        <li><a href="#優先測試的三種情境">優先測試的三種情境</a></li>
+        <li><a href="#測試工具推薦">測試工具推薦</a></li>
+        <li><a href="#aaa-測試結構">AAA 測試結構</a></li>
+      </ul>
+    </li>
+    <li><a href="#十openspec-工作流程速查ai-協作開發">十、OpenSpec 工作流程速查（AI 協作開發）</a>
+      <ul>
+        <li><a href="#終端機指令openspec-config">終端機指令（openspec config）</a></li>
+        <li><a href="#強制啟動-openspecclaude-code-對話框">強制啟動 OpenSpec（Claude Code 對話框）</a></li>
+        <li><a href="#完整指令速查表">完整指令速查表</a></li>
+        <li><a href="#推薦工作流程順序">推薦工作流程順序</a></li>
+      </ul>
+    </li>
+    <li><a href="#十一維護與上線後監控對應-sdlc維護">十一、維護與上線後監控（對應 SDLC：維護）</a>
+      <ul>
+        <li><a href="#上線檢查清單">上線檢查清單</a></li>
+        <li><a href="#常見維運工具">常見維運工具</a></li>
+        <li><a href="#後續疊代原則">後續疊代原則</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></nav>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-9">
+        
+        <a href="/categories/coding" class="badge badge-primary badge-sm">Coding</a>
+        
+        <a href="/categories/diary" class="badge badge-primary badge-sm">Diary</a>
+        
+        <h2>全端代書控案系統 - 開發實錄</h2>
+        <div class="mb-3 post-meta">
+          <span>By 定康</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>21 March 2026</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>3 min read</span>
+        </div>
+
+        
+
+
+        <div class="content mb-5 post-content">
+          <p>這裡是未來專案開發時可以隨時參考的筆記心得與架構指南。</p>
+<hr>
+<h2 id="一軟體開發生命周期-sdlc">一、軟體開發生命周期 (SDLC)</h2>
+<p>每個專案都應該遵循這個流程，避免走彎路：</p>
+<ol>
+<li><strong>計畫</strong>：釐清現況、找出落差並設定期待的目標。</li>
+<li><strong>需求分析</strong>：深度分析使用者的需求與痛點。</li>
+<li><strong>解法設計</strong>：設計能填補「現況」與「期待」落差的整體架構。</li>
+<li><strong>實作</strong>：開始撰寫程式碼並建立系統。</li>
+<li><strong>測試</strong>：確保系統功能正常運作，排查邊界案例與錯誤。</li>
+<li><strong>部署</strong>：將系統發布到正式環境，並上線提供使用。</li>
+<li><strong>維護</strong>：持續監控系統，更新與修復後續的問題。</li>
+</ol>
+<hr>
+<h2 id="二技術與架構評估對應-sdlc計畫--需求分析">二、技術與架構評估（對應 SDLC：計畫 &amp; 需求分析）</h2>
+<p>在動手前先決定要用什麼工具，避免中途換技術造成浪費。</p>
+<h3 id="平台定位">平台定位</h3>
+<ul>
+<li><strong>手機端 (Mobile)</strong></li>
+<li><strong>電腦端 (Desktop / Web)</strong></li>
+</ul>
+<h3 id="資料儲存">資料儲存</h3>
+<ul>
+<li><strong>Notion</strong> (透過 API 作為簡易後台或資料庫)</li>
+<li><strong>本機上傳</strong> (檔案儲存處理)</li>
+</ul>
+<h3 id="資料庫選擇-db-options">資料庫選擇 (DB Options)</h3>
+<p>依專案複雜度選型，不要過度工程化：</p>
+<ul>
+<li><strong>輕量級 / No-Code</strong>：Google Sheets, Airtable, Notion</li>
+<li><strong>關聯式 / 專業資料庫</strong>：MySQL, PostgreSQL（現代化開發推薦使用 Supabase）</li>
+</ul>
+<h3 id="權限管理與身分驗證-auth">權限管理與身分驗證 (Auth)</h3>
+<ul>
+<li>首選：<strong>Google OAuth</strong>（快速且免去密碼管理負擔）</li>
+<li>進階防護：<strong>OTP (One-Time Password)</strong>，手機或信箱驗證</li>
+</ul>
+<hr>
+<h2 id="三規格驅動開發對應-sdlc解法設計">三、規格驅動開發（對應 SDLC：解法設計）</h2>
+<p>架構決定後，<strong>先寫規格，再寫程式碼</strong>。這是 AI 協作開發的核心原則。</p>
+<h3 id="什麼是-openspec">什麼是 OpenSpec？</h3>
+<p>OpenSpec 是一套<strong>規格驅動開發 (Spec-Driven Development)</strong> 的工具，核心理念是「先定義合約，再開始實作」，確保 AI 與開發者之間有共同依據。</p>
+<h3 id="初始化openspec-init">初始化：<code>openspec init</code></h3>
+<p>在新專案根目錄開啟終端機執行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx openspec init
+</span></span></code></pre></div><p>執行後會引導你完成設定，並在專案中產生規格文件結構。</p>
+<hr>
+<h2 id="四開發環境建置對應-sdlc實作準備">四、開發環境建置（對應 SDLC：實作準備）</h2>
+<p>規格確認後，建置本機開發環境。</p>
+<h3 id="nodejs-基礎環境">Node.js 基礎環境</h3>
+<p>前端或全端開發皆需依賴 Node.js 生態。安裝完成後，確認是否正確掛載到環境變數：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node -v
+</span></span></code></pre></div><p><em>(成功安裝時，會回傳版本號，如 <code>v22.x.x</code>)</em></p>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：需先確認 Node.js 環境已安裝，才能使用 <code>npx openspec init</code>。</p>
+</blockquote>
+<hr>
+<h2 id="五網域與部署策略對應-sdlc部署">五、網域與部署策略（對應 SDLC：部署）</h2>
+<h3 id="購買網域平台">購買網域平台</h3>
+<ul>
+<li><strong>推薦</strong>：Cloudflare, Gandi</li>
+<li><strong>不推薦</strong>：GoDaddy（⚠️ 續約費用昂貴且推銷多）</li>
+</ul>
+<h3 id="部署平台選擇">部署平台選擇</h3>
+<ul>
+<li><strong>推薦（免費或低成本）</strong>：
+<ul>
+<li><strong>Zeabur</strong>（部署簡單快捷，對開發者友善）</li>
+<li><strong>Google Apps Script</strong>（適合自動化小工具與排程）</li>
+<li><strong>GitHub Pages</strong>（適合純靜態網站）</li>
+<li><strong>Cloudflare Pages</strong>（不想公開程式碼的前端或全端部署，效能極佳）</li>
+</ul>
+</li>
+<li><strong>較不推薦（下次可換）</strong>：
+<ul>
+<li><strong>Vercel / Render</strong></li>
+<li><strong>三大公有雲：GCP, AWS</strong>（設定繁瑣，不適合初期快速疊代）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>總結</strong>：雖然這次使用 <strong>Vercel</strong> 部署，下次強烈建議嘗試 Zeabur 或 Cloudflare Pages，配置彈性更好、長遠維護更輕鬆。</p>
+</blockquote>
+<hr>
+<h2 id="六資料庫設計原則對應-sdlc解法設計--實作">六、資料庫設計原則（對應 SDLC：解法設計 &amp; 實作）</h2>
+<p>良好的資料庫設計能避免後期大規模重構。</p>
+<h3 id="設計前要問的問題">設計前要問的問題</h3>
+<ul>
+<li>資料之間的關係是什麼？（一對一、一對多、多對多）</li>
+<li>哪些欄位會被頻繁查詢？（考慮建立索引）</li>
+<li>資料量預期多大？（影響技術選型）</li>
+</ul>
+<h3 id="命名慣例">命名慣例</h3>
+<ul>
+<li>資料表：小寫 + 底線，用<strong>複數</strong>（<code>case_records</code>、<code>users</code>）</li>
+<li>欄位：小寫 + 底線（<code>created_at</code>、<code>client_name</code>）</li>
+<li>主鍵：統一用 <code>id</code>（自動遞增整數或 UUID）</li>
+<li>外鍵：<code>{資料表單數}_{id}</code>，例如 <code>user_id</code></li>
+</ul>
+<h3 id="常見欄位模板">常見欄位模板</h3>
+<p>每張資料表建議都加上這三個欄位，方便追蹤：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>id         SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>created_at TIMESTAMPTZ <span style="color:#66d9ef">DEFAULT</span> NOW(),
+</span></span><span style="display:flex;"><span>updated_at TIMESTAMPTZ <span style="color:#66d9ef">DEFAULT</span> NOW()
+</span></span></code></pre></div><h3 id="supabase-快速上手提醒">Supabase 快速上手提醒</h3>
+<ul>
+<li>在 Dashboard 建好資料表後，記得開啟 <strong>Row Level Security (RLS)</strong>。</li>
+<li>使用 Supabase JS Client 時，查詢語法接近 SQL，很直覺。</li>
+<li><code>.env</code> 中放 <code>SUPABASE_URL</code> 和 <code>SUPABASE_ANON_KEY</code>，不要 commit 進 Git。</li>
+</ul>
+<hr>
+<h2 id="七版本控制與-git-工作流程對應-sdlc實作">七、版本控制與 Git 工作流程（對應 SDLC：實作）</h2>
+<h3 id="基本分支策略">基本分支策略</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>main        → 正式環境（穩定版本）
+</span></span><span style="display:flex;"><span>dev         → 開發整合分支
+</span></span><span style="display:flex;"><span>feature/xxx → 單一功能開發
+</span></span><span style="display:flex;"><span>fix/xxx     → 臭蟲修復
+</span></span></code></pre></div><h3 id="commit-訊息格式conventional-commits">Commit 訊息格式（Conventional Commits）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>feat: 新增案件查詢功能
+</span></span><span style="display:flex;"><span>fix: 修正日期格式解析錯誤
+</span></span><span style="display:flex;"><span>refactor: 重構 API 回傳結構
+</span></span><span style="display:flex;"><span>docs: 更新 README 安裝說明
+</span></span><span style="display:flex;"><span>chore: 升級套件版本
+</span></span></code></pre></div><blockquote>
+<p>💡 <strong>好習慣</strong>：每完成一個小功能就 commit，不要等到一大包再提交，出問題時更容易回溯。</p>
+</blockquote>
+<h3 id="常用指令速查">常用指令速查</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b feature/xxx   <span style="color:#75715e"># 建立新功能分支</span>
+</span></span><span style="display:flex;"><span>git add -p                    <span style="color:#75715e"># 逐段暫存，避免誤提交</span>
+</span></span><span style="display:flex;"><span>git stash                     <span style="color:#75715e"># 暫存目前工作，切換分支用</span>
+</span></span><span style="display:flex;"><span>git log --oneline --graph     <span style="color:#75715e"># 視覺化分支歷史</span>
+</span></span></code></pre></div><hr>
+<h2 id="八api-設計原則對應-sdlc解法設計">八、API 設計原則（對應 SDLC：解法設計）</h2>
+<h3 id="restful-路由慣例">RESTful 路由慣例</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>路徑</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/cases</code></td>
+<td>取得所有案件</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/cases/:id</code></td>
+<td>取得單一案件</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/cases</code></td>
+<td>新增案件</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/cases/:id</code></td>
+<td>完整更新案件</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/api/cases/:id</code></td>
+<td>部分更新案件</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/cases/:id</code></td>
+<td>刪除案件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="回傳格式統一">回傳格式統一</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;success&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;data&#34;</span>: { <span style="color:#960050;background-color:#1e0010">...</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;error&#34;</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>失敗時：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;success&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;data&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;錯誤描述訊息&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>💡 回傳格式統一，前端處理邏輯更簡單，也方便之後接 AI 工具做自動化。</p>
+</blockquote>
+<hr>
+<h2 id="九測試策略對應-sdlc測試">九、測試策略（對應 SDLC：測試）</h2>
+<p>不需要測試所有東西，但核心流程一定要涵蓋。</p>
+<h3 id="優先測試的三種情境">優先測試的三種情境</h3>
+<ol>
+<li><strong>Happy Path</strong>：正常情況下，系統是否如預期運作？</li>
+<li><strong>Edge Case</strong>：邊界值（空字串、null、超大數字）會不會炸？</li>
+<li><strong>Error Handling</strong>：API 失敗或網路中斷時，系統怎麼反應？</li>
+</ol>
+<h3 id="測試工具推薦">測試工具推薦</h3>
+<ul>
+<li><strong>後端 API</strong>：Postman 或 Thunder Client（VS Code 插件）</li>
+<li><strong>前端元件</strong>：Vitest + Testing Library</li>
+<li><strong>End-to-End</strong>：Playwright（模擬真實使用者操作）</li>
+</ul>
+<h3 id="aaa-測試結構">AAA 測試結構</h3>
+<p>每個測試案例都遵循三段式，邏輯清晰：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Arrange  → 準備測試資料與環境
+</span></span><span style="display:flex;"><span>Act      → 執行要測試的動作
+</span></span><span style="display:flex;"><span>Assert   → 驗證結果是否符合預期
+</span></span></code></pre></div><hr>
+<h2 id="十openspec-工作流程速查ai-協作開發">十、OpenSpec 工作流程速查（AI 協作開發）</h2>
+<p>在這個專案中使用 Claude Code + OpenSpec 進行規格驅動開發，以下是常用指令。</p>
+<h3 id="終端機指令openspec-config">終端機指令（openspec config）</h3>
+<p>查看與修改 OpenSpec 全域設定。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openspec config list          <span style="color:#75715e"># 查看所有目前設定值</span>
+</span></span><span style="display:flex;"><span>openspec config get &lt;key&gt;     <span style="color:#75715e"># 取得特定設定值</span>
+</span></span><span style="display:flex;"><span>openspec config set &lt;key&gt; &lt;value&gt;  <span style="color:#75715e"># 修改設定值</span>
+</span></span><span style="display:flex;"><span>openspec config unset &lt;key&gt;   <span style="color:#75715e"># 移除設定，恢復預設值</span>
+</span></span><span style="display:flex;"><span>openspec config reset         <span style="color:#75715e"># 重設所有設定為預設值</span>
+</span></span><span style="display:flex;"><span>openspec config path          <span style="color:#75715e"># 顯示設定檔位置</span>
+</span></span><span style="display:flex;"><span>openspec config edit          <span style="color:#75715e"># 用 $EDITOR 直接開啟設定檔編輯</span>
+</span></span></code></pre></div><blockquote>
+<p>⚠️ 目前 <code>--scope</code> 只支援 <code>global</code>，尚無 project-level 設定。</p>
+</blockquote>
+<h3 id="強制啟動-openspecclaude-code-對話框">強制啟動 OpenSpec（Claude Code 對話框）</h3>
+<p>在 Claude Code 對話框輸入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/opsx
+</span></span></code></pre></div><p>這會強制進入 OpenSpec 工作流程，即使沒有現有規格也能從頭開始。</p>
+<h3 id="完整指令速查表">完整指令速查表</h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/opsx:new</code></td>
+<td>開始一個新變更，逐步建立規格工件</td>
+</tr>
+<tr>
+<td><code>/opsx:ff</code></td>
+<td>快速產生所有規格工件（Fast Forward）</td>
+</tr>
+<tr>
+<td><code>/opsx:continue</code></td>
+<td>繼續進行中的變更，建立下一個工件</td>
+</tr>
+<tr>
+<td><code>/opsx:apply</code></td>
+<td>依規格執行實作任務</td>
+</tr>
+<tr>
+<td><code>/opsx:verify</code></td>
+<td>驗證實作是否符合規格</td>
+</tr>
+<tr>
+<td><code>/opsx:archive</code></td>
+<td>封存已完成的變更</td>
+</tr>
+<tr>
+<td><code>/opsx:explore</code></td>
+<td>探索模式，釐清需求後再開始</td>
+</tr>
+<tr>
+<td><code>/opsx:sync</code></td>
+<td>將 delta spec 同步至主規格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="推薦工作流程順序">推薦工作流程順序</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>探索需求         → /opsx:explore
+</span></span><span style="display:flex;"><span>建立規格         → /opsx:new 或 /opsx:ff
+</span></span><span style="display:flex;"><span>實作功能         → /opsx:apply
+</span></span><span style="display:flex;"><span>驗證成果         → /opsx:verify
+</span></span><span style="display:flex;"><span>封存歸檔         → /opsx:archive
+</span></span></code></pre></div><blockquote>
+<p>💡 <strong>原則</strong>：不確定要做什麼時，先用 <code>/opsx:explore</code> 思考清楚，再動手。規格先行，程式碼後行。</p>
+</blockquote>
+<hr>
+<h2 id="十一維護與上線後監控對應-sdlc維護">十一、維護與上線後監控（對應 SDLC：維護）</h2>
+<h3 id="上線檢查清單">上線檢查清單</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 環境變數（<code>.env</code>）是否全部在正式環境設定完成？</li>
+<li><input disabled="" type="checkbox"> 資料庫 Migration 是否執行？</li>
+<li><input disabled="" type="checkbox"> CORS 設定是否只允許必要網域？</li>
+<li><input disabled="" type="checkbox"> 錯誤日誌（Error Logging）是否接上（Sentry 或 console）？</li>
+<li><input disabled="" type="checkbox"> 有沒有設定自動備份？</li>
+</ul>
+<h3 id="常見維運工具">常見維運工具</h3>
+<ul>
+<li><strong>錯誤追蹤</strong>：Sentry（免費方案夠用）</li>
+<li><strong>使用者行為分析</strong>：Google Analytics 4 或 Umami（自架、隱私友善）</li>
+<li><strong>正常時間監控</strong>：UptimeRobot（免費，定時打 API 確認服務存活）</li>
+</ul>
+<h3 id="後續疊代原則">後續疊代原則</h3>
+<blockquote>
+<p>「能上線的系統才是好系統，完美的系統是不存在的。」</p>
+</blockquote>
+<p>每次疊代前先問：</p>
+<ol>
+<li>這個改動解決了什麼真實痛點？</li>
+<li>最小可行的改法是什麼？</li>
+<li>有沒有可能搞壞現有功能？</li>
+</ol>
+
+
+          
+          <div class="post-tags mt-5 pt-4 border-top">
+            <span class="d-inline-block mr-3 text-muted"><i class="fas fa-tags mr-2"></i>文章標籤:</span>
+            
+            <a href="/tags/sdlc" class="post-tag-item">SDLC</a>
+            
+            <a href="/tags/database" class="post-tag-item">Database</a>
+            
+            <a href="/tags/deployment" class="post-tag-item">Deployment</a>
+            
+            <a href="/tags/full-stack" class="post-tag-item">Full-stack</a>
+            
+            <a href="/tags/project-management" class="post-tag-item">Project Management</a>
+            
+          </div>
+          
+        </div>
+
+        
+        <div class="navigation-container">
+          
+          <div class="post-navigation">
+            <div class="row">
+              <div class="col-md-6">
+                
+                <div class="prev-post">
+                  <span>上一篇</span>
+                  <a href="/automation/google-food-list-scraper/">
+                    <h5>Google Maps 地點清單自動爬蟲 (JavaScript Snippet)</h5>
+                  </a>
+                </div>
+                
+              </div>
+              <div class="col-md-6 text-right">
+                
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="navigation-tabs mt-5">
+            <ul class="nav nav-tabs" id="navigationTabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="related-tab" data-toggle="tab" href="#related" role="tab">相關文章</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab">最新文章</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="navigationTabsContent">
+              
+              <div class="tab-pane fade show active" id="related" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                  
+                  
+                  
+                  <div class="col-12">
+                    <p class="text-muted">目前沒有相關文章</p>
+                  </div>
+                  
+                </div>
+              </div>
+
+              
+              <div class="tab-pane fade" id="latest" role="tabpanel">
+                <div class="row mt-4">
+                  
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E6%B3%95%E5%BC%8F%E6%B0%B4%E6%9E%9C%E5%A5%B6%E6%B2%B9%E8%96%84%E9%A4%85%E4%BD%90%E6%A9%99%E5%91%B3%E6%B2%99%E5%B7%B4%E9%9B%8D/">法式水果奶油薄餅佐橙味沙巴雍</a>
+                      <small>2026-03-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%82%99%E7%83%A4%E9%AE%AD%E9%AD%9A%E6%8E%92%E9%99%84%E6%B0%B4%E7%85%AE%E9%A6%AC%E9%88%B4%E8%96%AF%E7%82%92%E8%98%86%E7%AD%8D%E4%BD%90%E7%95%AA%E8%8C%84%E5%A5%B6%E6%B2%B9%E9%86%AC/">炙烤鮭魚排附英式馬鈴薯與 Choron 醬汁</a>
+                      <small>2026-03-15</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E9%87%8C%E6%98%82%E5%BC%8F%E6%B2%B9%E7%82%B8%E9%BB%9E%E5%BF%83/">里昂式油炸點心 (Bugnes Lyonnaises)</a>
+                      <small>2026-03-12</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%BE%A9%E5%BC%8F%E9%A6%AC%E8%96%A9%E6%8B%89%E5%A5%B6%E6%B2%B9%E9%9B%9E%E9%99%84%E9%BA%B5%E6%A2%9D/">義式馬薩拉奶油雞附麵條</a>
+                      <small>2026-02-07</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E8%8F%AF%E7%88%BE%E9%81%93%E5%A4%AB%E6%B2%99%E6%8B%89%E5%92%8C%E8%8D%89%E8%8E%93%E8%88%92%E8%8A%99%E8%95%BE%E8%9B%8B%E6%8D%B2/">草莓舒芙蕾蛋捲佐華爾道夫沙拉 (Strawberry Soufflé Omelet &amp; Waldorf Salad)</a>
+                      <small>2025-12-20</small>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6 mb-3">
+                    <div class="post-item">
+                      <a href="/lifestyle/%E7%BE%A9%E5%BC%8F%E8%BE%A3%E5%91%B3%E7%87%89%E7%85%AE%E7%BE%8A%E8%82%89/">義式辣味燉煮羊肉 (Spicy Basilicata Lamb Stew)</a>
+                      <small>2025-12-11</small>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tomisagoodguy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-capitalize footer-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="http://localhost:1313/" aria-label="定康筆記 | Tom&#39;s Note">
+          
+          <h3>定康筆記 | Tom&#39;s Note</h3>
+          
+        </a>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">聯絡我們</h6>
+        <ul class="list-unstyled contact-list">
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center cursor-pointer" href="tel:0911445898">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+              </svg>
+              0911445898
+            </a>
+          </li>
+          
+          
+          <li class="mb-3 d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Taiwan
+          </li>
+          
+          
+          <li class="mb-3">
+            <a class="text-dark d-flex align-items-center cursor-pointer" href="mailto:tom890108159@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="text-primary mr-2" style="width: 20px; height: 20px;">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              tom890108159@gmail.com
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">社群連結</h6>
+        <ul class="list-unstyled social-list">
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://www.facebook.com/profile.php?id=100005583693079" >
+              <i class="ti-facebook"></i>facebook
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark social-item" href="https://github.com/tomisagoodguy?tab=repositories" >
+              <i class="ti-github"></i>github
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">文章分類</h6>
+        <ul class="list-unstyled category-list">
+          <li class="mb-3">
+            <a class="text-dark category-item" href="/categories/">
+              查看所有分類
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">快速連結</h6>
+        <ul class="list-unstyled quick-links">
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/">
+              首頁
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/lifestyle/">
+              廚藝與生活
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/real-estate/">
+              代書修煉
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/automation/">
+              自動化實驗室
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/adventure-map/">
+              破關地圖
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/about/">
+              關於
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="http://localhost:1313/links/">
+              相關連結
+            </a>
+          </li>
+          
+          <li class="mb-3">
+            <a class="text-dark" href="https://security.lucas-futures.com/">
+              網站安全報告
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center footer-copyright">
+        | copyright © 2025 定康筆記 | Tom&rsquo;s Note All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="return-to-top" class="cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+    style="width: 24px; height: 24px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+  </svg>
+</a>
+<a href="#" id="go-to-bottom" class="cursor-pointer">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+    style="width: 24px; height: 24px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+  </svg>
+</a>
+
+<script id="index-script" data-index-url="http://localhost:1313/index.json">
+  var indexURL = document.currentScript.dataset.indexUrl;
+</script>
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jQuery/jquery.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/slick/slick.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/venobox/venobox.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/fuse.min.js"  ></script>
+
+<script src="http://localhost:1313/plugins/search/mark.js"  ></script>
+
+
+<!-- Main script with TypeScript support -->
+
+<script src="http://localhost:1313/js/script.js"></script>
+
+<!-- UI logic bundle with TypeScript -->
+
+<script src="http://localhost:1313/js/index.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide"
+  data-cookie-expire="2">
+  <div class="container">
+    <div class="cookie-content">
+      <p>本網站使用Cookie來改善您的瀏覽體驗。繼續使用本網站，即表示您同意我們的Cookie使用政策。</p>
+      <div class="cookie-buttons">
+        <button id="js-cookie-button" class="btn btn-sm btn-primary">我接受</button>
+        <a href="" class="btn btn-sm btn-outline-secondary ml-2">了解更多</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
